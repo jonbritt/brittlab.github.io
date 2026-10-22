@@ -4,40 +4,23 @@ layout: default
 {%- include page-vars.html -%}
 {%- assign h = t.home -%}
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy reveal">
-      <div>
-        <p class="label">{{ h.eyebrow }}</p>
-        <h1 class="display">{{ h.title }}</h1>
-        <p class="lede">{{ h.lede }}</p>
-      </div>
+{%- assign banner = site.data.gallery.images | where: "slug", "bla-calbindin" | first %}
+<section class="banner">
+  <img class="banner-img" src="/assets/img/hero/banner-amygdala-1400.jpg"
+       srcset="/assets/img/hero/banner-amygdala-800.jpg 800w, /assets/img/hero/banner-amygdala-1400.jpg 1400w, /assets/img/hero/banner-amygdala-2274.jpg 2274w"
+       sizes="100vw" width="2274" height="1082" alt="{{ banner[k_alt] | escape }}" fetchpriority="high">
+  <div class="wrap banner-inner">
+    <div class="banner-card">
+      <p class="label">{{ h.eyebrow }}</p>
+      <h1 class="display">{{ h.title }}</h1>
+      <p class="lede">{{ h.lede }}</p>
       <div class="cta-row">
         {% include cta.html href=url_research label=h.cta_research mouse="right" %}
         {% include cta.html href=url_people label=h.cta_people mouse="left" %}
       </div>
     </div>
-
-    <div class="scope scope-corners reveal" data-circuit
-         data-labels="{{ h.regions | jsonify | escape }}"
-         data-findings="{{ t.gallery.viz.circuit.findings | jsonify | escape }}">
-      <canvas aria-hidden="true"></canvas>
-      <div class="scope-hud">
-        <div class="scope-hud-top">
-          <span class="scope-title">{{ h.viewport_title }}</span>
-          <span>{{ h.viewport_note }}</span>
-        </div>
-        <div></div>
-        <div class="scope-hud-bottom">
-          <span class="scope-legend">
-            <span><i></i>{{ h.legend_glutamate }}</span>
-            <span><i class="da"></i>{{ h.legend_dopamine }}</span>
-          </span>
-          <span class="scope-readout" data-readout aria-live="polite" data-hint="{{ h.viewport_hint }}" data-hint-touch="{{ h.viewport_hint_touch }}">{{ h.viewport_hint }}</span>
-        </div>
-      </div>
-    </div>
   </div>
+  <p class="banner-credit">{{ banner[k_title] }} · {{ banner.credit }}</p>
 </section>
 
 <section class="section section--rule">
@@ -111,8 +94,8 @@ layout: default
       {% include cta.html href=url_pubs label=t.common.all_publications mouse="right" %}
     </div>
     <ul class="pub-list reveal">
-      {%- assign featured = site.data.publications | where: "featured", true -%}
-      {%- for p in featured %}
+      {%- comment -%} The newest papers; publications.yml is kept newest first {%- endcomment -%}
+      {%- for p in site.data.publications limit: 4 %}
       {% include pub-row.html pub=p compact=true %}
       {%- endfor %}
     </ul>
@@ -178,18 +161,19 @@ layout: default
 </section>
 
 <section class="funders" aria-labelledby="funders-label">
-  <div class="wrap">
+  <div class="wrap funders-head">
     <p class="label" id="funders-label">{{ h.funders_label }}</p>
+    {% include motion-btn.html %}
   </div>
-  <div class="marquee">
+  <div class="marquee" data-motion-target>
     <div class="marquee-track">
       {%- for pass in (1..2) %}
       <div class="marquee-group"{% if pass == 2 %} aria-hidden="true"{% endif %}>
         {%- for f in site.data.funders -%}
         {%- assign logo = f.logo -%}{%- if lang == "fr" and f.logo_fr -%}{%- assign logo = f.logo_fr -%}{%- endif %}
-        <a class="funder" href="{{ f[k_url] }}" rel="noopener"{% if pass == 2 %} tabindex="-1"{% endif %} title="{{ f[k_name] }}">
-          <img src="/assets/img/funders/{{ logo }}" alt="{{ f[k_name] }}" style="height:{{ f.height }}px" loading="lazy">
-          {%- if f.caption_en %}<small>{{ f[k_caption] }}</small>{% endif %}
+        <a class="funder" href="{{ f[k_url] }}" rel="noopener"{% if pass == 2 %} tabindex="-1"{% endif %} title="{{ f[k_name] }}" aria-label="{{ f[k_name] }}">
+          <img src="/assets/img/funders/{{ logo }}" alt="" style="height:{{ f.height }}px" loading="lazy">
+          {%- if f.caption_en %}<small aria-hidden="true">{{ f[k_caption] }}</small>{% endif %}
         </a>
         {%- endfor %}
       </div>
@@ -198,4 +182,3 @@ layout: default
   </div>
 </section>
 
-<script src="/assets/js/circuit.js?v={{ site.time | date: '%s' }}" defer></script>

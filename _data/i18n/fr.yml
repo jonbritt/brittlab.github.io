@@ -42,14 +42,16 @@ common:
   credit: Crédit
   license: Licence
   real_data: Données publiées
-  illustrative: À titre illustratif
-  illustrative_note: Animation à titre illustratif, sans données enregistrées.
   close_image: Fermer l’image
   previous: Précédent
   next: Suivant
   back_to_news: Toutes les nouvelles
   posted: Date de publication
   view_paper: Lire l’article
+  pause: Pause
+  play: Lecture
+  pause_motion: Mettre l’animation en pause
+  play_motion: Relancer l’animation
 
 home:
   meta_description: >-
@@ -65,19 +67,6 @@ home:
     renforcement.
   cta_research: Nos recherches
   cta_people: Rencontrer l’équipe
-  viewport_title: Afférences du noyau accumbens
-  viewport_note: Schéma en vue sagittale, non à l’échelle
-  viewport_hint: Survolez une région pour la stimuler
-  viewport_hint_touch: Touchez une région pour la stimuler
-  legend_glutamate: Afférences glutamatergiques
-  legend_dopamine: Afférence dopaminergique
-  regions:
-    pfc: Cortex préfrontal
-    vhpc: Hippocampe ventral
-    bla: Amygdale basolatérale
-    pvt: Thalamus paraventriculaire
-    vta: Aire tegmentale ventrale
-    nac: Noyau accumbens
   welcome_label: Bienvenue
   # traduction fidèle du texte original
   welcome: >-
@@ -98,7 +87,7 @@ home:
         convergent vers le noyau accumbens. Nous enregistrons et manipulons
         l’activité de chaque voie pour déterminer quand elle est active et quand
         elle influence le comportement.
-      refs: Reed et al., Neuron 2018 · Britt et al., Neuron 2012
+      refs: Reed et al., Neuron 2018 · Lafferty et al., Cell Rep. 2020
     - title: Comment le cerveau décide-t-il de manger et d’y prendre plaisir ?
       text: >-
         La prise alimentaire coïncide avec une diminution coordonnée des
@@ -219,7 +208,7 @@ research:
         populations distinctes et entremêlées de neurones du prosencéphale, et
         que chaque afférence véhicule un mélange de signaux opposés pendant la
         recherche de récompenses.
-      papers: ["10.1016/j.neuron.2018.07.051", "10.1016/j.neuron.2012.09.040"]
+      papers: ["10.1016/j.neuron.2018.07.051", "10.1016/j.celrep.2020.02.095"]
       image: research/nac-input-innervation.jpg
       image_caption: Innervation du noyau accumbens par différentes voies afférentes.
     - id: feeding
@@ -410,12 +399,8 @@ publications:
   title: Publications
   meta_description: Publications du Laboratoire Britt et de Jonathan Britt.
   lede: >-
-    Articles, synthèses et prépublications du Laboratoire Britt à McGill et des
-    années de formation de Jon. Les noms des membres du laboratoire sont mis en
-    évidence.
-  filter_all: Toutes
-  filter_mcgill: Laboratoire Britt, depuis 2014
-  filter_prior: Travaux antérieurs
+    Articles, synthèses et prépublications du Laboratoire Britt à McGill, depuis
+    2014. Les noms des membres du laboratoire sont mis en évidence.
   search_placeholder: Rechercher par titre, nom ou revue
   search_label: Rechercher des publications
   count_one: publication
@@ -428,9 +413,8 @@ gallery:
     Microscopie, photos du laboratoire, figures et visualisations interactives
     de données du Laboratoire Britt.
   lede: >-
-    Images de microscopie du laboratoire, figures tirées de nos articles,
-    visualisations interactives de données publiées et quelques animations
-    explicatives.
+    Images de microscopie du laboratoire, figures tirées de nos articles et
+    visualisations interactives de données publiées.
   filters:
     all: Toutes
     microscopy: Microscopie
@@ -443,11 +427,6 @@ gallery:
     Chaque panneau est produit directement à partir des données sources
     diffusées avec l’article. Les résumés sont de simples dénombrements : rien
     n’est simulé et aucune nouvelle statistique n’est calculée.
-  explainers_label: Animations explicatives
-  explainers_title: Le fonctionnement des méthodes
-  explainers_text: >-
-    Schémas animés des principales techniques du laboratoire. Il s’agit
-    d’illustrations et non d’enregistrements.
   viz:
     attention:
       title: La sérotonine régule l’intensité de l’attention
@@ -513,50 +492,6 @@ gallery:
       y_label: −log10(p)
       gene: Gène
       note: Affiche le sous-ensemble présélectionné dans l’article (p < 0,001), et non tous les sites testés.
-    optogenetics:
-      title: Optogénétique
-      text: >-
-        Les neurones exprimant la channelrhodopsine émettent des potentiels
-        d’action lorsque la lumière bleue ouvre le canal. Modifiez la fréquence
-        des impulsions pour accélérer ou ralentir l’activité du neurone.
-      frequency: Fréquence des impulsions
-      light: Lumière
-      membrane: Potentiel de membrane
-    photometry:
-      title: Photométrie par fibre optique
-      text: >-
-        La fluorescence de GCaMP excitée à 470 nm suit le calcium ; un canal
-        isosbestique à 405 nm suit les mouvements et le photoblanchiment. La
-        soustraction du signal témoin mis à l’échelle permet d’isoler le signal
-        d’activité, ΔF/F.
-      signal: 470 nm (calcium)
-      control: 405 nm (isosbestique)
-      corrected: ΔF/F corrigé
-      event: Événement
-    circuit:
-      title: Le circuit du noyau accumbens
-      text: >-
-        Sélectionnez une afférence pour découvrir les résultats du laboratoire
-        à son sujet.
-      findings:
-        vhpc: >-
-          Afférence la plus forte vers la coquille médiale. Son activation
-          renforce le comportement, et sa stimulation à basse fréquence pendant
-          la prise alimentaire augmente la palatabilité des aliments.
-        bla: >-
-          Nécessaire pour inhiber la recherche de récompenses lorsque la
-          récompense n’est pas disponible ; ses axones occupent des sous-régions
-          du noyau accumbens différentes de celles des axones thalamiques.
-        pvt: >-
-          Nécessaire à l’inhibition comportementale, et ses corps cellulaires
-          contribuent au comportement alimentaire.
-        pfc: >-
-          L’une des voies excitatrices comparées dans les travaux fondateurs du
-          laboratoire ; son activation renforce également le comportement.
-        vta: >-
-          Afférence dopaminergique. La dopamine évoquée par un indice maintient
-          les associations indice–valeur, et la dopamine dans la coquille limite
-          la durée des actions renforcées.
 
 news:
   title: Nouvelles

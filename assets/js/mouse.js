@@ -1,6 +1,5 @@
 /* Pixel mouse that peeks over call-to-action buttons on hover.
-   Any .cta[data-mouse] gets a sprite; data-mouse="left" puts it on the left.
-   The pixel map matches tools/mouse_sprite.py. */
+   Any .cta[data-mouse] gets a sprite; data-mouse="left" puts it on the left. */
 (function () {
   "use strict";
 

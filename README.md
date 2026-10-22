@@ -16,7 +16,7 @@ on github.com.
 |---|---|
 | Current lab members | `_data/people.yml`: add a block with `name` and `group` (`phd`, `msc`, `undergrad`, `postdoc`, `staff`). Optional: `photo` (put the file in `assets/img/people/`), `interests_en` / `interests_fr`, `email`, `website`, `author` (e.g. `Morris MM`, to highlight them in publication lists). Without a photo, the card shows the lab-mouse placeholder. |
 | Alumni | `_data/alumni.yml`: move a member here when they leave. `role_*` is what they did in the lab, `now_*` where they went next. |
-| Publications | `_data/publications.yml`: copy a block to the top. Set `featured: true` to show it on the home page. |
+| Publications | `_data/publications.yml`: copy a block to the top (the list is newest first; the four newest appear on the home page). |
 | Funders strip | `_data/funders.yml`, logos in `assets/img/funders/`. |
 | Gallery images | `_data/gallery.yml`, files in `assets/img/gallery/` with a 720px copy in `assets/img/gallery/thumbs/`. Keep the credit and licence for paper figures. |
 | Any page text | `_data/i18n/en.yml` and `_data/i18n/fr.yml`. The two files have the same keys; change both. |
@@ -42,11 +42,11 @@ unaffected): run with `RUBYOPT=-r./path/to/shim.rb`, where the shim defines
   language, strings and cross-language links used everywhere.
 - `assets/css/site.css` the whole design system (paper + fluorescence palette,
   Geist / Geist Mono).
-- `assets/js/circuit.js` home-page circuit animation (also used in the gallery).
+- `assets/js/site.js` menu, pause control for the funder strip,
+  publication search, gallery filter and lightbox.
 - `assets/js/mouse.js` the pixel mouse that peeks over buttons with a
-  `data-mouse` attribute. `tools/mouse_sprite.py` regenerates the matching
-  favicon and logo mark from the same pixel map.
-- `assets/js/gallery-viz.js` interactive charts and explainer animations.
+  `data-mouse` attribute.
+- `assets/js/gallery-viz.js` interactive charts of published data.
 - `assets/data/*.json` chart data, packed from published source data by
   `tools/build_viz_data.py`. Sources: Lehnert et al. 2026 (Nature
   Communications source data, CC BY 4.0; Dryad example dataset, CC0) and Lax et

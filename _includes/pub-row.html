@@ -20,7 +20,7 @@
   </a>
 </li>
 {%- else -%}
-<li class="pub-row" data-era="{{ p.era }}" data-search="{{ p.title | downcase | escape }} {{ p.authors | join: ' ' | downcase | escape }} {{ p.journal | downcase | escape }} {{ p.year }}">
+<li class="pub-row" data-search="{{ p.title | downcase | escape }} {{ p.authors | join: ' ' | downcase | escape }} {{ p.journal | downcase | escape }} {{ p.year }}">
   <div>
     <span>
       <span class="pub-title">{{ p.title }}</span>{{ tag }}

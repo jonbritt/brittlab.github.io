@@ -42,14 +42,16 @@ common:
   credit: Credit
   license: License
   real_data: Published data
-  illustrative: Illustrative
-  illustrative_note: Illustrative animation, not recorded data.
   close_image: Close image
   previous: Previous
   next: Next
   back_to_news: All news
   posted: Posted
   view_paper: Read the paper
+  pause: Pause
+  play: Play
+  pause_motion: Pause animation
+  play_motion: Play animation
 
 home:
   meta_description: >-
@@ -63,19 +65,6 @@ home:
     processes such as motivation and reinforcement learning.
   cta_research: Our research
   cta_people: Meet the lab
-  viewport_title: Inputs to the nucleus accumbens
-  viewport_note: Sagittal schematic, not to scale
-  viewport_hint: Hover a region to stimulate it
-  viewport_hint_touch: Tap a region to stimulate it
-  legend_glutamate: Glutamate inputs
-  legend_dopamine: Dopamine input
-  regions:
-    pfc: Prefrontal cortex
-    vhpc: Ventral hippocampus
-    bla: Basolateral amygdala
-    pvt: Paraventricular thalamus
-    vta: Ventral tegmental area
-    nac: Nucleus accumbens
   welcome_label: Welcome
   # verbatim
   welcome: >-
@@ -94,7 +83,7 @@ home:
         Hippocampal, amygdala, thalamic and cortical inputs all converge on the
         nucleus accumbens. We record and manipulate each pathway to learn when it
         is active and when it matters for behaviour.
-      refs: Reed et al., Neuron 2018 · Britt et al., Neuron 2012
+      refs: Reed et al., Neuron 2018 · Lafferty et al., Cell Rep. 2020
     - title: How does the brain decide to eat, and to enjoy it?
       text: >-
         Eating coincides with a coordinated dip in excitatory input to the rostral
@@ -204,7 +193,7 @@ research:
         shell are innervated by distinct, intermingled populations of forebrain
         neurons, and that each input carries mixed, opposing signals during reward
         seeking.
-      papers: ["10.1016/j.neuron.2018.07.051", "10.1016/j.neuron.2012.09.040"]
+      papers: ["10.1016/j.neuron.2018.07.051", "10.1016/j.celrep.2020.02.095"]
       image: research/nac-input-innervation.jpg
       image_caption: Innervation of the nucleus accumbens by different input pathways.
     - id: feeding
@@ -380,11 +369,8 @@ publications:
   title: Publications
   meta_description: Publications from the Britt Lab and Jonathan Britt.
   lede: >-
-    Articles, reviews and preprints from the Britt Lab at McGill and from Jon's
-    earlier training. Lab members are highlighted.
-  filter_all: All
-  filter_mcgill: Britt Lab, 2014 on
-  filter_prior: Earlier work
+    Articles, reviews and preprints from the Britt Lab at McGill, since 2014.
+    Lab members are highlighted.
   search_placeholder: Search titles, authors, journals
   search_label: Search publications
   count_one: publication
@@ -397,8 +383,8 @@ gallery:
     Microscopy, lab photos, figures and interactive data visualizations from the
     Britt Lab.
   lede: >-
-    Microscopy from the lab, figures from our papers, interactive views of
-    published data, and a few animated explainers.
+    Microscopy from the lab, figures from our papers, and interactive views of
+    published data.
   filters:
     all: All
     microscopy: Microscopy
@@ -411,11 +397,6 @@ gallery:
     Each panel is drawn directly from source data released with the paper.
     Summaries are simple counts; nothing is simulated and no new statistics are
     computed.
-  explainers_label: Explainers
-  explainers_title: How the methods work
-  explainers_text: >-
-    Animated sketches of the lab's core techniques. These are illustrations, not
-    recordings.
   viz:
     attention:
       title: Serotonin sets the strength of attention
@@ -477,44 +458,6 @@ gallery:
       y_label: −log10(p)
       gene: Gene
       note: Shows the paper's preselected p < 0.001 subset, not every tested site.
-    optogenetics:
-      title: Optogenetics
-      text: >-
-        Neurons expressing channelrhodopsin fire when blue light opens the channel.
-        Change the pulse frequency to drive the neuron faster or slower.
-      frequency: Pulse frequency
-      light: Light
-      membrane: Membrane potential
-    photometry:
-      title: Fiber photometry
-      text: >-
-        GCaMP fluorescence excited at 470 nm tracks calcium; a 405 nm isosbestic
-        channel tracks motion and bleaching. Subtracting the scaled control leaves
-        the activity signal, ΔF/F.
-      signal: 470 nm (calcium)
-      control: 405 nm (isosbestic)
-      corrected: Corrected ΔF/F
-      event: Event
-    circuit:
-      title: The accumbens circuit
-      text: >-
-        Select an input to read what the lab has learned about it.
-      findings:
-        vhpc: >-
-          Strongest input to the medial shell. Its activation reinforces behaviour,
-          and low-frequency stimulation during eating makes food more palatable.
-        bla: >-
-          Needed to suppress reward seeking when reward is unavailable; its axons
-          sit in different accumbens subregions from thalamic ones.
-        pvt: >-
-          Required for behavioural suppression, and its cell bodies contribute to
-          feeding behaviour.
-        pfc: >-
-          One of the excitatory pathways compared in the lab's foundational work;
-          activating it also reinforces behaviour.
-        vta: >-
-          Dopamine input. Cue-evoked dopamine maintains cue–value associations, and
-          shell dopamine limits how long reinforced actions last.
 
 news:
   title: News

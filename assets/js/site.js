@@ -41,22 +41,44 @@
     reveals.forEach(function (el) { el.classList.add("is-in"); });
   }
 
-  // Publications: era filter + text search
+  // Pause / play buttons (data-motion-toggle) for anything that moves on its own
+  function motionToggle(btn, onChange) {
+    var label = btn.querySelector("span");
+    function set(paused) {
+      btn.setAttribute("aria-pressed", paused ? "true" : "false");
+      btn.setAttribute("aria-label", btn.getAttribute(paused ? "data-play" : "data-pause"));
+      if (label) label.textContent = btn.getAttribute(paused ? "data-play" : "data-pause").split(" ")[0];
+      onChange(paused);
+    }
+    btn.addEventListener("click", function () { set(btn.getAttribute("aria-pressed") !== "true"); });
+    return set;
+  }
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Funder logo marquee
+  var funders = document.querySelector(".funders");
+  if (funders) {
+    var marquee = funders.querySelector(".marquee");
+    var mBtn = funders.querySelector("[data-motion-toggle]");
+    if (mBtn) {
+      if (reduce) mBtn.hidden = true;
+      motionToggle(mBtn, function (paused) { marquee.classList.toggle("is-paused", paused); });
+    }
+  }
+
+  // Publications: text search
   var pubRoot = document.querySelector("[data-pubs]");
   if (pubRoot) {
     var rows = pubRoot.querySelectorAll(".pub-row");
     var groups = pubRoot.querySelectorAll(".year-group");
-    var buttons = pubRoot.querySelectorAll("[data-era-filter]");
     var input = pubRoot.querySelector("input[type=search]");
     var count = pubRoot.querySelector("[data-count]");
     var none = pubRoot.querySelector("[data-none]");
-    var era = "all";
     function apply() {
       var q = (input && input.value || "").trim().toLowerCase();
       var shown = 0;
       rows.forEach(function (r) {
-        var ok = (era === "all" || r.getAttribute("data-era") === era) &&
-                 (!q || r.getAttribute("data-search").indexOf(q) !== -1);
+        var ok = !q || r.getAttribute("data-search").indexOf(q) !== -1;
         r.hidden = !ok;
         if (ok) shown++;
       });
@@ -64,13 +86,6 @@
       if (count) count.textContent = shown + " " + (shown === 1 ? count.getAttribute("data-one") : count.getAttribute("data-many"));
       if (none) none.hidden = shown !== 0;
     }
-    buttons.forEach(function (b) {
-      b.addEventListener("click", function () {
-        era = b.getAttribute("data-era-filter");
-        buttons.forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
-        apply();
-      });
-    });
     if (input) input.addEventListener("input", apply);
     apply();
   }

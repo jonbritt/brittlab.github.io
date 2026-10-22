@@ -1,10 +1,9 @@
-# Publications, newest first. Built from the lab's old publication list plus OpenAlex,
-# then checked against the papers. To add a paper, copy a block to the top.
+# Britt Lab publications at McGill (2014 on), newest first. Built from the lab's old
+# publication list plus OpenAlex, then checked against the papers. To add a paper, copy a block to the top.
 #   authors: list in 'Surname AB' form
-#   era: mcgill (Britt Lab at McGill, 2014 on) or prior (earlier training and outside collaborations)
 #   type: article | review | commentary | methods | preprint
 #   lab_authors: which of the authors were Britt Lab members (highlighted on the site)
-#   featured: true puts the paper on the home page
+#   The four newest papers appear on the home page automatically.
 
 - title: "Rapid dynamics of dorsal raphe serotonin neurons regulate the strength of visual attention"
   authors: ["Lehnert J", "Cha K", "Forestell J", "Yang K", "Ma X", "Shariff S", "Britt JP", "Khadra A", "Cook EP", "Krishnaswamy A"]
@@ -16,7 +15,6 @@
   doi: "10.1038/s41467-026-70658-y"
   pmid: "41851109"
   type: article
-  era: mcgill
   lab_authors: ["Britt JP"]
   open_access_url: "https://doi.org/10.1038/s41467-026-70658-y"
 
@@ -29,7 +27,6 @@
   doi: "10.1016/j.physbeh.2024.114500"
   pmid: "38430645"
   type: article
-  era: mcgill
   lab_authors: ["Valyear MD", "Eustachon NM", "Britt JP"]
   open_access_url: "https://doi.org/10.1016/j.physbeh.2024.114500"
 
@@ -39,10 +36,8 @@
   year: 2023
   doi: "10.1101/2023.11.29.569116"
   type: preprint
-  era: mcgill
   lab_authors: ["Valyear MD", "Eustachon NM", "Morris MM", "Alymova I", "Tremblay BN", "Mitrikeski NM", "Britt JP"]
   open_access_url: "https://www.biorxiv.org/content/biorxiv/early/2024/05/02/2023.11.29.569116.full.pdf"
-  featured: true
 
 - title: "Methyl-CpG binding domain 2 (Mbd2) is an epigenetic regulator of autism-risk genes and cognition"
   authors: ["Lax E", "Do Carmo S", "Enuka Y", "Sapozhnikov DM", "Welikovitch LA", "Mahmood N", "Rabbani SA", "Wang L", "Britt JP", "Hancock WW", "Yarden Y", "Szyf M"]
@@ -54,7 +49,6 @@
   doi: "10.1038/s41398-023-02561-9"
   pmid: "37443311"
   type: article
-  era: mcgill
   lab_authors: ["Britt JP"]
   open_access_url: "https://www.nature.com/articles/s41398-023-02561-9.pdf"
 
@@ -68,7 +62,6 @@
   doi: "10.1111/ejn.15924"
   pmid: "36700576"
   type: commentary
-  era: mcgill
   lab_authors: ["Valyear MD", "Britt JP"]
   open_access_url: "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/ejn.15924"
 
@@ -81,7 +74,6 @@
   doi: "10.1016/j.ymeth.2021.07.007"
   pmid: "34314828"
   type: review
-  era: mcgill
   lab_authors: ["Lafferty CK", "Christinck TD", "Britt JP"]
 
 - title: "Lysergic acid diethylamide (LSD) promotes social behavior through mTORC1 in the excitatory neurotransmission"
@@ -94,7 +86,6 @@
   doi: "10.1073/pnas.2020705118"
   pmid: "33495318"
   type: article
-  era: mcgill
   lab_authors: ["Lafferty CK", "Britt JP"]
   open_access_url: "https://doi.org/10.1073/pnas.2020705118"
 
@@ -108,9 +99,7 @@
   doi: "10.1016/j.biopsych.2019.09.007"
   pmid: "31699294"
   type: article
-  era: mcgill
   lab_authors: ["Yang AK", "Mendoza JA", "Lafferty CK", "Lacroix F", "Britt JP"]
-  featured: true
 
 - title: "Cannabis Exposure Enhances Subcortical Control of Nucleus Accumbens Activity"
   authors: ["Lafferty CK", "Britt JP"]
@@ -122,7 +111,6 @@
   doi: "10.1016/j.biopsych.2019.12.017"
   pmid: "32164914"
   type: commentary
-  era: mcgill
   lab_authors: ["Lafferty CK", "Britt JP"]
 
 - title: "Off-Target Influences of Arch-Mediated Axon Terminal Inhibition on Network Activity and Behavior"
@@ -134,7 +122,6 @@
   doi: "10.3389/fncir.2020.00010"
   pmid: "32269514"
   type: article
-  era: mcgill
   lab_authors: ["Lafferty CK", "Britt JP"]
   open_access_url: "https://www.frontiersin.org/articles/10.3389/fncir.2020.00010/pdf"
 
@@ -148,10 +135,8 @@
   doi: "10.1016/j.celrep.2020.02.095"
   pmid: "32187545"
   type: article
-  era: mcgill
   lab_authors: ["Lafferty CK", "Yang AK", "Mendoza JA", "Britt JP"]
   open_access_url: "http://www.cell.com/article/S2211124720302692/pdf"
-  featured: true
 
 - title: "Cue-evoked dopamine neuron activity helps maintain but does not encode expected value"
   authors: ["Mendoza JA", "Lafferty CK", "Yang AK", "Britt JP"]
@@ -163,7 +148,6 @@
   doi: "10.1016/j.celrep.2019.09.077"
   pmid: "31693885"
   type: article
-  era: mcgill
   lab_authors: ["Mendoza JA", "Lafferty CK", "Yang AK", "Britt JP"]
   open_access_url: "http://www.cell.com/article/S2211124719312811/pdf"
 
@@ -177,52 +161,8 @@
   doi: "10.1016/j.neuron.2018.07.051"
   pmid: "30146308"
   type: article
-  era: mcgill
   lab_authors: ["Reed SJ", "Lafferty CK", "Mendoza JA", "Yang AK", "Britt JP"]
   open_access_url: "http://www.cell.com/article/S0896627318306494/pdf"
-  featured: true
-
-- title: "Local Control of Extracellular Dopamine Levels in the Medial Nucleus Accumbens by a Glutamatergic Projection from the Infralimbic Cortex"
-  authors: ["Quiroz C", "Orrú M", "Rea W", "Ciudad-Roberts A", "Yepes G", "Britt JP", "Ferré S"]
-  journal: "Journal of Neuroscience"
-  year: 2016
-  volume: "36"
-  issue: "3"
-  pages: "851-859"
-  doi: "10.1523/jneurosci.2850-15.2016"
-  pmid: "26791215"
-  type: article
-  era: prior
-  lab_authors: ["Britt JP"]
-  open_access_url: "https://www.jneurosci.org/content/jneuro/36/3/851.full.pdf"
-
-- title: "Dopaminergic and glutamatergic microdomains in a subset of rodent mesoaccumbens axons"
-  authors: ["Zhang S", "Qi J", "Li X", "Wang HL", "Britt JP", "Hoffman AF", "Bonci A", "Lupica CR", "Morales M"]
-  journal: "Nature Neuroscience"
-  year: 2015
-  volume: "18"
-  issue: "3"
-  pages: "386-392"
-  doi: "10.1038/nn.3945"
-  pmid: "25664911"
-  type: article
-  era: prior
-  lab_authors: ["Britt JP"]
-  open_access_url: "https://www.ncbi.nlm.nih.gov/pmc/articles/4340758"
-
-- title: "Serotonergic versus nonserotonergic dorsal raphe projection neurons: differential participation in reward circuitry"
-  authors: ["McDevitt RA", "Tiran-Cappello A", "Shen H", "Balderas I", "Britt JP", "Marino RAM", "Chung SL", "Richie CT", "Harvey BK", "Bonci A"]
-  journal: "Cell Reports"
-  year: 2014
-  volume: "8"
-  issue: "6"
-  pages: "1857-1869"
-  doi: "10.1016/j.celrep.2014.08.037"
-  pmid: "25242321"
-  type: article
-  era: prior
-  lab_authors: ["Britt JP"]
-  open_access_url: "https://doi.org/10.1016/j.celrep.2014.08.037"
 
 - title: "Optogenetics in preclinical neuroscience and psychiatry research: recent insights and potential applications"
   authors: ["McDevitt RA", "Reed SJ", "Britt JP"]
@@ -233,184 +173,5 @@
   doi: "10.2147/ndt.s45896"
   pmid: "25092982"
   type: review
-  era: mcgill
   lab_authors: ["Reed SJ", "Britt JP"]
   open_access_url: "https://www.dovepress.com/getfile.php?fileID=20935"
-
-- title: "Methamphetamine downregulates striatal glutamate receptors via diverse epigenetic mechanisms"
-  authors: ["Jayanthi S", "McCoy MT", "Chen B", "Britt JP", "Kourrich S", "Yau HJ", "Ladenheim B", "Krasnova IN", "Bonci A", "Cadet JL"]
-  journal: "Biological Psychiatry"
-  year: 2014
-  volume: "76"
-  issue: "1"
-  pages: "47-56"
-  doi: "10.1016/j.biopsych.2013.09.034"
-  pmid: "24239129"
-  type: article
-  era: prior
-  lab_authors: ["Britt JP"]
-  open_access_url: "https://www.ncbi.nlm.nih.gov/pmc/articles/3989474"
-
-- title: "Ultrastructural and Optogenetic Evidence for Dual Neuronal Signaling by Dopamine Neurons of the Ventral Tegmental Area (VTA)"
-  authors: ["Zhang S", "Li X", "Wang HL", "Qi J", "Britt JP", "Bonci A", "Morales M"]
-  journal: "Catecholamine Research in the 21st Century"
-  year: 2013
-  pages: "172-173"
-  doi: "10.1016/b978-0-12-800044-1.00152-5"
-  type: article
-  era: prior
-  lab_authors: ["Britt JP"]
-
-- title: "Alcohol and tobacco: how smoking may promote excessive drinking"
-  authors: ["Britt JP", "Bonci A"]
-  journal: "Neuron"
-  year: 2013
-  volume: "79"
-  issue: "3"
-  pages: "406-407"
-  doi: "10.1016/j.neuron.2013.07.018"
-  pmid: "23931990"
-  type: commentary
-  era: prior
-  lab_authors: ["Britt JP"]
-  open_access_url: "http://www.cell.com/article/S0896627313006429/pdf"
-
-- title: "Optogenetic interrogations of the neural circuits underlying addiction"
-  authors: ["Britt JP", "Bonci A"]
-  journal: "Current Opinion in Neurobiology"
-  year: 2013
-  volume: "23"
-  issue: "4"
-  pages: "539-545"
-  doi: "10.1016/j.conb.2013.01.010"
-  pmid: "23375167"
-  type: review
-  era: prior
-  lab_authors: ["Britt JP"]
-  open_access_url: "https://www.ncbi.nlm.nih.gov/pmc/articles/3776408"
-
-- title: "Synaptic and behavioral profile of multiple glutamatergic inputs to the nucleus accumbens"
-  authors: ["Britt JP", "Benaliouad F", "McDevitt RA", "Stuber GD", "Wise RA", "Bonci A"]
-  journal: "Neuron"
-  year: 2012
-  volume: "76"
-  issue: "4"
-  pages: "790-803"
-  doi: "10.1016/j.neuron.2012.09.040"
-  pmid: "23177963"
-  type: article
-  era: prior
-  lab_authors: ["Britt JP"]
-  open_access_url: "https://doi.org/10.1016/j.neuron.2012.09.040"
-
-- title: "Optogenetic modulation of neural circuits that underlie reward seeking"
-  authors: ["Stuber GD", "Britt JP", "Bonci A"]
-  journal: "Biological Psychiatry"
-  year: 2012
-  volume: "71"
-  issue: "12"
-  pages: "1061-1067"
-  doi: "10.1016/j.biopsych.2011.11.010"
-  pmid: "22196983"
-  type: review
-  era: prior
-  lab_authors: ["Britt JP"]
-  open_access_url: "https://cdr.lib.unc.edu/downloads/m326m7789"
-
-- title: "Use of channelrhodopsin for activation of CNS neurons"
-  authors: ["Britt JP", "McDevitt RA", "Bonci A"]
-  journal: "Current Protocols in Neuroscience"
-  year: 2012
-  volume: "58"
-  issue: "1"
-  pages: "Unit2.16"
-  doi: "10.1002/0471142301.ns0216s58"
-  pmid: "23042500"
-  type: methods
-  era: prior
-  lab_authors: ["Britt JP"]
-  open_access_url: "https://www.ncbi.nlm.nih.gov/pmc/articles/3466483"
-
-- title: "Enhanced striatal cholinergic neuronal activity mediates L-DOPA-induced dyskinesia in parkinsonian mice"
-  authors: ["Ding Y", "Won L", "Britt JP", "Lim SA", "McGehee DS", "Kang UJ"]
-  journal: "Proceedings of the National Academy of Sciences of the United States of America"
-  year: 2011
-  volume: "108"
-  issue: "2"
-  pages: "840-845"
-  doi: "10.1073/pnas.1006511108"
-  pmid: "21187382"
-  type: article
-  era: prior
-  lab_authors: ["Britt JP"]
-  open_access_url: "https://www.ncbi.nlm.nih.gov/pmc/articles/3021072"
-
-- title: "Dopaminergic terminals in the nucleus accumbens but not the dorsal striatum corelease glutamate"
-  authors: ["Stuber GD", "Hnasko TS", "Britt JP", "Edwards RH", "Bonci A"]
-  journal: "Journal of Neuroscience"
-  year: 2010
-  volume: "30"
-  issue: "24"
-  pages: "8229-8233"
-  doi: "10.1523/jneurosci.1754-10.2010"
-  pmid: "20554874"
-  type: article
-  era: prior
-  lab_authors: ["Britt JP"]
-  open_access_url: "https://www.jneurosci.org/content/jneuro/30/24/8229.full.pdf"
-
-- title: "Adenylyl cyclase type 5 contributes to corticostriatal plasticity and striatum-dependent learning"
-  authors: ["Kheirbek MA", "Britt JP", "Beeler JA", "Ishikawa Y", "McGehee DS", "Zhuang X"]
-  journal: "Journal of Neuroscience"
-  year: 2009
-  volume: "29"
-  issue: "39"
-  pages: "12115-12124"
-  doi: "10.1523/jneurosci.3343-09.2009"
-  pmid: "19793969"
-  type: article
-  era: prior
-  lab_authors: ["Britt JP"]
-  open_access_url: "https://www.jneurosci.org/content/jneuro/29/39/12115.full.pdf"
-
-- title: "Presynaptic opioid and nicotinic receptor modulation of dopamine overflow in the nucleus accumbens"
-  authors: ["Britt JP", "McGehee DS"]
-  journal: "Journal of Neuroscience"
-  year: 2008
-  volume: "28"
-  issue: "7"
-  pages: "1672-1681"
-  doi: "10.1523/jneurosci.4275-07.2008"
-  pmid: "18272687"
-  type: article
-  era: prior
-  lab_authors: ["Britt JP"]
-  open_access_url: "https://www.jneurosci.org/content/jneuro/28/7/1672.full.pdf"
-
-- title: "Dopamine scales performance in the absence of new learning"
-  authors: ["Cagniard B", "Beeler JA", "Britt JP", "McGehee DS", "Marinelli M", "Zhuang X"]
-  journal: "Neuron"
-  year: 2006
-  volume: "51"
-  issue: "5"
-  pages: "541-547"
-  doi: "10.1016/j.neuron.2006.07.026"
-  pmid: "16950153"
-  type: article
-  era: prior
-  lab_authors: ["Britt JP"]
-  open_access_url: "http://www.cell.com/article/S0896627306005952/pdf"
-
-- title: "Quantitative analysis of cortical pyramidal neurons after corpus callosotomy"
-  authors: ["Jacobs B", "Creswell J", "Britt JP", "Ford KL", "Bogen JE", "Zaidel E"]
-  journal: "Annals of Neurology"
-  year: 2003
-  volume: "54"
-  issue: "1"
-  pages: "126-130"
-  doi: "10.1002/ana.10620"
-  pmid: "12838530"
-  type: article
-  era: prior
-  lab_authors: ["Britt JP"]
-  open_access_url: "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ana.10620"

@@ -1,16 +1,15 @@
-/* Gallery visualizations. Data panels read JSON packed by tools/build_viz_data.py
-   from published source data; explainer panels are illustrative animations.
-   Plain SVG/canvas, no libraries. Strings come from each card's data-i18n. */
+/* Gallery visualizations, drawn only from published source data packed by
+   tools/build_viz_data.py. Plain SVG/canvas, no libraries. Strings come from
+   each card's data-i18n. */
 (function () {
   "use strict";
 
   var SVGNS = "http://www.w3.org/2000/svg";
   var C = {
-    ink: "#121315", ink2: "#474A50", ink3: "#74777D", rule: "rgba(18,19,21,0.12)", surface: "#FBFAF6",
+    ink: "#121315", ink2: "#474A50", ink3: "#66696F", rule: "rgba(18,19,21,0.12)", surface: "#FBFAF6",
     accent: "#3D5AFE", hyper: "#E0533F", hypo: "#3D5AFE",
     hit: "#2F8F5B", miss: "#D9A21E", fa: "#7A5AF0"
   };
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var lang = document.documentElement.lang || "en";
   var nf = function (x, d) { return Number(x).toLocaleString(lang === "fr" ? "fr-CA" : "en-CA", { minimumFractionDigits: d, maximumFractionDigits: d }); };
   var nInt = function (x) { return Number(x).toLocaleString(lang === "fr" ? "fr-CA" : "en-CA"); };
@@ -478,216 +477,19 @@
         ]);
       });
       s.addEventListener("pointerleave", function () { tip.hide(); ring.setAttribute("opacity", 0); });
+      var top = rows.slice().sort(function (a, b) { return b.y - a.y; }).slice(0, 20);
+      dataTable(host, lang === "fr" ? "Les 20 sites les plus significatifs" : "The 20 most significant sites",
+        [t.gene, t.chromosome, "KO−WT", "p"],
+        top.map(function (r) { return [r.gene || "–", "chr" + r.raw + ":" + nInt(r.pos), (r.diff > 0 ? "+" : "") + nf(r.diff, 1), Math.pow(10, -r.y).toExponential(1)]; }));
     }
     draw();
     onResize(host, draw);
-  }
-
-  /* ---------- 5. Optogenetics explainer (illustrative) ---------- */
-  function optogenetics(card, t) {
-    var host = card.querySelector(".viz-canvas");
-    host.style.minHeight = "0";
-    var cv = html("canvas", null, host);
-    cv.style.width = "100%";
-    cv.style.height = "300px";
-    cv.setAttribute("role", "img");
-    cv.setAttribute("aria-label", t.title);
-    var controls = html("div", "viz-controls", host);
-    var lab = html("label", null, controls, t.frequency + " ");
-    var steps = [1, 2, 5, 10, 20, 40];
-    var range = html("input", null, lab);
-    range.type = "range"; range.min = 0; range.max = steps.length - 1; range.value = 3; range.step = 1;
-    var out = html("output", null, lab);
-    var freq = steps[3];
-    function setF() { freq = steps[+range.value]; out.textContent = freq + " Hz"; }
-    range.addEventListener("input", setF); setF();
-    legend(host, [{ label: t.light, color: "#6F8BFF" }, { label: t.membrane, color: "#E9ECEF" }]);
-
-    var ctx = cv.getContext("2d"), W, H, dpr;
-    function size() {
-      dpr = Math.min(2, window.devicePixelRatio || 1);
-      W = cv.clientWidth; H = cv.clientHeight;
-      cv.width = W * dpr; cv.height = H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-    size(); onResize(host, function () { size(); draw(); });
-
-    var win = 2000, simT = 0, nextPulse = 0, v = -70, refr = 0, lightOn = 0;
-    var trace = [], pulses = [];
-    var running = false, last = 0;
-    function simulate(dt) {
-      // 1 ms steps: leaky membrane, light-gated current, spike + reset
-      for (var s = 0; s < dt; s++) {
-        simT += 1;
-        if (simT >= nextPulse) {
-          pulses.push(simT);
-          lightOn = 5;
-          nextPulse = simT + 1000 / freq;
-        }
-        var I = 0;
-        if (lightOn > 0) {
-          lightOn--;
-          // channelrhodopsin current shrinks at high rates (desensitisation)
-          I = freq >= 40 ? 6.2 : freq >= 20 ? 8 : 9;
-        }
-        if (refr > 0) { refr--; v = -75 + (5 * (6 - refr) / 6); }
-        else {
-          v += (-(v + 70) / 12) + I * 1.4 + (Math.random() - 0.5) * 0.6;
-          if (v > -50) { trace.push([simT, 30]); v = -75; refr = 6; continue; }
-        }
-        trace.push([simT, v]);
-      }
-      while (trace.length && trace[0][0] < simT - win) trace.shift();
-      while (pulses.length && pulses[0] < simT - win) pulses.shift();
-    }
-    function draw() {
-      ctx.clearRect(0, 0, W, H);
-      var split = Math.round(H * 0.42);
-      // Neuron with channels, light from an optic fibre
-      var cx = W * 0.5, cy = split * 0.62, r = Math.min(34, split * 0.3);
-      var lit = lightOn > 0;
-      ctx.fillStyle = "rgba(233,236,239,0.5)";
-      ctx.fillRect(cx - 5, 0, 10, cy - r - 26);
-      if (lit) {
-        var g = ctx.createLinearGradient(0, cy - r - 26, 0, cy + r);
-        g.addColorStop(0, "rgba(111,139,255,0.85)"); g.addColorStop(1, "rgba(111,139,255,0)");
-        ctx.fillStyle = g;
-        ctx.beginPath(); ctx.moveTo(cx - 5, cy - r - 26); ctx.lineTo(cx + 5, cy - r - 26); ctx.lineTo(cx + r * 1.6, cy + r); ctx.lineTo(cx - r * 1.6, cy + r); ctx.closePath(); ctx.fill();
-      }
-      ctx.strokeStyle = "rgba(233,236,239,0.6)"; ctx.lineWidth = 2;
-      [[-1, -0.3], [1, -0.4], [-0.9, 0.6], [1, 0.7]].forEach(function (d) {
-        ctx.beginPath(); ctx.moveTo(cx + d[0] * r * 0.8, cy + d[1] * r * 0.8);
-        ctx.quadraticCurveTo(cx + d[0] * r * 1.8, cy + d[1] * r * 1.2, cx + d[0] * r * 2.6, cy + d[1] * r * 1.6); ctx.stroke();
-      });
-      ctx.beginPath(); ctx.moveTo(cx + r * 0.9, cy + r * 0.2); ctx.lineTo(W * 0.92, cy + r * 0.5); ctx.stroke();
-      var spiking = trace.length && trace[trace.length - 1][1] > 0;
-      ctx.fillStyle = spiking ? "#E9ECEF" : "rgba(52,210,124,0.35)";
-      ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.fill();
-      ctx.strokeStyle = "rgba(52,210,124,0.9)"; ctx.lineWidth = 1.5; ctx.stroke();
-      for (var a = 0; a < 14; a++) {
-        var ang = a / 14 * Math.PI * 2;
-        ctx.fillStyle = lit ? "#9FB2FF" : "rgba(233,236,239,0.45)";
-        ctx.beginPath(); ctx.arc(cx + Math.cos(ang) * r, cy + Math.sin(ang) * r, 2.2, 0, Math.PI * 2); ctx.fill();
-      }
-      // Traces
-      var x0 = 8, x1 = W - 8;
-      var tx = function (tm) { return x1 - (simT - tm) / win * (x1 - x0); };
-      var lightY = split + 14;
-      ctx.fillStyle = "#6F8BFF";
-      pulses.forEach(function (p) { ctx.fillRect(tx(p), lightY, Math.max(1.5, 5 / win * (x1 - x0)), 10); });
-      var vy = scale(-80, 35, H - 10, lightY + 26);
-      ctx.strokeStyle = "rgba(233,236,239,0.12)"; ctx.lineWidth = 1;
-      ctx.beginPath(); ctx.moveTo(x0, vy(-70)); ctx.lineTo(x1, vy(-70)); ctx.stroke();
-      ctx.strokeStyle = "#E9ECEF"; ctx.lineWidth = 1.6; ctx.lineJoin = "round";
-      ctx.beginPath();
-      trace.forEach(function (pt, i) { var X = tx(pt[0]), Y = vy(pt[1]); if (i) ctx.lineTo(X, Y); else ctx.moveTo(X, Y); });
-      ctx.stroke();
-    }
-    function frame(now) {
-      if (!running) return;
-      var dt = last ? Math.min(50, now - last) : 16;
-      last = now;
-      simulate(Math.round(dt));
-      draw();
-      requestAnimationFrame(frame);
-    }
-    function start() { if (running) return; running = true; last = 0; requestAnimationFrame(frame); }
-    function stop() { running = false; }
-    simulate(win);
-    if (reduceMotion) { draw(); range.addEventListener("input", function () { trace = []; pulses = []; simT = 0; nextPulse = 0; simulate(2000); draw(); }); return; }
-    new IntersectionObserver(function (es) { if (es[0].isIntersecting) start(); else stop(); }).observe(card);
-  }
-
-  /* ---------- 6. Fiber photometry explainer (illustrative) ---------- */
-  function photometry(card, t) {
-    var host = card.querySelector(".viz-canvas");
-    host.style.minHeight = "0";
-    var cv = html("canvas", null, host);
-    cv.style.width = "100%";
-    cv.style.height = "300px";
-    cv.setAttribute("role", "img");
-    cv.setAttribute("aria-label", t.title);
-    legend(host, [
-      { label: t.signal, color: "#2F8F5B" },
-      { label: t.control, color: "#7A5AF0" },
-      { label: t.corrected, color: C.ink },
-      { label: t.event, color: "rgba(18,19,21,0.25)" }
-    ]);
-    var ctx = cv.getContext("2d"), W, H, dpr;
-    function size() {
-      dpr = Math.min(2, window.devicePixelRatio || 1);
-      W = cv.clientWidth; H = cv.clientHeight;
-      cv.width = W * dpr; cv.height = H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-    size(); onResize(host, function () { size(); draw(); });
-    // Generate a continuous illustrative stream, 20 samples per second
-    var N = 400, buf = [], tt = 0, motion = 0, mv = 0, ca = 0, events = [];
-    function sample() {
-      tt += 1;
-      mv += (Math.random() - 0.5) * 0.02 - mv * 0.04;
-      if (Math.random() < 0.012) mv += (Math.random() - 0.5) * 0.5;
-      motion += mv; motion *= 0.9;
-      if (Math.random() < 0.02) { events.push(tt); ca += 0.9 + Math.random() * 0.6; }
-      ca *= 0.93;
-      var bleach = 0.35 * Math.exp(-tt / 1600);
-      var iso = 1 + bleach + motion * 0.8 + (Math.random() - 0.5) * 0.02;
-      var sig = 1 + bleach * 1.1 + motion * 0.85 + ca * 0.4 + (Math.random() - 0.5) * 0.03;
-      buf.push({ t: tt, sig: sig, iso: iso, d: (sig - (0.02 + iso * 1.03)) * 100 / 1 });
-      if (buf.length > N) buf.shift();
-      while (events.length && events[0] < tt - N) events.shift();
-    }
-    for (var i = 0; i < N; i++) sample();
-    function drawLine(key, y, color) {
-      ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.lineJoin = "round"; ctx.lineCap = "round";
-      ctx.beginPath();
-      buf.forEach(function (p, i) { var X = 8 + i / (N - 1) * (W - 16), Y = y(p[key]); if (i) ctx.lineTo(X, Y); else ctx.moveTo(X, Y); });
-      ctx.stroke();
-    }
-    function draw() {
-      ctx.clearRect(0, 0, W, H);
-      var band = (H - 30) / 3;
-      var x = function (tm) { return 8 + (tm - buf[0].t) / (N - 1) * (W - 16); };
-      ctx.fillStyle = "rgba(18,19,21,0.08)";
-      events.forEach(function (e) { ctx.fillRect(x(e) - 1, 0, 2, H); });
-      ctx.font = "10.5px 'Geist Mono', monospace";
-      ctx.fillStyle = C.ink3;
-      var lo = Math.min.apply(null, buf.map(function (p) { return Math.min(p.sig, p.iso); }));
-      var hi = Math.max.apply(null, buf.map(function (p) { return Math.max(p.sig, p.iso); }));
-      var ys = scale(lo - 0.05, hi + 0.05, band * 2 - 6, 14);
-      drawLine("iso", ys, "#7A5AF0");
-      drawLine("sig", ys, "#2F8F5B");
-      ctx.fillText(t.signal + " / " + t.control, 8, 10);
-      ctx.strokeStyle = C.rule; ctx.lineWidth = 1;
-      ctx.beginPath(); ctx.moveTo(0, band * 2 + 4); ctx.lineTo(W, band * 2 + 4); ctx.stroke();
-      var yd = scale(-15, 75, H - 6, band * 2 + 22);
-      ctx.fillStyle = C.ink3;
-      ctx.fillText(t.corrected, 8, band * 2 + 18);
-      drawLine("d", yd, C.ink);
-    }
-    var running = false, acc = 0, last = 0;
-    function frame(now) {
-      if (!running) return;
-      var dt = last ? Math.min(100, now - last) : 16;
-      last = now; acc += dt;
-      while (acc > 50) { sample(); acc -= 50; }
-      draw();
-      requestAnimationFrame(frame);
-    }
-    draw();
-    if (reduceMotion) return;
-    new IntersectionObserver(function (es) {
-      running = es[0].isIntersecting;
-      if (running) { last = 0; requestAnimationFrame(frame); }
-    }).observe(card);
   }
 
   /* ---------- Boot ---------- */
   var builders = { attention: attention, stimulus: stimulus, trials: trials, mbd2: mbd2 };
   document.querySelectorAll("[data-viz]").forEach(function (card) {
     var kind = card.getAttribute("data-viz"), t = i18n(card);
-    if (kind === "optogenetics") return whenVisible(card, function () { optogenetics(card, t); });
-    if (kind === "photometry") return whenVisible(card, function () { photometry(card, t); });
     if (!builders[kind]) return;
     whenVisible(card, function () {
       loadJSON(card.getAttribute("data-src")).then(function (d) { builders[kind](card, d, t); })
