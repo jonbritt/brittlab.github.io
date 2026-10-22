@@ -116,3 +116,9 @@
 @media (prefers-reduced-motion: reduce) {
   .banner .banner-img { animation: none; transform: none; will-change: auto; }
 }
+.banner .banner-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
