@@ -6,9 +6,12 @@ layout: default
 
 {%- assign banner = site.data.gallery.images | where: "slug", "bla-calbindin" | first %}
 <section class="banner">
-  <img class="banner-img" src="/assets/img/hero/banner-amygdala-1400.jpg"
-       srcset="/assets/img/hero/banner-amygdala-800.jpg 800w, /assets/img/hero/banner-amygdala-1400.jpg 1400w, /assets/img/hero/banner-amygdala-2274.jpg 2274w"
-       sizes="100vw" width="2274" height="1082" alt="{{ banner[k_alt] | escape }}" fetchpriority="high">
+  <div class="banner-media" data-banner-fx>
+    <img class="banner-img" src="/assets/img/hero/banner-amygdala-1400.jpg"
+         srcset="/assets/img/hero/banner-amygdala-800.jpg 800w, /assets/img/hero/banner-amygdala-1400.jpg 1400w, /assets/img/hero/banner-amygdala-2274.jpg 2274w"
+         sizes="100vw" width="2274" height="1082" alt="{{ banner[k_alt] | escape }}" fetchpriority="high">
+    <canvas class="banner-fx" aria-hidden="true"></canvas>
+  </div>
   <div class="wrap banner-inner">
     <div class="banner-card">
       <p class="label">{{ h.eyebrow }}</p>
@@ -182,3 +185,4 @@ layout: default
   </div>
 </section>
 
+<script src="/assets/js/banner-fx.js?v={{ site.time | date: '%s' }}" defer></script>

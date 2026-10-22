@@ -239,15 +239,18 @@ main:focus { outline: none; }
 /* ---------- Home banner ---------- */
 
 .banner { position: relative; min-height: clamp(560px, 78vh, 820px); display: flex; align-items: flex-end; overflow: hidden; background: var(--scope); }
-.banner-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
-.banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7, 9, 12, 0.45), rgba(7, 9, 12, 0) 55%), linear-gradient(0deg, rgba(7, 9, 12, 0.35), rgba(7, 9, 12, 0) 40%); pointer-events: none; }
+.banner-media { position: absolute; inset: 0; }
+.banner-img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.banner-fx { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
+.banner-fx.is-on { opacity: 1; }
+.banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7, 9, 12, 0.22), rgba(7, 9, 12, 0) 55%), linear-gradient(0deg, rgba(7, 9, 12, 0.22), rgba(7, 9, 12, 0) 35%); pointer-events: none; }
 .banner-inner { position: relative; z-index: 1; padding-top: 64px; padding-bottom: clamp(32px, 5vw, 64px); }
 .banner-card {
   max-width: 620px; padding: clamp(24px, 3vw, 40px);
-  border: 1px solid var(--line); border-radius: var(--radius);
-  background: rgba(251, 250, 246, 0.96);
-  -webkit-backdrop-filter: blur(10px) saturate(1.2); backdrop-filter: blur(10px) saturate(1.2);
-  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.5); border-radius: var(--radius);
+  background: rgba(250, 249, 245, 0.8);
+  -webkit-backdrop-filter: blur(6px) saturate(1.05); backdrop-filter: blur(6px) saturate(1.05);
+  box-shadow: 0 0 0 1px rgba(18, 19, 21, 0.08), 0 24px 48px -32px rgba(0, 0, 0, 0.35);
 }
 .banner-card .display { font-size: clamp(2.2rem, 4.1vw, 3.8rem); }
 .banner-card .lede { margin: 20px 0 0; }
@@ -672,10 +675,10 @@ main:focus { outline: none; }
   :root { --header-h: 58px; }
   body { font-size: 15.5px; }
   .banner { display: block; min-height: 0; background: var(--paper); }
-  .banner-img { position: relative; height: 300px; }
+  .banner-media { position: relative; height: 300px; }
   .banner::after { display: none; }
   .banner-inner { padding-top: 0; padding-bottom: 8px; margin-top: -72px; }
-  .banner-card { box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.5); }
+  .banner-card { background: rgba(250, 249, 245, 0.88); box-shadow: 0 0 0 1px rgba(18, 19, 21, 0.08), 0 18px 36px -26px rgba(0, 0, 0, 0.35); }
   .banner-card .display { font-size: clamp(2rem, 9vw, 2.6rem); }
   .banner-credit { top: 12px; bottom: auto; right: 12px; }
   .card-grid { grid-template-columns: 1fr; }
