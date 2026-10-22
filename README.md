@@ -44,6 +44,9 @@ unaffected): run with `RUBYOPT=-r./path/to/shim.rb`, where the shim defines
   Geist / Geist Mono).
 - `assets/js/site.js` menu, pause control for the funder strip,
   publication search, gallery filter and lightbox.
+- `assets/js/banner-fx.js` WebGL effect on the home banner: cursor-driven,
+  noise-modulated refraction with localized pixel quantization (off for
+  reduced motion or without WebGL).
 - `assets/js/mouse.js` the pixel mouse that peeks over buttons with a
   `data-mouse` attribute.
 - `assets/js/gallery-viz.js` interactive charts of published data.
