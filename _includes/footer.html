@@ -1,25 +1,40 @@
-{% include base_path %}
-
-{% if site.author.github or site.author.bitbucket or site.atom_feed.hide != true %}
-<div class="page__footer-follow">
-  <ul class="social-icons">
-    {% if site.data.ui-text[site.locale].follow_label %}
-      <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-    {% endif %}
-    {% if site.author.github %}
-      <li><a href="https://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
-    {% endif %}
-    {% if site.author.bitbucket %}
-      <li><a href="https://bitbucket.org/{{ site.author.bitbucket }}"><i class="fab fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
-    {% endif %}
-    {% if site.atom_feed.hide != true %}
-    <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
-    {% endif %}
-  </ul>
-</div>
-{% endif %}
-
-<div class="page__footer-copyright">
-  &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}, {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated {{ "now" | date: '%Y-%m-%d' }}, <a href="/sitemap/" style="text-transform: uppercase;">{{ site.data.ui-text[site.locale].site_map | default: "Sitemap" }}</a>
-</div>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-id">
+      <div class="footer-lockup">
+        <img src="/assets/img/brand/mcgill-crest.svg" alt="" width="34" height="43" class="footer-crest">
+        <div>
+          <p class="footer-lab">{{ t.lab_full_name }}</p>
+          <p class="footer-dept">{{ t.department }} · {{ t.university }}</p>
+        </div>
+      </div>
+      <p class="footer-tagline">{{ t.footer.tagline }}</p>
+    </div>
+    <div>
+      <p class="label">{{ t.footer.address_label }}</p>
+      <address>
+        {{ site.contact.office }}<br>
+        {{ site.contact.street }}<br>
+        {{ site.contact.city }}
+      </address>
+    </div>
+    <div>
+      <p class="label">{{ t.footer.contact_label }}</p>
+      <p><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a><br>
+      <a href="tel:+1{{ site.contact.phone | remove: '-' }}">{{ site.contact.phone }}</a></p>
+    </div>
+    <div>
+      <p class="label">{{ t.footer.explore_label }}</p>
+      <ul class="footer-nav">
+        {%- for item in site.data.nav -%}{%- unless item.key == "home" %}
+        <li><a href="{{ item[lang] }}">{{ t.nav[item.key] }}</a></li>
+        {%- endunless -%}{%- endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>© {{ site.time | date: "%Y" }} {{ t.footer.rights }}</span>
+    <a class="lang-switch lang-switch--plain" href="{{ alt_url }}" hreflang="{{ alt_lang }}" lang="{{ alt_lang }}">{{ t.lang_switch_label }}</a>
+    <a href="https://github.com/jonbritt/brittlab.github.io">{{ t.footer.source }}</a>
+  </div>
+</footer>

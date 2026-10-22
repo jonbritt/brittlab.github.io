@@ -1,16 +1,26 @@
-{% include base_path %}
-
 <meta charset="utf-8">
-
-{% include seo.html %}
-
-<link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-</script>
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- if page_title %}
+<title>{{ page_title }} · {{ t.lab_name }}</title>
+{%- else %}
+<title>{{ t.lab_name }} · {{ t.university }}</title>
+{%- endif %}
+<meta name="description" content="{{ page_description | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="alternate" hreflang="{{ lang }}" href="{{ page.url | absolute_url }}">
+<link rel="alternate" hreflang="{{ alt_lang }}" href="{{ alt_url | absolute_url }}">
+<meta property="og:site_name" content="{{ t.lab_name }}">
+<meta property="og:title" content="{{ page_title | default: t.lab_full_name }}">
+<meta property="og:description" content="{{ page_description | escape }}">
+<meta property="og:type" content="{% if page.collection == 'posts' %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ '/assets/img/og-card.jpg' | absolute_url }}">
+<meta property="og:locale" content="{% if lang == 'fr' %}fr_CA{% else %}en_CA{% endif %}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F5F4EF">
+<link rel="icon" href="/assets/img/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@200..700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css?v={{ site.time | date: '%s' }}">
+<link rel="alternate" type="application/atom+xml" title="{{ t.lab_name }} · {{ t.nav.news }}" href="/news/feed.xml">

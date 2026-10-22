@@ -1,0 +1,16 @@
+---
+layout: default
+ref: notfound
+lang: en
+permalink: /404.html
+---
+{%- include page-vars.html -%}
+<section class="section">
+  <div class="wrap notfound">
+    <p class="label">404</p>
+    <h1 class="display">{{ t.notfound.title }}</h1>
+    <p class="lede">{{ t.notfound.text }}</p>
+    <p>{% include cta.html href="/" label=t.notfound.cta mouse="right" %}</p>
+    <p class="muted" lang="fr">{{ site.data.i18n.fr.notfound.title }} · <a href="/fr/">{{ site.data.i18n.fr.notfound.cta }}</a></p>
+  </div>
+</section>

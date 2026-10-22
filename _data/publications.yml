@@ -1,0 +1,177 @@
+# Britt Lab publications at McGill (2014 on), newest first. Built from the lab's old
+# publication list plus OpenAlex, then checked against the papers. To add a paper, copy a block to the top.
+#   authors: list in 'Surname AB' form
+#   type: article | review | commentary | methods | preprint
+#   lab_authors: which of the authors were Britt Lab members (highlighted on the site)
+#   The four newest papers appear on the home page automatically.
+
+- title: "Rapid dynamics of dorsal raphe serotonin neurons regulate the strength of visual attention"
+  authors: ["Lehnert J", "Cha K", "Forestell J", "Yang K", "Ma X", "Shariff S", "Britt JP", "Khadra A", "Cook EP", "Krishnaswamy A"]
+  journal: "Nature Communications"
+  year: 2026
+  volume: "17"
+  issue: "1"
+  pages: "3464"
+  doi: "10.1038/s41467-026-70658-y"
+  pmid: "41851109"
+  type: article
+  lab_authors: ["Britt JP"]
+  open_access_url: "https://doi.org/10.1038/s41467-026-70658-y"
+
+- title: "Palatability attributed to alcohol and alcohol-paired flavors"
+  authors: ["Valyear MD", "Eustachon NM", "Britt JP"]
+  journal: "Physiology & Behavior"
+  year: 2024
+  volume: "277"
+  pages: "114500"
+  doi: "10.1016/j.physbeh.2024.114500"
+  pmid: "38430645"
+  type: article
+  lab_authors: ["Valyear MD", "Eustachon NM", "Britt JP"]
+  open_access_url: "https://doi.org/10.1016/j.physbeh.2024.114500"
+
+- title: "A disengaging property of dopamine signaling"
+  authors: ["Valyear MD", "Eustachon NM", "Morris MM", "Alymova I", "Tremblay BN", "Mitrikeski NM", "Britt JP"]
+  journal: "bioRxiv"
+  year: 2023
+  doi: "10.1101/2023.11.29.569116"
+  type: preprint
+  lab_authors: ["Valyear MD", "Eustachon NM", "Morris MM", "Alymova I", "Tremblay BN", "Mitrikeski NM", "Britt JP"]
+  open_access_url: "https://www.biorxiv.org/content/biorxiv/early/2024/05/02/2023.11.29.569116.full.pdf"
+
+- title: "Methyl-CpG binding domain 2 (Mbd2) is an epigenetic regulator of autism-risk genes and cognition"
+  authors: ["Lax E", "Do Carmo S", "Enuka Y", "Sapozhnikov DM", "Welikovitch LA", "Mahmood N", "Rabbani SA", "Wang L", "Britt JP", "Hancock WW", "Yarden Y", "Szyf M"]
+  journal: "Translational Psychiatry"
+  year: 2023
+  volume: "13"
+  issue: "1"
+  pages: "259"
+  doi: "10.1038/s41398-023-02561-9"
+  pmid: "37443311"
+  type: article
+  lab_authors: ["Britt JP"]
+  open_access_url: "https://www.nature.com/articles/s41398-023-02561-9.pdf"
+
+- title: "A new circuit underlying the renewal of appetitive Pavlovian responses: Commentary on Brown and Chaudhri (2022)"
+  authors: ["Valyear MD", "Britt JP"]
+  journal: "European Journal of Neuroscience"
+  year: 2023
+  volume: "57"
+  issue: "5"
+  pages: "780-783"
+  doi: "10.1111/ejn.15924"
+  pmid: "36700576"
+  type: commentary
+  lab_authors: ["Valyear MD", "Britt JP"]
+  open_access_url: "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/ejn.15924"
+
+- title: "All-optical approaches to studying psychiatric disease"
+  authors: ["Lafferty CK", "Christinck TD", "Britt JP"]
+  journal: "Methods"
+  year: 2022
+  volume: "203"
+  pages: "46-55"
+  doi: "10.1016/j.ymeth.2021.07.007"
+  pmid: "34314828"
+  type: review
+  lab_authors: ["Lafferty CK", "Christinck TD", "Britt JP"]
+
+- title: "Lysergic acid diethylamide (LSD) promotes social behavior through mTORC1 in the excitatory neurotransmission"
+  authors: ["De Gregorio D", "Popic J", "Enns JP", "Inserra A", "Skalecka A", "Markopoulos A", "Posa L", "Lopez-Canul M", "He Q", "Lafferty CK", "Britt JP", "Comai S", "Aguilar-Valles A", "Sonenberg N", "Gobbi G"]
+  journal: "Proceedings of the National Academy of Sciences of the United States of America"
+  year: 2021
+  volume: "118"
+  issue: "5"
+  pages: "e2020705118"
+  doi: "10.1073/pnas.2020705118"
+  pmid: "33495318"
+  type: article
+  lab_authors: ["Lafferty CK", "Britt JP"]
+  open_access_url: "https://doi.org/10.1073/pnas.2020705118"
+
+- title: "Hippocampal Input to the Nucleus Accumbens Shell Enhances Food Palatability"
+  authors: ["Yang AK", "Mendoza JA", "Lafferty CK", "Lacroix F", "Britt JP"]
+  journal: "Biological Psychiatry"
+  year: 2020
+  volume: "87"
+  issue: "7"
+  pages: "597-608"
+  doi: "10.1016/j.biopsych.2019.09.007"
+  pmid: "31699294"
+  type: article
+  lab_authors: ["Yang AK", "Mendoza JA", "Lafferty CK", "Lacroix F", "Britt JP"]
+
+- title: "Cannabis Exposure Enhances Subcortical Control of Nucleus Accumbens Activity"
+  authors: ["Lafferty CK", "Britt JP"]
+  journal: "Biological Psychiatry"
+  year: 2020
+  volume: "87"
+  issue: "7"
+  pages: "592-594"
+  doi: "10.1016/j.biopsych.2019.12.017"
+  pmid: "32164914"
+  type: commentary
+  lab_authors: ["Lafferty CK", "Britt JP"]
+
+- title: "Off-Target Influences of Arch-Mediated Axon Terminal Inhibition on Network Activity and Behavior"
+  authors: ["Lafferty CK", "Britt JP"]
+  journal: "Frontiers in Neural Circuits"
+  year: 2020
+  volume: "14"
+  pages: "10"
+  doi: "10.3389/fncir.2020.00010"
+  pmid: "32269514"
+  type: article
+  lab_authors: ["Lafferty CK", "Britt JP"]
+  open_access_url: "https://www.frontiersin.org/articles/10.3389/fncir.2020.00010/pdf"
+
+- title: "Nucleus Accumbens Cell Type- and Input-Specific Suppression of Unproductive Reward Seeking"
+  authors: ["Lafferty CK", "Yang AK", "Mendoza JA", "Britt JP"]
+  journal: "Cell Reports"
+  year: 2020
+  volume: "30"
+  issue: "11"
+  pages: "3729-3742.e3"
+  doi: "10.1016/j.celrep.2020.02.095"
+  pmid: "32187545"
+  type: article
+  lab_authors: ["Lafferty CK", "Yang AK", "Mendoza JA", "Britt JP"]
+  open_access_url: "http://www.cell.com/article/S2211124720302692/pdf"
+
+- title: "Cue-evoked dopamine neuron activity helps maintain but does not encode expected value"
+  authors: ["Mendoza JA", "Lafferty CK", "Yang AK", "Britt JP"]
+  journal: "Cell Reports"
+  year: 2019
+  volume: "29"
+  issue: "6"
+  pages: "1429-1437.e3"
+  doi: "10.1016/j.celrep.2019.09.077"
+  pmid: "31693885"
+  type: article
+  lab_authors: ["Mendoza JA", "Lafferty CK", "Yang AK", "Britt JP"]
+  open_access_url: "http://www.cell.com/article/S2211124719312811/pdf"
+
+- title: "Coordinated Reductions in Excitatory Input to the Nucleus Accumbens Underlie Food Consumption"
+  authors: ["Reed SJ", "Lafferty CK", "Mendoza JA", "Yang AK", "Davidson TJ", "Grosenick L", "Deisseroth K", "Britt JP"]
+  journal: "Neuron"
+  year: 2018
+  volume: "99"
+  issue: "6"
+  pages: "1260-1273.e4"
+  doi: "10.1016/j.neuron.2018.07.051"
+  pmid: "30146308"
+  type: article
+  lab_authors: ["Reed SJ", "Lafferty CK", "Mendoza JA", "Yang AK", "Britt JP"]
+  open_access_url: "http://www.cell.com/article/S0896627318306494/pdf"
+
+- title: "Optogenetics in preclinical neuroscience and psychiatry research: recent insights and potential applications"
+  authors: ["McDevitt RA", "Reed SJ", "Britt JP"]
+  journal: "Neuropsychiatric Disease and Treatment"
+  year: 2014
+  volume: "10"
+  pages: "1369-1379"
+  doi: "10.2147/ndt.s45896"
+  pmid: "25092982"
+  type: review
+  lab_authors: ["Reed SJ", "Britt JP"]
+  open_access_url: "https://www.dovepress.com/getfile.php?fileID=20935"

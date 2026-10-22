@@ -1,0 +1,168 @@
+# Gallery images. Files live in assets/img/gallery/<slug>.jpg with a 720px
+# copy in assets/img/gallery/thumbs/. category: microscopy | lab | figures.
+# Paper figures are reproduced under their open licences; keep the credit line.
+
+images:
+  - slug: gcamp-expression
+    category: microscopy
+    title_en: Green fluorescent labelling
+    title_fr: Marquage par fluorescence verte
+    alt_en: Densely labelled green fluorescent neurons and fibres on a black background.
+    alt_fr: Neurones et fibres marqués en vert fluorescent sur fond noir.
+    credit: Britt Lab
+
+  - slug: striatum-two-colour
+    category: microscopy
+    title_en: Two-colour labelling in the striatum
+    title_fr: Double marquage dans le striatum
+    alt_en: Coronal section through both hemispheres with red and green fluorescent labelling around the ventricles.
+    alt_fr: Coupe coronale des deux hémisphères avec marquage fluorescent rouge et vert autour des ventricules.
+    credit: Britt Lab
+
+  - slug: photometry-rig
+    category: lab
+    title_en: Optics for fiber photometry
+    title_fr: Optique de photométrie par fibre
+    alt_en: Four panels showing blue light at a fibre tip, a lit fibre end, and an optical setup on a breadboard.
+    alt_fr: Quatre panneaux montrant la lumière bleue en bout de fibre, une extrémité de fibre éclairée et un montage optique.
+    credit: Britt Lab
+
+  - slug: tdtomato-cortex
+    category: microscopy
+    title_en: Red fluorescent labelling
+    title_fr: Marquage par fluorescence rouge
+    alt_en: Red fluorescent cells arranged along a band of tissue.
+    alt_fr: Cellules fluorescentes rouges alignées le long d'une bande de tissu.
+    credit: Britt Lab
+
+  - slug: brain-slices-blue-light
+    category: microscopy
+    title_en: Sections under blue light
+    title_fr: Coupes sous lumière bleue
+    alt_en: Brain sections in a multi-well plate glowing under blue excitation light.
+    alt_fr: Coupes de cerveau dans une plaque à puits, éclairées en lumière bleue.
+    credit: Britt Lab
+
+  - slug: bla-calbindin
+    category: microscopy
+    title_en: Amygdala section
+    title_fr: Coupe de l'amygdale
+    alt_en: Coronal section with green fluorescent labelling over a red counterstain in both hemispheres.
+    alt_fr: Coupe coronale avec marquage vert fluorescent sur une contre-coloration rouge dans les deux hémisphères.
+    credit: Britt Lab
+
+  - slug: fiber-implants
+    category: lab
+    title_en: Implantable optical fibres
+    title_fr: Fibres optiques implantables
+    alt_en: Close-up photographs of optical fibre ferrules and implants.
+    alt_fr: Gros plans de ferrules et d'implants de fibre optique.
+    credit: Britt Lab
+
+  - slug: mounted-sections
+    category: microscopy
+    title_en: Mounted brain sections
+    title_fr: Coupes de cerveau montées
+    alt_en: Rows of pale brain sections mounted on glass slides.
+    alt_fr: Rangées de coupes de cerveau montées sur lames de verre.
+    credit: Britt Lab
+
+  - slug: microscope-field
+    category: lab
+    title_en: Through the eyepiece
+    title_fr: Dans l'oculaire
+    alt_en: A circular microscope field of view.
+    alt_fr: Champ de vision circulaire d'un microscope.
+    credit: Britt Lab
+
+  - slug: whiteboard-sketch
+    category: lab
+    title_en: Whiteboard thinking
+    title_fr: Réflexions au tableau blanc
+    alt_en: Whiteboard drawing of a mouse with coloured lines running from its head and a speech bubble.
+    alt_fr: Dessin au tableau blanc d'une souris, avec des lignes de couleur et une bulle de texte.
+    credit: Britt Lab
+
+  - slug: fig-lehnert-2026-attention
+    category: figures
+    title_en: Serotonin and visual attention
+    title_fr: Sérotonine et attention visuelle
+    alt_en: Multi-panel figure showing dorsal raphe sections and behavioural effects of optogenetic excitation and suppression on attention.
+    alt_fr: Figure à plusieurs panneaux montrant des coupes du raphé dorsal et les effets comportementaux de l'excitation et de la suppression optogénétiques sur l'attention.
+    caption_en: Dorsal raphe serotonin neurons regulate visual attention.
+    caption_fr: Les neurones sérotoninergiques du raphé dorsal régulent l'attention visuelle.
+    credit: Lehnert et al., Nature Communications 2026, Fig. 4
+    license: CC BY 4.0
+    doi: 10.1038/s41467-026-70658-y
+
+  - slug: fig-mendoza-2019-dopamine
+    category: figures
+    title_en: Dopamine neuron activity
+    title_fr: Activité des neurones dopaminergiques
+    alt_en: Figure with photometry setup, heat maps and traces of dopamine neuron activity during lever presentation, pressing and reward.
+    alt_fr: Figure montrant le montage de photométrie, des cartes thermiques et des tracés de l'activité des neurones dopaminergiques.
+    caption_en: Phasic dopamine neuron activity during lever presentations, lever pressing and reward.
+    caption_fr: Activité phasique des neurones dopaminergiques lors de la présentation du levier, de l'appui et de la récompense.
+    credit: Mendoza et al., Cell Reports 2019, Fig. 1
+    license: CC BY 4.0
+    doi: 10.1016/j.celrep.2019.09.077
+
+  - slug: fig-lafferty-2020-archt
+    category: figures
+    title_en: Silencing accumbens inputs with light
+    title_fr: Inhiber les afférences de l'accumbens par la lumière
+    alt_en: Schematics and confocal images of ArchT expression in thalamic and amygdala axons in the nucleus accumbens, with behavioural results.
+    alt_fr: Schémas et images confocales de l'expression d'ArchT dans les axones thalamiques et amygdaliens de l'accumbens, avec résultats comportementaux.
+    caption_en: ArchT-mediated axon terminal inhibition of glutamate afferents in the nucleus accumbens.
+    caption_fr: Inhibition des terminaisons axonales glutamatergiques de l'accumbens par ArchT.
+    credit: Lafferty & Britt, Frontiers in Neural Circuits 2020, Fig. 1
+    license: CC BY 4.0
+    doi: 10.3389/fncir.2020.00010
+
+  - slug: fig-lafferty-2020-anatomy
+    category: figures
+    title_en: Two inputs, two territories
+    title_fr: Deux afférences, deux territoires
+    alt_en: Red and green fluorescent images showing thalamic and amygdala axons in different parts of the nucleus accumbens, with quantification.
+    alt_fr: Images fluorescentes rouges et vertes montrant les axones thalamiques et amygdaliens dans différentes parties de l'accumbens, avec quantification.
+    caption_en: PVT and BLA neurons innervate distinct areas of the nucleus accumbens.
+    caption_fr: Les neurones du PVT et de la BLA innervent des régions distinctes du noyau accumbens.
+    credit: Lafferty et al., Cell Reports 2020, Fig. 3
+    license: CC BY-NC-ND 4.0
+    doi: 10.1016/j.celrep.2020.02.095
+
+  - slug: fig-lehnert-2026-dynamics
+    category: figures
+    title_en: Serotonin signals during a task
+    title_fr: Signaux sérotoninergiques pendant une tâche
+    alt_en: Figure showing the task, fiber photometry from dorsal raphe neurons, and activity aligned to trial events.
+    alt_fr: Figure montrant la tâche, la photométrie des neurones du raphé dorsal et l'activité alignée sur les événements des essais.
+    caption_en: Dorsal raphe signals encode trial events and outcomes.
+    caption_fr: Les signaux du raphé dorsal encodent les événements et les issues des essais.
+    credit: Lehnert et al., Nature Communications 2026, Fig. 2
+    license: CC BY 4.0
+    doi: 10.1038/s41467-026-70658-y
+
+  - slug: fig-lafferty-2020-controls
+    category: figures
+    title_en: An off-target effect, measured
+    title_fr: Un effet hors cible, mesuré
+    alt_en: Slice recording schematics and traces showing increased spontaneous release and interneuron activity during ArchT illumination.
+    alt_fr: Schémas et tracés d'enregistrements en tranche montrant l'augmentation de la libération spontanée et de l'activité des interneurones sous illumination d'ArchT.
+    caption_en: ArchT inhibition of excitatory axons increases spontaneous release and recruits local interneurons.
+    caption_fr: L'inhibition des axones excitateurs par ArchT augmente la libération spontanée et recrute les interneurones locaux.
+    credit: Lafferty & Britt, Frontiers in Neural Circuits 2020, Fig. 3
+    license: CC BY 4.0
+    doi: 10.3389/fncir.2020.00010
+
+  - slug: fig-lax-2023-behaviour
+    category: figures
+    title_en: Behaviour without Mbd2
+    title_fr: Comportement sans Mbd2
+    alt_en: Bar charts comparing wild-type and Mbd2-deficient mice across behavioural tests.
+    alt_fr: Histogrammes comparant des souris de type sauvage et déficientes en Mbd2 dans plusieurs tests comportementaux.
+    caption_en: Behavioural effects of Mbd2 deficiency.
+    caption_fr: Effets comportementaux de la déficience en Mbd2.
+    credit: Lax et al., Translational Psychiatry 2023, Fig. 1
+    license: CC BY 4.0
+    doi: 10.1038/s41398-023-02561-9

@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{%- include page-vars.html -%}
+{%- assign pb = t.publications -%}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="label">{{ t.lab_name }}</p>
+    <h1 class="display">{{ pb.title }}</h1>
+    <p class="lede">{{ pb.lede }}</p>
+  </div>
+</section>
+
+<section class="section--tight" style="padding-top:0" data-pubs>
+  <div class="wrap">
+    <div class="pub-tools">
+      <label class="search">
+        <span class="visually-hidden">{{ pb.search_label }}</span>
+        <svg viewBox="0 0 14 14" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="m9.5 9.5 3.5 3.5" stroke="currentColor" stroke-width="1.3"/></svg>
+        <input type="search" placeholder="{{ pb.search_placeholder }}" autocomplete="off">
+      </label>
+      <span class="pub-count" data-count data-one="{{ pb.count_one }}" data-many="{{ pb.count_many }}" aria-live="polite"></span>
+    </div>
+
+    {%- assign by_year = site.data.publications | group_by: "year" -%}
+    {%- for yg in by_year %}
+    <section class="year-group">
+      <h2>{{ yg.name }}</h2>
+      <ul class="pub-list">
+        {%- for p in yg.items %}
+        {% include pub-row.html pub=p %}
+        {%- endfor %}
+      </ul>
+    </section>
+    {%- endfor %}
+    <p class="muted" data-none hidden>{{ pb.none }}</p>
+  </div>
+</section>
+<div class="section--tight"></div>

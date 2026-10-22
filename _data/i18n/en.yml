@@ -1,0 +1,513 @@
+# English interface strings and page copy.
+# fr.yml mirrors this file key for key. When you change text here, change it there too.
+# Paragraphs marked "verbatim" come from the lab's original McGill website.
+
+lang_name: English
+lang_switch_label: Français
+lang_switch_aria: Lire ce site en français
+skip_link: Skip to content
+menu: Menu
+close: Close
+lab_name: Britt Lab
+lab_full_name: Britt Lab for Neural Circuits, Motivation, and Reinforcement Learning
+department: Department of Psychology
+university: McGill University
+city: Montréal
+
+nav:
+  home: Home
+  research: Research
+  people: People
+  pi: Jonathan Britt
+  publications: Publications
+  gallery: Gallery
+  news: News
+  join: Join us
+
+common:
+  read_more: Read more
+  all_publications: All publications
+  doi: DOI
+  pubmed: PubMed
+  open_access: Open access
+  preprint: Preprint
+  review: Review
+  commentary: Commentary
+  methods: Methods
+  article: Article
+  email: Email
+  office: Office
+  phone: Phone
+  source: Source
+  credit: Credit
+  license: License
+  real_data: Published data
+  close_image: Close image
+  previous: Previous
+  next: Next
+  back_to_news: All news
+  posted: Posted
+  view_paper: Read the paper
+  pause: Pause
+  play: Play
+  pause_motion: Pause animation
+  play_motion: Play animation
+
+home:
+  meta_description: >-
+    The Britt Lab at McGill University studies how the nucleus accumbens and its
+    inputs shape motivation, reward seeking, feeding and reinforcement learning.
+  eyebrow: Department of Psychology · McGill University
+  title: Britt Lab for Neural Circuits, Motivation, and Reinforcement Learning
+  # verbatim
+  lede: >-
+    The Britt Lab investigates neural circuits that regulate basic psychological
+    processes such as motivation and reinforcement learning.
+  cta_research: Our research
+  cta_people: Meet the lab
+  welcome_label: Welcome
+  # verbatim
+  welcome: >-
+    We want to uncover the neurobiological mechanisms that underlie compulsive
+    thoughts and actions. We are also interested in the neurobiological
+    underpinnings of pleasure. Knowledge gained from these research endeavours
+    will help efforts to resolve the pathophysiology of a variety of human
+    psychiatric disorders, such as addiction, obsessive-compulsive disorder,
+    schizophrenia, and Tourette's syndrome.
+  welcome_signature: Jonathan Britt, Ph.D.
+  questions_label: Questions we're asking
+  questions_title: One small structure where context, emotion and motivation meet.
+  questions:
+    - title: What do the inputs to the nucleus accumbens encode?
+      text: >-
+        Hippocampal, amygdala, thalamic and cortical inputs all converge on the
+        nucleus accumbens. We record and manipulate each pathway to learn when it
+        is active and when it matters for behaviour.
+      refs: Reed et al., Neuron 2018 · Lafferty et al., Cell Rep. 2020
+    - title: How does the brain decide to eat, and to enjoy it?
+      text: >-
+        Eating coincides with a coordinated dip in excitatory input to the rostral
+        accumbens shell, and hippocampal input to the shell makes food more
+        palatable.
+      refs: Reed et al., Neuron 2018 · Yang et al., Biol. Psychiatry 2020
+    - title: What does dopamine actually teach?
+      text: >-
+        Cue-evoked dopamine helps maintain cue–value associations without setting
+        expected value, and accumbens shell dopamine both reinforces actions and
+        limits how long they last.
+      refs: Mendoza et al., Cell Rep. 2019 · Valyear et al., bioRxiv 2023
+    - title: How is unproductive reward seeking held back?
+      text: >-
+        Both major accumbens cell types, and both amygdala and thalamic inputs,
+        are needed to stop responding when reward is unavailable: complementary
+        roles rather than opposing ones.
+      refs: Lafferty et al., Cell Rep. 2020
+  approach_label: Approach
+  approach_title: Pathway-specific, with millisecond precision.
+  # verbatim (two paragraphs)
+  approach: >-
+    Our approach to uncovering the neurobiological processes that motivate and
+    direct volitional behaviour is to combine state of the art methodologies
+    (such as intracranial viral-mediated gene delivery, optogenetics, and calcium
+    imaging) with simple rodent behavioural paradigms (such as Pavlovian and
+    operant conditioning).
+  approach_2: >-
+    Our current efforts are largely focused on understanding the physiology and
+    function of the nucleus accumbens, a forebrain structure that integrates
+    contextual, emotional, and motivational cues to initiate and coordinate
+    reward seeking behaviour.
+  methods:
+    - title: Viral-mediated gene delivery
+      text: Light-sensitive proteins and calcium sensors, targeted to defined cell types and pathways.
+    - title: Optogenetics
+      text: Switching specific pathways on or off with light, time-locked to behaviour.
+    - title: Fiber photometry
+      text: Calcium activity recorded from pathway-defined axons in behaving mice.
+    - title: Pavlovian and operant conditioning
+      text: Simple, well-controlled tasks that separate seeking, consuming and learning.
+  approach_figure_caption: Pathway-specific innervation patterns in the nucleus accumbens.
+  selected_label: Selected work
+  selected_title: Recent papers from the lab
+  gallery_label: From the bench
+  gallery_title: Images and data
+  gallery_text: >-
+    Confocal sections, lab hardware, figures from our papers, and interactive
+    views of published datasets.
+  gallery_cta: Explore the gallery
+  news_label: News
+  news_cta: All news
+  join_title: Curious about what drives motivated behaviour?
+  join_text: >-
+    We welcome graduate students and undergraduate researchers from psychology,
+    neuroscience and cognitive science.
+  join_cta: Join the lab
+  funders_label: Supported by
+
+research:
+  title: Research
+  meta_description: >-
+    How the nucleus accumbens and its inputs encode and control reward seeking,
+    feeding, dopamine-dependent learning and behavioural suppression.
+  eyebrow: Research aims
+  # verbatim (three paragraphs, old "Research Aims" page)
+  lede: >-
+    The nucleus accumbens is a well-studied area of the forebrain that influences
+    the eagerness with which animals seek out rewards as well as the pleasure they
+    derive from consuming them. It regulates motivational processes and
+    reinforcement learning. Aberrant signalling in the nucleus accumbens has been
+    linked to a variety of psychiatric conditions, including addiction, OCD, and
+    schizophrenia. In general this structure is thought to integrate contextual,
+    emotional, and motivational cues to initiate and coordinate reward seeking
+    behaviour.
+  aims_1: >-
+    The Britt lab is currently trying to understand what kind of information is
+    encoded in the different inputs to the nucleus accumbens as well as how this
+    information ultimately gets integrated into an action plan. We hope to
+    establish exactly when each input to this integrative structure is both active
+    and consequential to behaviour. To address these questions the Britt lab
+    studies rodents and uses calcium imaging techniques, such as fiber photometry,
+    in combination with optogenetic manipulations. Our goal is to understand the
+    causal relationship between neural circuit activity and behaviour with
+    millisecond and pathway-specific precision.
+  aims_2: >-
+    The Britt lab is also trying to understand how pathway-specific neural circuit
+    activity is altered in rodent models of psychopathology as well as how it
+    changes in response to popular medications. Insights gained from this kind of
+    neural circuit-mapping approach have already been used in the development of
+    highly specific therapeutic interventions designed to improve the lives of
+    patients afflicted by mental illness.
+  figure_caption: >-
+    Pathway-specific innervation patterns in the nucleus accumbens, from the
+    lab's original research page.
+  themes_label: Research themes
+  themes:
+    - id: inputs
+      title: Inputs to the nucleus accumbens
+      text: >-
+        The accumbens receives excitatory input from the ventral hippocampus,
+        basolateral amygdala, midline thalamus and prefrontal cortex. Comparing
+        these pathways side by side, Jon's postdoctoral work found that
+        hippocampal input is concentrated in the medial shell, and that activating
+        any one of them is enough to reinforce behaviour. In the lab, fiber
+        photometry from pathway-defined axons showed that the rostral and caudal
+        shell are innervated by distinct, intermingled populations of forebrain
+        neurons, and that each input carries mixed, opposing signals during reward
+        seeking.
+      papers: ["10.1016/j.neuron.2018.07.051", "10.1016/j.celrep.2020.02.095"]
+      image: research/nac-input-innervation.jpg
+      image_caption: Innervation of the nucleus accumbens by different input pathways.
+    - id: feeding
+      title: Feeding and palatability
+      text: >-
+        Consumption coincides with a coordinated, network-wide reduction in
+        excitatory drive to the rostral accumbens shell, and reducing input from
+        individual pathways is enough to promote feeding. Measuring palatability
+        from the microstructure of licking, the lab found that low-frequency
+        stimulation of ventral hippocampal input to the shell enhances how
+        palatable a food is, independently of opioid signalling, and can condition
+        a flavour preference. The same lick-microstructure approach shows that
+        alcohol and alcohol-paired flavours gain palatability with repeated
+        drinking.
+      papers: ["10.1016/j.neuron.2018.07.051", "10.1016/j.biopsych.2019.09.007", "10.1016/j.physbeh.2024.114500"]
+      image: research/mouse-optogenetic.jpg
+      image_caption: >-
+        Optical stimulation of accumbens, amygdala and VTA circuits in the mouse.
+        Illustration from the lab's original gallery.
+    - id: dopamine
+      title: Dopamine, value and disengagement
+      text: >-
+        Bidirectional optogenetic manipulation of dopamine neurons during a
+        trial-based choice task showed that cue-evoked dopamine helps maintain
+        cue–value associations but does not encode expected value. More recent
+        work finds that dopamine in the medial accumbens shell reinforces actions
+        while simultaneously limiting how long they last, through D1 receptor
+        signalling.
+      papers: ["10.1016/j.celrep.2019.09.077", "10.1101/2023.11.29.569116"]
+      image: gallery/fig-mendoza-2019-dopamine.jpg
+      image_caption: >-
+        Dopamine neuron activity during lever presentation, lever pressing and
+        reward. Mendoza et al., Cell Reports 2019, Fig. 1 (CC BY 4.0).
+    - id: suppression
+      title: Holding back unproductive reward seeking
+      text: >-
+        Efficient reward seeking means knowing when not to respond. Direct and
+        indirect pathway neurons of the accumbens are both more active when
+        behaviour is suppressed, and inhibiting either one increases unproductive
+        responding. Amygdala and thalamic inputs, which innervate different
+        accumbens subregions, are both required as well, pointing to complementary
+        rather than opponent processes.
+      papers: ["10.1016/j.celrep.2020.02.095"]
+      image: gallery/fig-lafferty-2020-anatomy.jpg
+      image_caption: >-
+        Thalamic (PVT) and amygdala (BLA) axons innervate distinct areas of the
+        nucleus accumbens. Lafferty et al., Cell Reports 2020, Fig. 3 (CC BY-NC-ND 4.0).
+    - id: tools
+      title: Sharper tools for circuit neuroscience
+      text: >-
+        Axon-terminal silencing with archaerhodopsin is widely used to test
+        pathway-specific contributions to behaviour. The lab showed that it also
+        increases spontaneous transmitter release and recruits local inhibition,
+        producing the same behavioural effects regardless of the pathway targeted,
+        and that cell-body inhibition is a more specific alternative. A review
+        lays out all-optical approaches that record and manipulate circuits at
+        the same time.
+      papers: ["10.3389/fncir.2020.00010", "10.1016/j.ymeth.2021.07.007"]
+      image: gallery/fig-lafferty-2020-archt.jpg
+      image_caption: >-
+        ArchT-mediated inhibition of thalamic and amygdala axons in the nucleus
+        accumbens. Lafferty & Britt, Front. Neural Circuits 2020, Fig. 1 (CC BY 4.0).
+  collab_label: Collaborations
+  collab_title: Working with colleagues across McGill
+  collabs:
+    - title: Serotonin and the strength of attention
+      text: >-
+        Rapid dynamics of dorsal raphe serotonin neurons regulate how strongly
+        mice attend to visual targets.
+      doi: "10.1038/s41467-026-70658-y"
+    - title: Psychedelics and social behaviour
+      text: >-
+        Repeated LSD administration promotes social behaviour in mice, and
+        requires mTORC1 in excitatory neurons to do so.
+      doi: "10.1073/pnas.2020705118"
+    - title: Epigenetic regulation of autism-risk genes
+      text: >-
+        Loss of the methyl-CpG binding protein Mbd2 alters hippocampal gene
+        expression and produces cognitive, social and emotional deficits.
+      doi: "10.1038/s41398-023-02561-9"
+  key_papers: Key papers
+
+people:
+  title: People
+  meta_description: Current members and alumni of the Britt Lab at McGill University.
+  lede: >-
+    Graduate and undergraduate researchers studying the circuits of motivation,
+    led by Jonathan Britt.
+  pi_label: Principal Investigator
+  pi_role: Associate Professor · Canada Research Chair in Behavioural Neuroscience
+  pi_cta: Full profile
+  groups:
+    postdoc: Postdoctoral fellows
+    phd: Ph.D. students
+    msc: M.Sc. students
+    undergrad: Undergraduate researchers
+    staff: Research staff
+  roles:
+    postdoc: Postdoctoral Fellow
+    phd: Ph.D. Student
+    msc: M.Sc. Student
+    undergrad: Undergraduate Researcher
+    staff: Research Staff
+  interests_label: Research interests
+  interests_stub: Coming soon
+  placeholder_alt: Placeholder portrait of a lab mouse
+  alumni_label: Alumni
+  alumni_text: Former lab members and where they went next.
+  alumni_grad: Graduate students
+  alumni_undergrad: Undergraduate researchers
+  now_prefix: Now
+
+pi:
+  title: Jonathan Britt
+  meta_description: >-
+    Jonathan P. Britt, Ph.D., Associate Professor of Psychology at McGill
+    University and Canada Research Chair in Behavioural Neuroscience.
+  name: Jonathan Britt, Ph.D.
+  position: Associate Professor, Department of Psychology, McGill University
+  chair: Canada Research Chair (Tier 2) in Behavioural Neuroscience
+  portrait_alt: Portrait of Jonathan Britt
+  bio_label: Biography
+  # verbatim (old Lab Members page)
+  bio: >-
+    Jonathan Britt started the Britt Lab for Neural Circuits, Motivation, and
+    Reinforcement Learning when he became an Assistant Professor at McGill
+    University in 2014. Earlier in his career, Jon worked as a Research Fellow in
+    the lab of Antonello Bonci at both UCSF (Gallo Center) and the National
+    Institute on Drug Abuse in Baltimore. Jon earned his Ph.D. at the University
+    of Chicago in the lab of Dan McGehee. His introduction to neuroscience
+    research began during his undergraduate studies at Colorado College under the
+    mentorship of Bob Jacobs.
+  bio_2: >-
+    Jon is now an Associate Professor in McGill's Department of Psychology and
+    holds a Canada Research Chair (Tier 2) in Behavioural Neuroscience, funded by
+    the Canadian Institutes of Health Research and renewed in 2025. He trains
+    graduate students through the Department of Psychology and McGill's
+    Integrated Program in Neuroscience, and is affiliated with the Center for
+    Studies in Behavioral Neurobiology at Concordia University.
+  bio_3: >-
+    As a graduate student, Jon studied how presynaptic opioid and nicotinic
+    receptors regulate dopamine release in the nucleus accumbens. As a
+    postdoctoral fellow, he used optogenetics to compare the synaptic and
+    behavioural profiles of hippocampal, amygdala and prefrontal inputs to the
+    nucleus accumbens, work that set the direction of the Britt Lab. Since then
+    the lab has shown how these inputs coordinate feeding, enhance food
+    palatability, and suppress unproductive reward seeking, and how dopamine
+    signalling maintains learned values and limits the duration of reinforced
+    actions.
+  timeline_label: Path
+  timeline:
+    - place: Colorado College
+      what: Undergraduate research with Bob Jacobs
+    - place: University of Chicago
+      what: Ph.D., lab of Dan McGehee
+    - place: UCSF Gallo Center and NIDA, Baltimore
+      what: Research Fellow, lab of Antonello Bonci
+    - place: McGill University, 2014
+      what: Assistant Professor; founds the Britt Lab
+    - place: McGill University
+      what: Associate Professor, Department of Psychology
+    - place: Canada Research Chair, 2025
+      what: Tier 2 Chair in Behavioural Neuroscience renewed
+  selected_label: Selected publications
+  contact_label: Contact
+  links_label: Elsewhere
+  links:
+    orcid: ORCID
+    pubmed: PubMed
+    mcgill: McGill profile
+
+publications:
+  title: Publications
+  meta_description: Publications from the Britt Lab and Jonathan Britt.
+  lede: >-
+    Articles, reviews and preprints from the Britt Lab at McGill, since 2014.
+    Lab members are highlighted.
+  search_placeholder: Search titles, authors, journals
+  search_label: Search publications
+  count_one: publication
+  count_many: publications
+  none: No publications match.
+
+gallery:
+  title: Gallery
+  meta_description: >-
+    Microscopy, lab photos, figures and interactive data visualizations from the
+    Britt Lab.
+  lede: >-
+    Microscopy from the lab, figures from our papers, and interactive views of
+    published data.
+  filters:
+    all: All
+    microscopy: Microscopy
+    lab: In the lab
+    figures: Paper figures
+  images_label: Images
+  data_label: Interactive data
+  data_title: Explore published datasets
+  data_text: >-
+    Each panel is drawn directly from source data released with the paper.
+    Summaries are simple counts; nothing is simulated and no new statistics are
+    computed.
+  viz:
+    attention:
+      title: Serotonin sets the strength of attention
+      text: >-
+        Attention index for individual mice with optogenetic activation (left) or
+        inhibition (right) of dorsal raphe serotonin neurons. Each line is one
+        mouse across control, light-on and LED-off conditions.
+      source: Lehnert et al., Nature Communications 2026, Fig. 4i and 4n source data (CC BY 4.0).
+      activation: Activation
+      inhibition: Inhibition
+      control: Control
+      opto: Opto
+      led_off: LED off
+      y_label: Attention index
+      mouse: Mouse
+    trials:
+      title: One mouse, 3,043 trials
+      text: >-
+        Every trial from the public example session file, one row per session.
+        Hits, misses and false alarms in a cued visual detection task.
+      source: Lehnert et al. 2026, Dryad example dataset (CC0), doi:10.5061/dryad.5qfttdzms.
+      hit: Hit
+      miss: Miss
+      fa: False alarm
+      session: Session
+      trial: Trial
+      contrast: Contrast
+      hit_rate: Hit rate by stimulus contrast
+      trials_word: trials
+      note: One example mouse, not the full cohort.
+    stimulus:
+      title: What the mouse saw
+      text: >-
+        Playback of the stored left and right stimulus frames from the first trial
+        of the example file. Scrub to step through time.
+      source: Lehnert et al. 2026, Dryad example dataset (CC0).
+      play: Play
+      pause: Pause
+      left: Left
+      right: Right
+      frame: Frame
+      time: Time
+      types:
+        b: Blank
+        n: Noise
+        s: Static
+        g: Grating
+      note: Stored binary stimulus matrices, not a calibrated reconstruction of the display.
+    mbd2:
+      title: Methylation changes without Mbd2
+      text: >-
+        Differentially methylated sites in the hippocampus of Mbd2-deficient mice,
+        by chromosome. Height is significance; colour shows whether methylation went
+        up or down. Hover a point for the nearest gene.
+      source: Lax et al., Translational Psychiatry 2023, Supplementary Table 2 (CC BY 4.0).
+      hyper: More methylated in knockout
+      hypo: Less methylated in knockout
+      chromosome: Chromosome
+      y_label: −log10(p)
+      gene: Gene
+      note: Shows the paper's preselected p < 0.001 subset, not every tested site.
+
+news:
+  title: News
+  meta_description: News from the Britt Lab.
+  lede: Papers, people and other updates from the lab.
+  empty: No news yet.
+
+join:
+  title: Join us
+  meta_description: >-
+    Opportunities for graduate students, undergraduate researchers and
+    postdoctoral fellows in the Britt Lab at McGill University.
+  lede: >-
+    We study the circuits behind motivation with optogenetics, fiber photometry
+    and carefully designed behaviour, and we're always glad to hear from curious
+    people.
+  sections:
+    - title: Graduate students
+      text: >-
+        Prospective M.Sc. and Ph.D. students apply through McGill's Department of
+        Psychology or the Integrated Program in Neuroscience. Please email Jon
+        before applying with your CV, your transcripts, and a few sentences about
+        which of the lab's questions interest you.
+    - title: Undergraduate researchers
+      text: >-
+        McGill undergraduates join the lab through independent research courses.
+        Past members have completed PSYC 380, 395, 396, 450, 494, 496 and 498,
+        NSCI 420 and 430, and COGS 396, 401 and 444 projects, as well as summer
+        research through SURA, PURA, ARIA and NSERC USRA awards.
+    - title: Postdoctoral fellows
+      text: >-
+        If you'd like to study the circuit basis of motivation and learning,
+        get in touch to talk about projects and fellowship applications.
+  contact_title: Get in touch
+  contact_text: >-
+    Email Jon directly. The lab is in the Stewart Biology Building on McGill's
+    downtown campus.
+  email_cta: Email Jonathan Britt
+
+footer:
+  tagline: Neural circuits, motivation, and reinforcement learning.
+  address_label: Visit
+  contact_label: Contact
+  explore_label: Explore
+  rights: Britt Lab
+  source: Site source
+
+notfound:
+  title: Page not found
+  text: >-
+    This page wandered off. Like any good lab mouse, it may be somewhere it
+    shouldn't be.
+  cta: Back to home

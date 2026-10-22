@@ -1,0 +1,51 @@
+{%- comment -%}
+  Sets shared variables for the current page: t (strings in the page's
+  language), alt_lang / alt_url (the same page in the other language),
+  and page_title / page_description.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: "en" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- if lang == "fr" -%}{%- assign alt_lang = "en" -%}{%- else -%}{%- assign alt_lang = "fr" -%}{%- endif -%}
+{%- assign alt_url = nil -%}
+{%- if page.collection == "posts" -%}
+  {%- assign alt_post = site.posts | where: "ref", page.ref | where: "lang", alt_lang | first -%}
+  {%- if alt_post -%}{%- assign alt_url = alt_post.url -%}{%- endif -%}
+  {%- assign page_title = page.title -%}
+  {%- assign page_description = page.summary | strip_newlines -%}
+  {%- assign nav_key = "news" -%}
+{%- else -%}
+  {%- assign nav_item = site.data.nav | where: "key", page.ref | first -%}
+  {%- if nav_item -%}{%- assign alt_url = nav_item[alt_lang] -%}{%- endif -%}
+  {%- assign section = t[page.ref] -%}
+  {%- if page.ref == "home" -%}
+    {%- assign page_title = nil -%}
+  {%- elsif section.title -%}
+    {%- assign page_title = section.title -%}
+  {%- else -%}
+    {%- assign page_title = page.title -%}
+  {%- endif -%}
+  {%- assign page_description = section.meta_description | default: site.description | strip_newlines -%}
+  {%- assign nav_key = page.ref -%}
+{%- endif -%}
+{%- unless alt_url -%}{%- assign home_item = site.data.nav | first -%}{%- assign alt_url = home_item[alt_lang] -%}{%- endunless -%}
+{%- assign home_item = site.data.nav | first -%}
+{%- assign home_url = home_item[lang] -%}
+{%- for item in site.data.nav -%}
+  {%- case item.key -%}
+    {%- when "research" -%}{%- assign url_research = item[lang] -%}
+    {%- when "people" -%}{%- assign url_people = item[lang] -%}
+    {%- when "pi" -%}{%- assign url_pi = item[lang] -%}
+    {%- when "publications" -%}{%- assign url_pubs = item[lang] -%}
+    {%- when "gallery" -%}{%- assign url_gallery = item[lang] -%}
+    {%- when "news" -%}{%- assign url_news = item[lang] -%}
+    {%- when "join" -%}{%- assign url_join = item[lang] -%}
+  {%- endcase -%}
+{%- endfor -%}
+{%- assign k_alt = "alt_" | append: lang -%}
+{%- assign k_caption = "caption_" | append: lang -%}
+{%- assign k_interests = "interests_" | append: lang -%}
+{%- assign k_name = "name_" | append: lang -%}
+{%- assign k_now = "now_" | append: lang -%}
+{%- assign k_role = "role_" | append: lang -%}
+{%- assign k_title = "title_" | append: lang -%}
+{%- assign k_url = "url_" | append: lang -%}

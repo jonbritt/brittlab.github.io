@@ -1,0 +1,81 @@
+---
+layout: default
+---
+{%- include page-vars.html -%}
+{%- assign r = t.research -%}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="label">{{ r.eyebrow }}</p>
+    <h1 class="display">{{ r.title }}</h1>
+  </div>
+</section>
+
+<section class="section--tight" style="padding-top:0">
+  <div class="wrap">
+    <div class="banner-strip reveal"><img src="/assets/img/research/banner-confocal.jpg" alt="" width="1880" height="378"></div>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="wrap aims">
+    <p class="lede reveal" style="max-width:none; color: var(--ink)">{{ r.lede }}</p>
+    <div class="prose reveal">
+      <p>{{ r.aims_1 }}</p>
+      <p>{{ r.aims_2 }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="wrap">
+    <p class="label">{{ r.themes_label }}</p>
+    {%- for th in r.themes %}
+    <article class="theme" id="{{ th.id }}">
+      <div class="reveal">
+        <span class="theme-num">0{{ forloop.index }}</span>
+        <h2 class="h2">{{ th.title }}</h2>
+        <div class="prose"><p>{{ th.text }}</p></div>
+        <p class="label label--plain" style="margin:28px 0 0">{{ r.key_papers }}</p>
+        <ul class="paper-links">
+          {%- for doi in th.papers -%}
+          {%- assign p = site.data.publications | where: "doi", doi | first -%}
+          {%- if p %}
+          <li><a href="https://doi.org/{{ p.doi }}" rel="noopener">{{ p.title }} <span>{{ p.authors | first | split: " " | first }}{% if p.authors.size > 1 %} et al.{% endif %}, {{ p.year }}</span></a></li>
+          {%- endif -%}
+          {%- endfor %}
+        </ul>
+      </div>
+      <figure class="figure theme-figure reveal">
+        {%- if th.image %}
+        <div class="figure-frame"><img src="/assets/img/{{ th.image }}" alt="{{ th.image_caption | strip }}" loading="lazy"></div>
+        <figcaption>{{ th.image_caption }}</figcaption>
+        {%- else %}
+        <div class="figure-frame figure-frame--dark"><img src="/assets/img/research/mouse-optogenetic.jpg" alt="" loading="lazy" style="background:#fff"></div>
+        {%- endif %}
+      </figure>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section section--rule">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="label">{{ r.collab_label }}</p>
+        <h2 class="h2">{{ r.collab_title }}</h2>
+      </div>
+    </div>
+    <div class="collab-grid">
+      {%- for c in r.collabs -%}
+      {%- assign p = site.data.publications | where: "doi", c.doi | first %}
+      <article class="card reveal">
+        <span class="card-num">{{ p.journal }} · {{ p.year }}</span>
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.text }}</p>
+        <p class="card-refs"><a href="https://doi.org/{{ c.doi }}" rel="noopener">{{ p.authors | first | split: " " | first }} et al. · doi:{{ c.doi }}</a></p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
