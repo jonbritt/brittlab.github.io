@@ -45,10 +45,10 @@ images:
 
   - slug: bla-calbindin
     category: microscopy
-    title_en: Amygdala section
-    title_fr: Coupe de l'amygdale
-    alt_en: Coronal section with green fluorescent labelling over a red counterstain in both hemispheres.
-    alt_fr: Coupe coronale avec marquage vert fluorescent sur une contre-coloration rouge dans les deux hémisphères.
+    title_en: Green fluorescent labelling in the nucleus accumbens
+    title_fr: Marquage fluorescent vert dans le noyau accumbens
+    alt_en: Coronal brain section showing bilateral green fluorescent labelling in the nucleus accumbens against a red fluorescent background.
+    alt_fr: Coupe coronale du cerveau montrant un marquage fluorescent vert bilatéral dans le noyau accumbens sur un fond fluorescent rouge.
     credit: Britt Lab
 
   - slug: fiber-implants
