@@ -39,7 +39,9 @@
     " float wl=124.0*u_dpr;               // spacing between rings",
     " float front=14.0*u_dpr, trail=330.0*u_dpr;",
     " float env=x>0.0 ? exp(-x*x/(2.0*front*front)) : exp(x/trail);",
-    " env*=smoothstep(0.0,0.04,u_life)*(1.0-smoothstep(0.82,1.0,u_life))*(1.0-0.3*u_life);",
+    // fade in quickly; fade out over the last 30% while the rings keep moving
+    " float life=smoothstep(0.0,0.04,u_life)*(1.0-smoothstep(0.70,1.0,u_life))*(1.0-0.3*u_life);",
+    " env*=life;",
     " if(env<0.01){gl_FragColor=vec4(tap(p),1.0);return;}",
     " vec2 dir=dv/max(d,1.0);",
     // refraction between the rings: push the image in and out along the radius
@@ -51,11 +53,15 @@
     " float xq=length(q-u_origin)-u_radius;",
     " float envq=xq>0.0 ? exp(-xq*xq/(2.0*front*front)) : exp(xq/trail);",
     " float crest=cos(xq/wl*6.2831853);",
-    " float qm=step(0.30,crest)*step(0.10,envq*(1.0-smoothstep(0.82,1.0,u_life)));",
+    // blocks dissolve one by one in random order, each fading rather than popping
+    " vec2 cid=floor(p/cell);",
+    " float h=fract(sin(dot(cid,vec2(12.9898,78.233)))*43758.5453);",
+    " float strength=envq*life;",
+    " float qm=step(0.30,crest)*smoothstep(h*0.5,h*0.5+0.2,strength);",
     " vec3 pix=tap(q+off);",
     " vec2 inCell=abs(fract(p/cell)-0.5);",
     " pix*=1.0-0.12*step(0.45,max(inCell.x,inCell.y));   // crisp pixel edges",
-    " pix*=1.0+0.14*envq;                                   // rings catch the light",
+    " pix*=1.0+0.14*strength;                               // rings catch the light",
     " vec3 col=mix(tap(p+off),pix,qm);",
     " gl_FragColor=vec4(col,1.0);",
     "}"
@@ -106,7 +112,8 @@
   var dpr = 1, W = 1, H = 1;
   function size() {
     var r = root.getBoundingClientRect();
-    dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    // Full device resolution so handing back to the <img> doesn't change sharpness
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
     W = Math.max(1, Math.round(r.width * dpr));
     H = Math.max(1, Math.round(r.height * dpr));
     canvas.width = W; canvas.height = H;
@@ -126,7 +133,7 @@
     // Far enough to clear the farthest corner, plus the trailing rings
     var far = Math.max(Math.hypot(ox, oy), Math.hypot(W - ox, oy), Math.hypot(ox, H - oy), Math.hypot(W - ox, H - oy));
     var reach = far + 320 * dpr;
-    ripple = { x: ox, y: oy, reach: reach, dur: Math.min(3.6, Math.max(2.4, reach / dpr / 550)), t0: performance.now() };
+    ripple = { x: ox, y: oy, reach: reach, dur: Math.min(5.0, Math.max(3.6, reach / dpr / 380)), t0: performance.now() };
     canvas.classList.add("is-on");
     cancelAnimationFrame(raf);
     raf = requestAnimationFrame(frame);
@@ -139,7 +146,8 @@
     if (!ripple) return;
     var life = (now - ripple.t0) / 1000 / ripple.dur;
     if (life >= 1) { ripple = null; canvas.classList.remove("is-on"); return; }
-    var ease = 1 - Math.pow(1 - life, 1.25);
+    // Mostly steady speed, easing a little, but never stopping before it fades out
+    var ease = 0.6 * life + 0.4 * (1 - Math.pow(1 - life, 2));
     gl.uniform1i(U.u_tex, 0);
     gl.uniform2f(U.u_res, W, H);
     gl.uniform2f(U.u_img, img.naturalWidth, img.naturalHeight);
