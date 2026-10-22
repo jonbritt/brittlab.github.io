@@ -1,0 +1,152 @@
+---
+layout: default
+---
+{%- include page-vars.html -%}
+{%- assign g = t.gallery -%}
+{%- assign v = g.viz -%}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="label">{{ t.lab_name }}</p>
+    <h1 class="display">{{ g.title }}</h1>
+    <p class="lede">{{ g.lede }}</p>
+  </div>
+</section>
+
+<section class="section--tight" style="padding-top:0" data-gallery>
+  <div class="wrap">
+    <p class="label">{{ g.images_label }}</p>
+    <div class="filter-bar" role="group" aria-label="{{ g.images_label }}">
+      {%- assign cats = "all,microscopy,lab,figures" | split: "," -%}
+      {%- for c in cats %}
+      <button class="chip" type="button" data-cat-filter="{{ c }}" aria-pressed="{% if c == 'all' %}true{% else %}false{% endif %}">{{ g.filters[c] }}</button>
+      {%- endfor %}
+    </div>
+    <div class="masonry">
+      {%- for img in site.data.gallery.images -%}
+      {%- assign title = img[k_title] | default: img.title_en -%}
+      {%- assign alt = img[k_alt] | default: img.alt_en -%}
+      {%- assign cap = img[k_caption] | default: img.caption_en -%}
+      {%- capture caption -%}{% if cap %}{{ cap }} {% endif %}{{ t.common.credit }}: {{ img.credit }}{% if img.license %} ({{ img.license }}){% endif %}{%- endcapture %}
+      <figure class="tile{% if img.category == 'figures' %} tile--figure{% endif %}" id="{{ img.slug }}" data-cat="{{ img.category }}">
+        <button type="button" data-full="/assets/img/gallery/{{ img.slug }}.jpg" data-title="{{ title | escape }}" data-caption="{{ caption | escape }}">
+          <img src="/assets/img/gallery/thumbs/{{ img.slug }}.jpg" alt="{{ alt | escape }}" loading="lazy">
+        </button>
+        <figcaption><b>{{ title }}</b>{% if img.doi %}<a href="https://doi.org/{{ img.doi }}" rel="noopener" class="muted">{{ img.credit }}</a>{% else %}<span class="muted">{{ img.credit }}</span>{% endif %}</figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
+  </div>
+
+  <div class="lightbox" data-lightbox hidden role="dialog" aria-modal="true" aria-label="{{ g.images_label }}">
+    <button class="lb-btn lb-close" type="button">{{ t.close }}</button>
+    <div class="lightbox-stage"><img alt=""></div>
+    <div class="lightbox-meta">
+      <p><b data-lb-title></b><span data-lb-caption></span></p>
+      <div class="lightbox-btns">
+        <button class="lb-btn" type="button" data-lb-prev aria-label="{{ t.common.previous }}">←</button>
+        <button class="lb-btn" type="button" data-lb-next aria-label="{{ t.common.next }}">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--rule" id="data">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="label">{{ g.data_label }}</p>
+        <h2 class="h2">{{ g.data_title }}</h2>
+        <p class="lede" style="margin-top:16px">{{ g.data_text }}</p>
+      </div>
+    </div>
+    <div class="viz-grid">
+      <article class="viz" data-viz="attention" data-src="/assets/data/attention-mice.json" data-i18n="{{ v.attention | jsonify | escape }}">
+        <div class="viz-head"><h3>{{ v.attention.title }}</h3><span class="badge badge--data">{{ t.common.real_data }}</span></div>
+        <p class="viz-text">{{ v.attention.text }}</p>
+        <div class="viz-canvas"></div>
+        <p class="viz-source"><a href="https://doi.org/10.1038/s41467-026-70658-y" rel="noopener">{{ v.attention.source }}</a></p>
+      </article>
+
+      <article class="viz viz--dark" data-viz="stimulus" data-src="/assets/data/attention-stimulus.json" data-i18n="{{ v.stimulus | jsonify | escape }}">
+        <div class="viz-head"><h3>{{ v.stimulus.title }}</h3><span class="badge badge--data">{{ t.common.real_data }}</span></div>
+        <p class="viz-text">{{ v.stimulus.text }}</p>
+        <div class="viz-canvas"></div>
+        <p class="viz-source">{{ v.stimulus.note }} <a href="https://doi.org/10.5061/dryad.5qfttdzms" rel="noopener">{{ v.stimulus.source }}</a></p>
+      </article>
+
+      <article class="viz viz--wide" data-viz="trials" data-src="/assets/data/attention-trials.json" data-i18n="{{ v.trials | jsonify | escape }}">
+        <div class="viz-head"><h3>{{ v.trials.title }}</h3><span class="badge badge--data">{{ t.common.real_data }}</span></div>
+        <p class="viz-text">{{ v.trials.text }}</p>
+        <div class="viz-canvas"></div>
+        <p class="viz-source">{{ v.trials.note }} <a href="https://doi.org/10.5061/dryad.5qfttdzms" rel="noopener">{{ v.trials.source }}</a></p>
+      </article>
+
+      <article class="viz viz--wide" data-viz="mbd2" data-src="/assets/data/mbd2-sites.json" data-i18n="{{ v.mbd2 | jsonify | escape }}">
+        <div class="viz-head"><h3>{{ v.mbd2.title }}</h3><span class="badge badge--data">{{ t.common.real_data }}</span></div>
+        <p class="viz-text">{{ v.mbd2.text }}</p>
+        <div class="viz-canvas"></div>
+        <p class="viz-source">{{ v.mbd2.note }} <a href="https://doi.org/10.1038/s41398-023-02561-9" rel="noopener">{{ v.mbd2.source }}</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--rule" id="explainers">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="label">{{ g.explainers_label }}</p>
+        <h2 class="h2">{{ g.explainers_title }}</h2>
+        <p class="lede" style="margin-top:16px">{{ g.explainers_text }}</p>
+      </div>
+    </div>
+    <div class="viz-grid">
+      <article class="viz viz--dark" data-viz="optogenetics" data-i18n="{{ v.optogenetics | jsonify | escape }}">
+        <div class="viz-head"><h3>{{ v.optogenetics.title }}</h3><span class="badge badge--illus">{{ t.common.illustrative }}</span></div>
+        <p class="viz-text">{{ v.optogenetics.text }}</p>
+        <div class="viz-canvas"></div>
+        <p class="viz-source">{{ t.common.illustrative_note }}</p>
+      </article>
+
+      <article class="viz" data-viz="photometry" data-i18n="{{ v.photometry | jsonify | escape }}">
+        <div class="viz-head"><h3>{{ v.photometry.title }}</h3><span class="badge badge--illus">{{ t.common.illustrative }}</span></div>
+        <p class="viz-text">{{ v.photometry.text }}</p>
+        <div class="viz-canvas"></div>
+        <p class="viz-source">{{ t.common.illustrative_note }}</p>
+      </article>
+
+      <article class="viz viz--dark viz--wide" data-viz="circuit">
+        <div class="viz-head"><h3>{{ v.circuit.title }}</h3><span class="badge badge--illus">{{ t.common.illustrative }}</span></div>
+        <p class="viz-text">{{ v.circuit.text }}</p>
+        <div class="circuit-picker" role="group" aria-label="{{ v.circuit.title }}">
+          {%- assign regions = "pfc,vhpc,bla,pvt,vta" | split: "," -%}
+          {%- for r in regions %}
+          <button type="button" class="viz-btn" data-region="{{ r }}" aria-pressed="false">{{ t.home.regions[r] }}</button>
+          {%- endfor %}
+        </div>
+        <div class="scope" data-circuit style="min-height:420px"
+             data-labels="{{ t.home.regions | jsonify | escape }}"
+             data-findings="{{ v.circuit.findings | jsonify | escape }}">
+          <canvas aria-hidden="true"></canvas>
+          <div class="scope-hud">
+            <div class="scope-hud-top">
+              <span class="scope-title">{{ t.home.viewport_title }}</span>
+              <span>{{ t.home.viewport_note }}</span>
+            </div>
+            <div></div>
+            <div class="scope-hud-bottom">
+              <span class="scope-legend">
+                <span><i></i>{{ t.home.legend_glutamate }}</span>
+                <span><i class="da"></i>{{ t.home.legend_dopamine }}</span>
+              </span>
+              <span class="scope-readout" data-readout aria-live="polite" data-hint="{{ t.home.viewport_hint }}" data-hint-touch="{{ t.home.viewport_hint_touch }}">{{ t.home.viewport_hint }}</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script src="/assets/js/circuit.js?v={{ site.time | date: '%s' }}" defer></script>
+<script src="/assets/js/gallery-viz.js?v={{ site.time | date: '%s' }}" defer></script>

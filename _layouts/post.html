@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{%- include page-vars.html -%}
+<article class="section">
+  <div class="wrap post">
+    <p class="post-meta">
+      <span>{{ t.nav.news }}</span>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{% include date.html date=page.date %}</time>
+    </p>
+    <h1>{{ page.title }}</h1>
+    <div class="post-body">
+      {{ content }}
+    </div>
+    <div class="post-foot">
+      {% include cta.html href=url_news label=t.common.back_to_news mouse="left" %}
+      {%- if page.doi %}
+      {%- assign doi_url = "https://doi.org/" | append: page.doi %}
+      {% include cta.html href=doi_url label=t.common.view_paper %}
+      {%- endif %}
+    </div>
+  </div>
+</article>

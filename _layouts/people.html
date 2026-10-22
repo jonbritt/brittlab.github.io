@@ -1,0 +1,92 @@
+---
+layout: default
+---
+{%- include page-vars.html -%}
+{%- assign pp = t.people -%}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="label">{{ t.lab_name }}</p>
+    <h1 class="display">{{ pp.title }}</h1>
+    <p class="lede">{{ pp.lede }}</p>
+  </div>
+</section>
+
+<section class="section--tight" style="padding-top:0">
+  <div class="wrap">
+    <p class="label">{{ pp.pi_label }}</p>
+    <div class="pi-card reveal">
+      <img src="/assets/img/pi/jonathan-britt.jpg" alt="{{ t.pi.portrait_alt }}" width="200" height="200">
+      <div>
+        <h2>{{ t.pi.name }}</h2>
+        <p>{{ pp.pi_role }}</p>
+      </div>
+      {% include cta.html href=url_pi label=pp.pi_cta mouse="right" %}
+    </div>
+
+    {%- assign group_order = "postdoc,phd,msc,staff,undergrad" | split: "," -%}
+    {%- for g in group_order -%}
+    {%- assign members = site.data.people | where: "group", g -%}
+    {%- if members.size > 0 %}
+    <div class="group">
+      <div class="group-head">
+        <h2>{{ pp.groups[g] }}</h2>
+        <span>{{ members.size }}</span>
+      </div>
+      <ul class="member-grid">
+        {%- for m in members -%}
+        {%- assign interests = m[k_interests] | default: m.interests_en %}
+        <li class="member reveal">
+          <div class="member-photo">
+            {%- if m.photo %}
+            <img src="/assets/img/people/{{ m.photo }}" alt="{{ m.name }}" loading="lazy">
+            {%- else %}
+            <img class="is-placeholder" src="/assets/img/people/placeholder-mouse.jpg" alt="{{ pp.placeholder_alt }}" loading="lazy">
+            {%- endif %}
+          </div>
+          <div class="member-body">
+            <span class="member-name">{{ m.name }}</span>
+            <span class="member-role">{{ pp.roles[m.group] }}</span>
+            <p class="member-interests"><em>{{ pp.interests_label }}</em>{% if interests %}{{ interests }}{% else %}<span class="stub">{{ pp.interests_stub }}</span>{% endif %}</p>
+            {%- if m.email or m.website %}
+            <span class="member-links">
+              {%- if m.email %}<a href="mailto:{{ m.email }}">{{ t.common.email }}</a>{% endif -%}
+              {%- if m.website %}<a href="{{ m.website }}" rel="noopener">Web</a>{% endif -%}
+            </span>
+            {%- endif %}
+          </div>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endif -%}
+    {%- endfor %}
+
+    <div class="group" id="alumni">
+      <div class="group-head">
+        <h2>{{ pp.alumni_label }}</h2>
+        <span>{{ site.data.alumni.size }}</span>
+      </div>
+      <p class="muted" style="margin:0">{{ pp.alumni_text }}</p>
+      {%- assign alumni_groups = "grad,undergrad" | split: "," -%}
+      {%- for ag in alumni_groups -%}
+      {%- assign al = site.data.alumni | where: "group", ag %}
+      <p class="subhead">{% if ag == "grad" %}{{ pp.alumni_grad }}{% else %}{{ pp.alumni_undergrad }}{% endif %}</p>
+      <ul class="alumni-grid">
+        {%- for a in al -%}
+        {%- assign role = a[k_role] | default: a.role_en -%}
+        {%- assign now = a[k_now] | default: a.now_en %}
+        <li class="alum">
+          <div class="alum-photo">
+            <img src="/assets/img/{% if a.photo %}alumni/{{ a.photo }}{% else %}people/placeholder-mouse.jpg{% endif %}" alt="" loading="lazy" width="210" height="210">
+          </div>
+          <div class="alum-name">{{ a.name }}</div>
+          <div class="alum-role">{{ role }}</div>
+          {%- if now %}<div class="alum-now">{{ now }}</div>{% endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+<div class="section--tight"></div>

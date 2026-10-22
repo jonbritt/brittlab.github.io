@@ -1,0 +1,30 @@
+---
+layout: default
+---
+{%- include page-vars.html -%}
+{%- assign nw = t.news -%}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="label">{{ t.lab_name }}</p>
+    <h1 class="display">{{ nw.title }}</h1>
+    <p class="lede">{{ nw.lede }}</p>
+  </div>
+</section>
+<section class="section--tight" style="padding-top:0">
+  <div class="wrap">
+    {%- assign posts = site.posts | where: "lang", lang -%}
+    {%- if posts.size == 0 %}<p class="muted">{{ nw.empty }}</p>{% endif %}
+    <ul class="news-list">
+      {%- for post in posts %}
+      <li class="reveal">
+        <a href="{{ post.url }}">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{% include date.html date=post.date %}</time>
+          <span><h3>{{ post.title }}</h3><p>{{ post.summary }}</p></span>
+          {% include arrow.svg %}
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+<div class="section--tight"></div>

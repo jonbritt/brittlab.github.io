@@ -1,0 +1,261 @@
+# Former lab members, shown in the Alumni grid on the People page.
+# role_*: what they did in the lab.  now_*: where they went next (optional).
+# photo: file in assets/img/alumni/ (optional).
+# group: grad or undergrad (graduate alumni are listed first).
+
+- name: Christopher Lafferty
+  group: grad
+  photo: christopher-lafferty.jpg
+  role_en: Ph.D. Student
+  role_fr: Doctorat
+- name: Sean J Reed
+  group: grad
+  photo: sean-reed.jpg
+  role_en: Ph.D. Student
+  role_fr: Doctorat
+  now_en: Business Development Liaison at SickKids (Toronto)
+  now_fr: Liaison en développement des affaires à SickKids (Toronto)
+- name: Karim Bouayad-Gervais
+  group: grad
+  photo: karim-bouayad-gervais.jpg
+  role_en: Ph.D. Student (co-supervised with Yogita Chudasama)
+  role_fr: Doctorat (codirection avec Yogita Chudasama)
+  now_en: President of Pillar Science
+  now_fr: Présidence de Pillar Science
+- name: Jesse Mendoza
+  group: grad
+  photo: jesse-mendoza.jpg
+  role_en: M.Sc. Student
+  role_fr: Maîtrise
+- name: Angela (Kayoung) Yang
+  group: grad
+  photo: angela-yang.jpg
+  role_en: M.Sc. Student
+  role_fr: Maîtrise
+
+- name: Chloe Pronovost-Morgan
+  group: undergrad
+  photo: chloe-pronovost-morgan.jpg
+  role_en: PSYC 395 & 498 & PURA Research Projects
+  role_fr: Projets de recherche PSYC 395 et 498 et PURA
+  now_en: Med student at McGill
+  now_fr: Études de médecine à McGill
+- name: Ashley Jussaume
+  group: undergrad
+  photo: ashley-jussaume.jpg
+  role_en: PSYC 380 Research Project
+  role_fr: Projet de recherche PSYC 380
+- name: Chelsea Kalla
+  group: undergrad
+  photo: chelsea-kalla.jpg
+  role_en: COGS 444 Research Project
+  role_fr: Projet de recherche COGS 444
+- name: Camille Bouchard
+  group: undergrad
+  photo: camille-bouchard.jpg
+  role_en: PSYC 494 Research Project
+  role_fr: Projet de recherche PSYC 494
+- name: Sebastian Hunte
+  group: undergrad
+  photo: sebastian-hunte.jpg
+  role_en: COGS 444 Research Project
+  role_fr: Projet de recherche COGS 444
+- name: Shangge Jiang
+  group: undergrad
+  photo: shangge-jiang.jpg
+  role_en: NSCI 420 Research Project
+  role_fr: Projet de recherche NSCI 420
+  now_en: Research Assistant at McGill
+  now_fr: Assistance de recherche à McGill
+- name: Julia Akimoto
+  group: undergrad
+  photo: julia-akimoto.jpg
+  role_en: PSYC 380 Research Project
+  role_fr: Projet de recherche PSYC 380
+- name: Debra Bercovici
+  group: undergrad
+  photo: debra-bercovici.jpg
+  role_en: PSYC 494 Research Project
+  role_fr: Projet de recherche PSYC 494
+  now_en: Graduate Student at UBC (Stan Floresco Lab)
+  now_fr: Études supérieures à UBC (laboratoire de Stan Floresco)
+- name: Julia Yu
+  group: undergrad
+  photo: julia-yu.jpg
+  role_en: PSYC 380 & 496 Research Projects
+  role_fr: Projets de recherche PSYC 380 et 496
+  now_en: Graduate Student at UofT (Sheena Josselyn Lab)
+  now_fr: Études supérieures à UofT (laboratoire de Sheena Josselyn)
+- name: Angie (Ye Eun) Lee
+  group: undergrad
+  photo: angie-lee.jpg
+  role_en: Undergraduate Research Assistant
+  role_fr: Assistance de recherche au premier cycle
+  now_en: Med student at Yonsei University (Korea)
+  now_fr: Études de médecine à Yonsei University (Corée)
+- name: Jane Su
+  group: undergrad
+  photo: jane-su.jpg
+  role_en: NSCI 420 Research Project
+  role_fr: Projet de recherche NSCI 420
+  now_en: Med Student at McMaster University
+  now_fr: Études de médecine à McMaster University
+- name: Sarah Martin
+  group: undergrad
+  photo: sarah-martin.jpg
+  role_en: PSYC 450 Research Project
+  role_fr: Projet de recherche PSYC 450
+  now_en: Graduate Student at University of Manchester (Forensic Psychology)
+  now_fr: Études supérieures à University of Manchester (psychologie légale)
+- name: Sandy Wong
+  group: undergrad
+  photo: sandy-wong.jpg
+  role_en: NSCI 430 Research Project
+  role_fr: Projet de recherche NSCI 430
+  now_en: Graduate Student at McGill (Vision Research Lab)
+  now_fr: Études supérieures à McGill (laboratoire de recherche sur la vision)
+- name: Veronica Le
+  group: undergrad
+  photo: veronica-le.jpg
+  role_en: NSERC USRA Research Project
+  role_fr: Projet de recherche NSERC USRA
+- name: Jiamin Song
+  group: undergrad
+  photo: jiamin-song.jpg
+  role_en: Undergraduate Research Assistant
+  role_fr: Assistance de recherche au premier cycle
+  now_en: Science Writer at NetEase
+  now_fr: Rédaction scientifique chez NetEase
+- name: Martin Dimitrov
+  group: undergrad
+  photo: martin-dimitrov.jpg
+  role_en: PSYC 396 Research Project
+  role_fr: Projet de recherche PSYC 396
+- name: Han Byul Moon
+  group: undergrad
+  photo: han-byul-moon.jpg
+  role_en: SURA Research Project
+  role_fr: Projet de recherche SURA
+- name: Steven (Wen) Zhang
+  group: undergrad
+  photo: steven-zhang.jpg
+  role_en: NSCI 420 Research Project
+  role_fr: Projet de recherche NSCI 420
+  now_en: Graduate Student at McGill (Jamie Near Lab)
+  now_fr: Études supérieures à McGill (laboratoire de Jamie Near)
+- name: Gabriel Desrosiers-Gregoire
+  group: undergrad
+  photo: gabriel-desrosiers-gregoire.jpg
+  role_en: SURA Research Project
+  role_fr: Projet de recherche SURA
+  now_en: Graduate Student at McGill (Mallar Chakravarty Lab)
+  now_fr: Études supérieures à McGill (laboratoire de Mallar Chakravarty)
+- name: Sze-Yuh (Nina) Wang
+  group: undergrad
+  photo: nina-wang.jpg
+  role_en: COGS 444 Research Project
+  role_fr: Projet de recherche COGS 444
+  now_en: Graduate Student at UofT (Yoel Inbar Lab)
+  now_fr: Études supérieures à UofT (laboratoire de Yoel Inbar)
+- name: Chloe Lau
+  group: undergrad
+  photo: chloe-lau.jpg
+  role_en: NSCI 420 Research Project
+  role_fr: Projet de recherche NSCI 420
+  now_en: Project Coordinator at Neuroethics Canada (UBC)
+  now_fr: Coordination de projets à Neuroethics Canada (UBC)
+- name: Shannon Harrington
+  group: undergrad
+  photo: shannon-harrington.jpg
+  role_en: COGS 444 Research Project
+  role_fr: Projet de recherche COGS 444
+  now_en: Research Assistant at McGill (Ross Otto Lab)
+  now_fr: Assistance de recherche à McGill (laboratoire de Ross Otto)
+- name: Sarah London
+  group: undergrad
+  photo: sarah-london.jpg
+  role_en: NSCI 420 Research Project
+  role_fr: Projet de recherche NSCI 420
+  now_en: Engineering Student at McGill
+  now_fr: Études en génie à McGill
+- name: Kayla Horowitz
+  group: undergrad
+  photo: kayla-horowitz.jpg
+  role_en: PSYC 496 Research Project
+  role_fr: Projet de recherche PSYC 496
+- name: Yasmine Dabbous
+  group: undergrad
+  photo: yasmine-dabbous.jpg
+  role_en: COGS 401 Research Project
+  role_fr: Projet de recherche COGS 401
+- name: Dasha Sandra
+  group: undergrad
+  photo: dasha-sandra.jpg
+  role_en: ARIA Research Project
+  role_fr: Projet de recherche ARIA
+- name: Sasha Burwell
+  group: undergrad
+  photo: sasha-burwell.jpg
+  role_en: NSCI 420 Research Project
+  role_fr: Projet de recherche NSCI 420
+  now_en: Graduate Student at Duke University (Michael Tadross Lab)
+  now_fr: Études supérieures à Duke University (laboratoire de Michael Tadross)
+- name: Joyce Quansah
+  group: undergrad
+  photo: joyce-quansah.jpg
+  role_en: PSYC 395 & ARIA Research Projects
+  role_fr: Projets de recherche PSYC 395 et ARIA
+  now_en: Graduate Student at UdeM (Jean Gagnon Lab)
+  now_fr: Études supérieures à UdeM (laboratoire de Jean Gagnon)
+- name: Yang Ge
+  group: undergrad
+  photo: yang-ge.jpg
+  role_en: PSYC 450 Research Project
+  role_fr: Projet de recherche PSYC 450
+  now_en: Graduate Student at UBC (Yu Tian Wang Lab)
+  now_fr: Études supérieures à UBC (laboratoire de Yu Tian Wang)
+- name: Louis Huynh
+  group: undergrad
+  photo: louis-huynh.jpg
+  role_en: NSCI 420 Research Project
+  role_fr: Projet de recherche NSCI 420
+  now_en: Med Student at Queen's University
+  now_fr: Études de médecine à Queen's University
+- name: Rachelle Zipper
+  group: undergrad
+  photo: rachelle-zipper.jpg
+  role_en: PSYC 396 Research Project
+  role_fr: Projet de recherche PSYC 396
+  now_en: Med Student at Technion Israel Institute of Technology
+  now_fr: Études de médecine à Technion Israel Institute of Technology
+- name: Chloe Ahluwalia
+  group: undergrad
+  photo: chloe-ahluwalia.jpg
+  role_en: PSYC 496 & PURA Research Projects
+  role_fr: Projets de recherche PSYC 496 et PURA
+- name: Michael Cressaty
+  group: undergrad
+  photo: michael-cressaty.jpg
+  role_en: NSCI 420 Research Project
+  role_fr: Projet de recherche NSCI 420
+  now_en: Health Information Specialist at Novus Health
+  now_fr: Spécialiste de l’information sur la santé chez Novus Health
+- name: Yu Fei Ma
+  group: undergrad
+  photo: yu-fei-ma.jpg
+  role_en: NSCI 430 Research Project
+  role_fr: Projet de recherche NSCI 430
+  now_en: Med Student at McMaster University
+  now_fr: Études de médecine à McMaster University
+- name: Shira Mattuck
+  group: undergrad
+  photo: shira-mattuck.jpg
+  role_en: PSYC 496 Research Project
+  role_fr: Projet de recherche PSYC 496
+  now_en: Behavioral Interventionist at Leap Behavior Consulting
+  now_fr: Intervention comportementale chez Leap Behavior Consulting
+- name: Jessica Chan
+  group: undergrad
+  photo: jessica-chan.jpg
+  role_en: COGS 396 Research Project
+  role_fr: Projet de recherche COGS 396

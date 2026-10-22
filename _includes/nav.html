@@ -1,0 +1,24 @@
+<header class="site-header" data-header>
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ home_url }}" aria-label="{{ t.lab_name }}, {{ t.nav.home }}">
+      {% include brand-mark.svg %}
+      <span class="brand-name">{{ t.lab_name }}</span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="{{ t.menu }}">
+      <ul>
+        {%- for item in site.data.nav -%}
+        {%- unless item.key == "home" %}
+        <li><a href="{{ item[lang] }}"{% if nav_key == item.key %} aria-current="page"{% endif %}>{{ t.nav[item.key] }}</a></li>
+        {%- endunless -%}
+        {%- endfor %}
+      </ul>
+      <a class="lang-switch" href="{{ alt_url }}" hreflang="{{ alt_lang }}" lang="{{ alt_lang }}" aria-label="{{ t.lang_switch_aria }}">
+        <span{% if lang == "en" %} class="is-on"{% endif %}>EN</span><span class="lang-sep" aria-hidden="true">/</span><span{% if lang == "fr" %} class="is-on"{% endif %}>FR</span>
+      </a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+      <span class="menu-toggle-label">{{ t.menu }}</span>
+      <span class="menu-toggle-icon" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</header>

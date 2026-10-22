@@ -1,0 +1,68 @@
+# Organizations that fund the lab's research at McGill, verified against the
+# funding statements in the lab's papers (2014 onward). Shown as a scrolling
+# strip at the bottom of the home page, in one ink tone (full colour on hover).
+#   logo / logo_fr: file in assets/img/funders/ (logo_fr is optional)
+#   caption_*: small text under logos that don't name the program themselves
+
+- name_en: Canadian Institutes of Health Research
+  name_fr: Instituts de recherche en santé du Canada
+  url_en: https://cihr-irsc.gc.ca/e/193.html
+  url_fr: https://cihr-irsc.gc.ca/f/193.html
+  logo: cihr.svg
+  height: 46
+
+- name_en: Natural Sciences and Engineering Research Council of Canada
+  name_fr: Conseil de recherches en sciences naturelles et en génie du Canada
+  url_en: https://nserc-crsng.canada.ca/en
+  url_fr: https://nserc-crsng.canada.ca/fr
+  logo: nserc.svg
+  height: 40
+
+- name_en: Canada Research Chairs Program
+  name_fr: Programme des chaires de recherche du Canada
+  url_en: https://www.chairs-chaires.gc.ca/home-accueil-eng.aspx
+  url_fr: https://www.chairs-chaires.gc.ca/home-accueil-fra.aspx
+  logo: goc-signature.svg
+  logo_fr: goc-signature-fr.svg
+  caption_en: Canada Research Chairs
+  caption_fr: Chaires de recherche du Canada
+  height: 22
+
+- name_en: Canada Foundation for Innovation
+  name_fr: Fondation canadienne pour l'innovation
+  url_en: https://www.innovation.ca/
+  url_fr: https://www.innovation.ca/fr
+  logo: cfi.svg
+  height: 34
+
+- name_en: Fonds de recherche du Québec – Santé
+  name_fr: Fonds de recherche du Québec – Santé
+  url_en: https://frq.gouv.qc.ca/en/
+  url_fr: https://frq.gouv.qc.ca/
+  logo: frqs.png
+  height: 40
+
+- name_en: Fonds de recherche du Québec – Nature et technologies
+  name_fr: Fonds de recherche du Québec – Nature et technologies
+  url_en: https://frq.gouv.qc.ca/en/
+  url_fr: https://frq.gouv.qc.ca/
+  logo: frqnt.png
+  height: 40
+
+- name_en: Canada First Research Excellence Fund, through McGill's Healthy Brains, Healthy Lives
+  name_fr: Fonds d'excellence en recherche Apogée Canada, par l'entremise de l'initiative Cerveau en santé, vie en santé de McGill
+  url_en: https://www.mcgill.ca/hbhl/
+  url_fr: https://www.mcgill.ca/hbhl/
+  logo: cfref.png
+  caption_en: Healthy Brains, Healthy Lives
+  caption_fr: Cerveau en santé, vie en santé
+  height: 40
+
+- name_en: McGill University
+  name_fr: Université McGill
+  url_en: https://www.mcgill.ca/
+  url_fr: https://www.mcgill.ca/fr
+  logo: mcgill-crest.svg
+  caption_en: McGill University
+  caption_fr: Université McGill
+  height: 40

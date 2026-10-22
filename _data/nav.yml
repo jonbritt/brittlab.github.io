@@ -1,0 +1,26 @@
+# Page addresses in each language. `key` matches the `ref` in each page's front
+# matter and the labels under `nav:` in _data/i18n/*.yml.
+- key: home
+  en: /
+  fr: /fr/
+- key: research
+  en: /research/
+  fr: /fr/recherche/
+- key: people
+  en: /people/
+  fr: /fr/equipe/
+- key: pi
+  en: /jonathan-britt/
+  fr: /fr/jonathan-britt/
+- key: publications
+  en: /publications/
+  fr: /fr/publications/
+- key: gallery
+  en: /gallery/
+  fr: /fr/galerie/
+- key: news
+  en: /news/
+  fr: /fr/nouvelles/
+- key: join
+  en: /join/
+  fr: /fr/se-joindre/

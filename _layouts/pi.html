@@ -1,0 +1,70 @@
+---
+layout: default
+---
+{%- include page-vars.html -%}
+{%- assign pi = t.pi -%}
+<section class="page-hero">
+  <div class="wrap pi-hero">
+    <div class="pi-portrait reveal">
+      <img src="/assets/img/pi/jonathan-britt.jpg" alt="{{ pi.portrait_alt }}" width="1000" height="1000">
+    </div>
+    <div class="reveal">
+      <p class="label">{{ t.people.pi_label }}</p>
+      <h1 class="display">{{ pi.name }}</h1>
+      <ul class="pi-titles">
+        <li>{{ pi.position }}</li>
+        <li>{{ pi.chair }}</li>
+      </ul>
+      <div class="mcgill-lockup">
+        <img src="/assets/img/brand/mcgill-crest.svg" alt="" width="30" height="38">
+        <span>{{ t.department }}<br>{{ t.university }}, {{ t.city }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="wrap pi-body">
+    <div>
+      <p class="label">{{ pi.bio_label }}</p>
+      <div class="prose reveal">
+        <p>{{ pi.bio }}</p>
+        <p>{{ pi.bio_2 }}</p>
+        <p>{{ pi.bio_3 }}</p>
+      </div>
+
+      <p class="label" style="margin-top:48px">{{ pi.selected_label }}</p>
+      <ul class="pub-list">
+        {%- assign picks = "10.1016/j.neuron.2018.07.051,10.1016/j.celrep.2020.02.095,10.1016/j.biopsych.2019.09.007,10.1016/j.celrep.2019.09.077,10.1016/j.neuron.2012.09.040,10.1523/jneurosci.4275-07.2008" | split: "," -%}
+        {%- for d in picks -%}
+        {%- assign p = site.data.publications | where: "doi", d | first -%}
+        {%- if p %}{% include pub-row.html pub=p compact=true %}{% endif -%}
+        {%- endfor %}
+      </ul>
+      <p style="margin-top:24px">{% include cta.html href=url_pubs label=t.common.all_publications mouse="right" %}</p>
+    </div>
+    <aside>
+      <p class="label">{{ pi.timeline_label }}</p>
+      <ol class="timeline reveal">
+        {%- for e in pi.timeline %}
+        <li><strong>{{ e.place }}</strong><span>{{ e.what }}</span></li>
+        {%- endfor %}
+      </ol>
+
+      <p class="label" style="margin-top:36px">{{ pi.contact_label }}</p>
+      <div class="contact-card reveal">
+        <dl>
+          <dt>{{ t.common.email }}</dt><dd><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></dd>
+          <dt>{{ t.common.phone }}</dt><dd><a href="tel:+1{{ site.contact.phone | remove: '-' }}">{{ site.contact.phone }}</a></dd>
+          <dt>{{ t.common.office }}</dt><dd>{{ site.contact.office }}<br>{{ site.contact.street }}<br>{{ site.contact.city }}</dd>
+        </dl>
+        <ul class="link-list">
+          <li><a href="{{ site.contact.orcid }}" rel="noopener">{{ pi.links.orcid }}</a></li>
+          <li><a href="{{ site.contact.pubmed }}" rel="noopener">{{ pi.links.pubmed }}</a></li>
+          <li><a href="{{ site.contact.mcgill_profile }}" rel="noopener">{{ pi.links.mcgill }}</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+<div class="section--tight"></div>

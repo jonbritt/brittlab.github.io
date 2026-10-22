@@ -1,0 +1,8 @@
+{%- comment -%} Localized date: include.date {%- endcomment -%}
+{%- if lang == "fr" -%}
+{%- assign months = "janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre" | split: "," -%}
+{%- assign m = include.date | date: "%-m" | minus: 1 -%}
+{{ include.date | date: "%-d" }} {{ months[m] }} {{ include.date | date: "%Y" }}
+{%- else -%}
+{{ include.date | date: "%B %-d, %Y" }}
+{%- endif -%}

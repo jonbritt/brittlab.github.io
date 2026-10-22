@@ -1,0 +1,37 @@
+---
+layout: default
+---
+{%- include page-vars.html -%}
+{%- assign j = t.join -%}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="label">{{ t.lab_name }}</p>
+    <h1 class="display">{{ j.title }}</h1>
+    <p class="lede">{{ j.lede }}</p>
+  </div>
+</section>
+<section class="section--tight" style="padding-top:0">
+  <div class="wrap join-grid">
+    <ol class="join-list">
+      {%- for s in j.sections %}
+      <li class="reveal">
+        <span class="card-num">0{{ forloop.index }}</span>
+        <div><h2>{{ s.title }}</h2><p>{{ s.text }}</p></div>
+      </li>
+      {%- endfor %}
+    </ol>
+    <aside class="join-aside">
+      <div class="contact-card reveal">
+        <h2>{{ j.contact_title }}</h2>
+        <p>{{ j.contact_text }}</p>
+        {%- assign mail_url = "mailto:" | append: site.contact.email %}
+        <p style="margin:22px 0 0">{% include cta.html href=mail_url label=j.email_cta mouse="right" %}</p>
+        <div class="mcgill-lockup">
+          <img src="/assets/img/brand/mcgill-crest.svg" alt="" width="30" height="38">
+          <span>{{ site.contact.office }}<br>{{ t.department }}, {{ t.university }}</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+<div class="section--tight"></div>

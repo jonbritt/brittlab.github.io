@@ -1,0 +1,4 @@
+<a class="cta{% if include.class %} {{ include.class }}{% endif %}" href="{{ include.href }}"{% if include.mouse %} data-mouse="{{ include.mouse }}"{% endif %}>
+  <span class="cta-label">{{ include.label }}</span>
+  <span class="cta-arrow" aria-hidden="true">{% include arrow.svg %}</span>
+</a>

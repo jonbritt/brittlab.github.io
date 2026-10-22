@@ -1,0 +1,617 @@
+# Chaînes de l’interface et textes des pages en français.
+# fr.yml reprend les clés de en.yml à l’identique. Toute modification du texte doit être reportée dans les deux fichiers.
+# Les paragraphes marqués « traduction fidèle du texte original » proviennent de l’ancien site Web du laboratoire à McGill.
+
+lang_name: Français
+lang_switch_label: English
+lang_switch_aria: Read this site in English
+skip_link: Aller au contenu
+menu: Menu
+close: Fermer
+lab_name: Britt Lab
+lab_full_name: Laboratoire Britt sur les circuits neuronaux, la motivation et l'apprentissage par renforcement
+department: Département de psychologie
+university: Université McGill
+city: Montréal
+
+nav:
+  home: Accueil
+  research: Recherche
+  people: Équipe
+  pi: Jonathan Britt
+  publications: Publications
+  gallery: Galerie
+  news: Nouvelles
+  join: Se joindre au labo
+
+common:
+  read_more: En savoir plus
+  all_publications: Toutes les publications
+  doi: DOI
+  pubmed: PubMed
+  open_access: Libre accès
+  preprint: Prépublication
+  review: Article de synthèse
+  commentary: Commentaire
+  methods: Méthodes
+  article: Article
+  email: Courriel
+  office: Bureau
+  phone: Téléphone
+  source: Source
+  credit: Crédit
+  license: Licence
+  real_data: Données publiées
+  illustrative: À titre illustratif
+  illustrative_note: Animation à titre illustratif, sans données enregistrées.
+  close_image: Fermer l’image
+  previous: Précédent
+  next: Suivant
+  back_to_news: Toutes les nouvelles
+  posted: Date de publication
+  view_paper: Lire l’article
+
+home:
+  meta_description: >-
+    Le Laboratoire Britt de l’Université McGill étudie comment le noyau accumbens
+    et ses afférences façonnent la motivation, la recherche de récompenses,
+    l’alimentation et l’apprentissage par renforcement.
+  eyebrow: Département de psychologie · Université McGill
+  title: Laboratoire Britt sur les circuits neuronaux, la motivation et l'apprentissage par renforcement
+  # traduction fidèle du texte original
+  lede: >-
+    Le Laboratoire Britt étudie les circuits neuronaux qui régulent des processus
+    psychologiques fondamentaux, comme la motivation et l’apprentissage par
+    renforcement.
+  cta_research: Nos recherches
+  cta_people: Rencontrer l’équipe
+  viewport_title: Afférences du noyau accumbens
+  viewport_note: Schéma en vue sagittale, non à l’échelle
+  viewport_hint: Survolez une région pour la stimuler
+  viewport_hint_touch: Touchez une région pour la stimuler
+  legend_glutamate: Afférences glutamatergiques
+  legend_dopamine: Afférence dopaminergique
+  regions:
+    pfc: Cortex préfrontal
+    vhpc: Hippocampe ventral
+    bla: Amygdale basolatérale
+    pvt: Thalamus paraventriculaire
+    vta: Aire tegmentale ventrale
+    nac: Noyau accumbens
+  welcome_label: Bienvenue
+  # traduction fidèle du texte original
+  welcome: >-
+    Nous souhaitons découvrir les mécanismes neurobiologiques qui sous-tendent
+    les pensées et les actions compulsives. Nous nous intéressons également aux
+    fondements neurobiologiques du plaisir. Les connaissances issues de ces
+    travaux contribueront aux efforts visant à élucider la physiopathologie de
+    divers troubles psychiatriques chez l’humain, notamment la dépendance, le
+    trouble obsessionnel-compulsif, la schizophrénie et le syndrome de Gilles de
+    la Tourette.
+  welcome_signature: Jonathan Britt, Ph. D.
+  questions_label: Nos questions de recherche
+  questions_title: Une petite structure où se rencontrent contexte, émotion et motivation.
+  questions:
+    - title: Qu’encodent les afférences du noyau accumbens ?
+      text: >-
+        Les afférences hippocampiques, amygdaliennes, thalamiques et corticales
+        convergent vers le noyau accumbens. Nous enregistrons et manipulons
+        l’activité de chaque voie pour déterminer quand elle est active et quand
+        elle influence le comportement.
+      refs: Reed et al., Neuron 2018 · Britt et al., Neuron 2012
+    - title: Comment le cerveau décide-t-il de manger et d’y prendre plaisir ?
+      text: >-
+        La prise alimentaire coïncide avec une diminution coordonnée des
+        afférences excitatrices vers la portion rostrale de la coquille (shell)
+        du noyau accumbens, et les afférences hippocampiques vers la coquille
+        augmentent la palatabilité des aliments.
+      refs: Reed et al., Neuron 2018 · Yang et al., Biol. Psychiatry 2020
+    - title: Qu’enseigne réellement la dopamine ?
+      text: >-
+        La dopamine évoquée par un indice aide à maintenir les associations
+        indice–valeur sans déterminer la valeur attendue, et la dopamine dans la
+        coquille du noyau accumbens renforce les actions tout en limitant leur
+        durée.
+      refs: Mendoza et al., Cell Rep. 2019 · Valyear et al., bioRxiv 2023
+    - title: Comment freiner la recherche infructueuse de récompenses ?
+      text: >-
+        Les deux principaux types de cellules du noyau accumbens, ainsi que les
+        afférences amygdaliennes et thalamiques, sont nécessaires pour cesser de
+        répondre lorsque la récompense n’est pas disponible : leurs rôles sont
+        complémentaires plutôt qu’opposés.
+      refs: Lafferty et al., Cell Rep. 2020
+  approach_label: Approche
+  approach_title: Une approche propre à chaque voie, avec une précision de l’ordre de la milliseconde.
+  # traduction fidèle du texte original (deux paragraphes)
+  approach: >-
+    Pour découvrir les processus neurobiologiques qui motivent et orientent le
+    comportement volontaire, nous combinons des méthodes de pointe, comme le
+    transfert intracrânien de gènes par vecteurs viraux, l’optogénétique et
+    l’imagerie calcique, avec des paradigmes comportementaux simples chez les
+    rongeurs, comme le conditionnement pavlovien et opérant.
+  approach_2: >-
+    Nos travaux actuels visent principalement à comprendre la physiologie et la
+    fonction du noyau accumbens, une structure du prosencéphale qui intègre des
+    indices contextuels, émotionnels et motivationnels pour déclencher et
+    coordonner la recherche de récompenses.
+  methods:
+    - title: Transfert de gènes par vecteurs viraux
+      text: Des protéines photosensibles et des capteurs de calcium ciblant des types cellulaires et des voies définis.
+    - title: Optogénétique
+      text: Activation ou inhibition de voies précises par la lumière, synchronisée avec le comportement.
+    - title: Photométrie par fibre optique
+      text: Enregistrement de l’activité calcique d’axones appartenant à des voies définies chez des souris en cours de tâche comportementale.
+    - title: Conditionnement pavlovien et opérant
+      text: Des tâches simples et bien contrôlées qui distinguent la recherche de récompenses, la consommation et l’apprentissage.
+  approach_figure_caption: Profils d’innervation du noyau accumbens propres à chaque voie.
+  selected_label: Travaux choisis
+  selected_title: Articles récents du laboratoire
+  gallery_label: Au laboratoire
+  gallery_title: Images et données
+  gallery_text: >-
+    Coupes en microscopie confocale, équipement de laboratoire, figures tirées
+    de nos articles et visualisations interactives de jeux de données publiés.
+  gallery_cta: Explorer la galerie
+  news_label: Nouvelles
+  news_cta: Toutes les nouvelles
+  join_title: Qu’est-ce qui sous-tend les comportements motivés ?
+  join_text: >-
+    Nous accueillons des personnes aux études supérieures et au premier cycle
+    qui souhaitent faire de la recherche en psychologie, en neurosciences et en
+    sciences cognitives.
+  join_cta: Se joindre au labo
+  funders_label: Avec le soutien de
+
+research:
+  title: Recherche
+  meta_description: >-
+    Comment le noyau accumbens et ses afférences encodent et contrôlent la
+    recherche de récompenses, l’alimentation, l’apprentissage dépendant de la
+    dopamine et l’inhibition comportementale.
+  eyebrow: Objectifs de recherche
+  # traduction fidèle du texte original (trois paragraphes de l’ancienne page « Objectifs de recherche »)
+  lede: >-
+    Le noyau accumbens est une région bien étudiée du prosencéphale qui influence
+    l’ardeur avec laquelle les animaux recherchent des récompenses ainsi que le
+    plaisir qu’ils tirent de leur consommation. Il régule les processus
+    motivationnels et l’apprentissage par renforcement. Une signalisation
+    anormale dans le noyau accumbens a été associée à divers troubles
+    psychiatriques, dont la dépendance, le trouble obsessionnel-compulsif et la
+    schizophrénie. On considère généralement que cette structure intègre des
+    indices contextuels, émotionnels et motivationnels pour déclencher et
+    coordonner la recherche de récompenses.
+  aims_1: >-
+    Le Laboratoire Britt cherche actuellement à comprendre quels types
+    d’information sont encodés dans les différentes afférences du noyau
+    accumbens, ainsi que la manière dont cette information est finalement
+    intégrée dans un plan d’action. Nous espérons établir précisément à quels
+    moments chaque afférence de cette structure intégratrice est à la fois
+    active et déterminante pour le comportement. Pour répondre à ces questions,
+    le Laboratoire Britt étudie les rongeurs et utilise des techniques d’imagerie
+    calcique, comme la photométrie par fibre optique, en combinaison avec des
+    manipulations optogénétiques. Notre objectif est de comprendre la relation
+    causale entre l’activité des circuits neuronaux et le comportement, avec une
+    précision de l’ordre de la milliseconde et propre à chaque voie.
+  aims_2: >-
+    Le Laboratoire Britt cherche également à comprendre comment l’activité des
+    circuits neuronaux propres à chaque voie est altérée dans des modèles de
+    psychopathologie chez les rongeurs, ainsi que ses changements en réponse à
+    des médicaments couramment utilisés. Les connaissances issues de ce type
+    d’approche de cartographie des circuits neuronaux ont déjà servi à mettre au
+    point des interventions thérapeutiques hautement ciblées, conçues pour
+    améliorer la vie des personnes atteintes de maladies mentales.
+  figure_caption: >-
+    Profils d’innervation du noyau accumbens propres à chaque voie, tirés de
+    l’ancienne page de recherche du laboratoire.
+  themes_label: Thèmes de recherche
+  themes:
+    - id: inputs
+      title: Afférences du noyau accumbens
+      text: >-
+        Le noyau accumbens reçoit des afférences excitatrices de l’hippocampe
+        ventral, de l’amygdale basolatérale, du thalamus médian et du cortex
+        préfrontal. En comparant directement ces voies, les travaux postdoctoraux
+        de Jon ont montré que les afférences hippocampiques se concentrent dans
+        la coquille médiale et que l’activation de n’importe laquelle de ces
+        voies suffit à renforcer le comportement. Au laboratoire, la photométrie
+        par fibre optique d’axones appartenant à des voies définies a montré que
+        les portions rostrale et caudale de la coquille sont innervées par des
+        populations distinctes et entremêlées de neurones du prosencéphale, et
+        que chaque afférence véhicule un mélange de signaux opposés pendant la
+        recherche de récompenses.
+      papers: ["10.1016/j.neuron.2018.07.051", "10.1016/j.neuron.2012.09.040"]
+      image: research/nac-input-innervation.jpg
+      image_caption: Innervation du noyau accumbens par différentes voies afférentes.
+    - id: feeding
+      title: Alimentation et palatabilité
+      text: >-
+        La consommation coïncide avec une réduction coordonnée, à l’échelle du
+        réseau, de l’activité excitatrice afférente à la portion rostrale de la
+        coquille du noyau accumbens, et la réduction des afférences d’une seule
+        voie suffit à favoriser la prise alimentaire. En mesurant la
+        palatabilité à partir de la microstructure du léchage, le laboratoire a
+        montré qu’une stimulation à basse fréquence des afférences de
+        l’hippocampe ventral vers la coquille augmente la palatabilité d’un
+        aliment, indépendamment de la signalisation opioïde, et peut conditionner
+        une préférence pour une saveur. Cette même approche d’analyse de la
+        microstructure du léchage montre que la palatabilité de l’alcool et des
+        saveurs qui lui sont associées augmente avec la consommation répétée.
+      papers: ["10.1016/j.neuron.2018.07.051", "10.1016/j.biopsych.2019.09.007", "10.1016/j.physbeh.2024.114500"]
+      image: research/mouse-optogenetic.jpg
+      image_caption: >-
+        Stimulation optique des circuits de l’accumbens, de l’amygdale et de
+        l’ATV chez la souris. Illustration tirée de l’ancienne galerie du
+        laboratoire.
+    - id: dopamine
+      title: Dopamine, valeur et désengagement
+      text: >-
+        La manipulation optogénétique bidirectionnelle des neurones
+        dopaminergiques pendant une tâche de choix par essais a montré que la
+        dopamine évoquée par un indice aide à maintenir les associations
+        indice–valeur, mais n’encode pas la valeur attendue. Des travaux plus
+        récents montrent que la dopamine dans la coquille médiale du noyau
+        accumbens renforce les actions tout en limitant leur durée, par
+        l’intermédiaire de la signalisation des récepteurs D1.
+      papers: ["10.1016/j.celrep.2019.09.077", "10.1101/2023.11.29.569116"]
+      image: gallery/fig-mendoza-2019-dopamine.jpg
+      image_caption: >-
+        Activité des neurones dopaminergiques lors de la présentation du levier,
+        de l’appui sur le levier et de la récompense. Mendoza et al., Cell Reports
+        2019, fig. 1 (CC BY 4.0).
+    - id: suppression
+      title: Freiner la recherche infructueuse de récompenses
+      text: >-
+        Une recherche efficace de récompenses exige de savoir quand ne pas
+        répondre. Les neurones des voies directe et indirecte du noyau accumbens
+        sont tous deux plus actifs lorsque le comportement est inhibé, et
+        l’inhibition de l’un ou l’autre type augmente les réponses infructueuses.
+        Les afférences amygdaliennes et thalamiques, qui innervent différentes
+        sous-régions du noyau accumbens, sont également toutes deux nécessaires,
+        ce qui indique des processus complémentaires plutôt qu’opposés.
+      papers: ["10.1016/j.celrep.2020.02.095"]
+      image: gallery/fig-lafferty-2020-anatomy.jpg
+      image_caption: >-
+        Les axones thalamiques (PVT) et amygdaliens (BLA) innervent des régions
+        distinctes du noyau accumbens. Lafferty et al., Cell Reports 2020, fig. 3
+        (CC BY-NC-ND 4.0).
+    - id: tools
+      title: Des outils plus précis pour l’étude des circuits neuronaux
+      text: >-
+        L’inhibition des terminaisons axonales par l’archaerhodopsine est
+        largement utilisée pour évaluer la contribution de chaque voie au
+        comportement. Le laboratoire a montré qu’elle augmente également la
+        libération spontanée de neurotransmetteurs et recrute l’inhibition
+        locale, produisant les mêmes effets comportementaux quelle que soit la
+        voie ciblée, et que l’inhibition des corps cellulaires constitue une
+        solution plus spécifique. Un article de synthèse présente des approches
+        entièrement optiques qui permettent d’enregistrer et de manipuler
+        simultanément l’activité des circuits.
+      papers: ["10.3389/fncir.2020.00010", "10.1016/j.ymeth.2021.07.007"]
+      image: gallery/fig-lafferty-2020-archt.jpg
+      image_caption: >-
+        Inhibition des axones thalamiques et amygdaliens dans le noyau accumbens
+        par ArchT. Lafferty et Britt, Front. Neural Circuits 2020, fig. 1
+        (CC BY 4.0).
+  collab_label: Collaborations
+  collab_title: Collaborer avec des collègues de toute l’Université McGill
+  collabs:
+    - title: Sérotonine et intensité de l’attention
+      text: >-
+        La dynamique rapide des neurones sérotoninergiques du raphé dorsal
+        régule l’intensité de l’attention que les souris portent à des cibles
+        visuelles.
+      doi: "10.1038/s41467-026-70658-y"
+    - title: Psychédéliques et comportement social
+      text: >-
+        L’administration répétée de LSD favorise le comportement social chez les
+        souris, un effet qui nécessite mTORC1 dans les neurones excitateurs.
+      doi: "10.1073/pnas.2020705118"
+    - title: Régulation épigénétique des gènes de prédisposition à l’autisme
+      text: >-
+        La perte de la protéine de liaison aux dinucléotides CpG méthylés Mbd2
+        modifie l’expression des gènes dans l’hippocampe et entraîne des déficits
+        cognitifs, sociaux et émotionnels.
+      doi: "10.1038/s41398-023-02561-9"
+  key_papers: Articles clés
+
+people:
+  title: Équipe
+  meta_description: Membres actuels et des années précédentes du Laboratoire Britt à l’Université McGill.
+  lede: >-
+    Une équipe de recherche du premier cycle et des cycles supérieurs qui étudie
+    les circuits de la motivation, sous la direction de Jonathan Britt.
+  pi_label: Chercheur principal
+  pi_role: Professeur agrégé · Titulaire de la Chaire de recherche du Canada en neurosciences comportementales
+  pi_cta: Profil complet
+  groups:
+    postdoc: Stages postdoctoraux
+    phd: Doctorat
+    msc: Maîtrise
+    undergrad: Recherche au premier cycle
+    staff: Personnel de recherche
+  roles:
+    postdoc: Stage postdoctoral
+    phd: Doctorat
+    msc: Maîtrise
+    undergrad: Recherche au premier cycle
+    staff: Personnel de recherche
+  interests_label: Intérêts de recherche
+  interests_stub: À venir
+  placeholder_alt: Portrait provisoire d’une souris de laboratoire
+  alumni_label: Membres des années précédentes
+  alumni_text: Les membres qui ont quitté le laboratoire et la suite de leur parcours.
+  alumni_grad: Études supérieures
+  alumni_undergrad: Recherche au premier cycle
+  now_prefix: Aujourd’hui
+
+pi:
+  title: Jonathan Britt
+  meta_description: >-
+    Jonathan P. Britt, Ph. D., professeur agrégé de psychologie à l’Université
+    McGill et titulaire de la Chaire de recherche du Canada en neurosciences
+    comportementales.
+  name: Jonathan Britt, Ph. D.
+  position: Professeur agrégé, Département de psychologie, Université McGill
+  chair: Chaire de recherche du Canada (niveau 2) en neurosciences comportementales
+  portrait_alt: Portrait de Jonathan Britt
+  bio_label: Biographie
+  # traduction fidèle du texte original (ancienne page « Membres du laboratoire »)
+  bio: >-
+    Jonathan Britt a fondé le Laboratoire Britt sur les circuits neuronaux, la
+    motivation et l’apprentissage par renforcement lorsqu’il est devenu
+    professeur adjoint à l’Université McGill en 2014. Auparavant, Jon a été
+    chercheur dans le laboratoire d’Antonello Bonci, à l’UCSF (Gallo Center) et
+    au National Institute on Drug Abuse à Baltimore. Jon a obtenu son Ph. D. à
+    l’Université de Chicago, dans le laboratoire de Dan McGehee. Son initiation
+    à la recherche en neurosciences a commencé pendant ses études de premier
+    cycle au Colorado College, sous le mentorat de Bob Jacobs.
+  bio_2: >-
+    Jon est maintenant professeur agrégé au Département de psychologie de
+    l’Université McGill et titulaire d’une Chaire de recherche du Canada
+    (niveau 2) en neurosciences comportementales, financée par les Instituts de
+    recherche en santé du Canada et renouvelée en 2025. Il encadre des personnes
+    aux études supérieures au Département de psychologie et au Programme intégré
+    en neurosciences de McGill, et est affilié au Centre d’études en
+    neurobiologie comportementale de l’Université Concordia.
+  bio_3: >-
+    Pendant ses études supérieures, Jon a étudié comment les récepteurs
+    présynaptiques opioïdes et nicotiniques régulent la libération de dopamine
+    dans le noyau accumbens. Lors de son stage postdoctoral, il a utilisé
+    l’optogénétique pour comparer les profils synaptiques et comportementaux des
+    afférences hippocampiques, amygdaliennes et préfrontales du noyau accumbens,
+    des travaux qui ont orienté les recherches du Laboratoire Britt. Depuis, le
+    laboratoire a montré comment ces afférences coordonnent la prise alimentaire,
+    augmentent la palatabilité des aliments et inhibent la recherche infructueuse
+    de récompenses, ainsi que la façon dont la signalisation dopaminergique
+    maintient les valeurs apprises et limite la durée des actions renforcées.
+  timeline_label: Parcours
+  timeline:
+    - place: Colorado College
+      what: Recherche au premier cycle avec Bob Jacobs
+    - place: Université de Chicago
+      what: Ph. D., laboratoire de Dan McGehee
+    - place: Gallo Center de l’UCSF et NIDA, Baltimore
+      what: Chercheur, laboratoire d’Antonello Bonci
+    - place: Université McGill, 2014
+      what: Professeur adjoint ; fondation du Laboratoire Britt
+    - place: Université McGill
+      what: Professeur agrégé, Département de psychologie
+    - place: Chaire de recherche du Canada, 2025
+      what: Renouvellement de la chaire de niveau 2 en neurosciences comportementales
+  selected_label: Publications choisies
+  contact_label: Coordonnées
+  links_label: Ailleurs sur le Web
+  links:
+    orcid: ORCID
+    pubmed: PubMed
+    mcgill: Profil McGill
+
+publications:
+  title: Publications
+  meta_description: Publications du Laboratoire Britt et de Jonathan Britt.
+  lede: >-
+    Articles, synthèses et prépublications du Laboratoire Britt à McGill et des
+    années de formation de Jon. Les noms des membres du laboratoire sont mis en
+    évidence.
+  filter_all: Toutes
+  filter_mcgill: Laboratoire Britt, depuis 2014
+  filter_prior: Travaux antérieurs
+  search_placeholder: Rechercher par titre, nom ou revue
+  search_label: Rechercher des publications
+  count_one: publication
+  count_many: publications
+  none: Aucune publication ne correspond à la recherche.
+
+gallery:
+  title: Galerie
+  meta_description: >-
+    Microscopie, photos du laboratoire, figures et visualisations interactives
+    de données du Laboratoire Britt.
+  lede: >-
+    Images de microscopie du laboratoire, figures tirées de nos articles,
+    visualisations interactives de données publiées et quelques animations
+    explicatives.
+  filters:
+    all: Toutes
+    microscopy: Microscopie
+    lab: Au laboratoire
+    figures: Figures d’articles
+  images_label: Images
+  data_label: Données interactives
+  data_title: Explorer les jeux de données publiés
+  data_text: >-
+    Chaque panneau est produit directement à partir des données sources
+    diffusées avec l’article. Les résumés sont de simples dénombrements : rien
+    n’est simulé et aucune nouvelle statistique n’est calculée.
+  explainers_label: Animations explicatives
+  explainers_title: Le fonctionnement des méthodes
+  explainers_text: >-
+    Schémas animés des principales techniques du laboratoire. Il s’agit
+    d’illustrations et non d’enregistrements.
+  viz:
+    attention:
+      title: La sérotonine régule l’intensité de l’attention
+      text: >-
+        Indice d’attention de chaque souris lors de l’activation (à gauche) ou
+        de l’inhibition (à droite) optogénétique des neurones sérotoninergiques du
+        raphé dorsal. Chaque ligne représente une souris dans les conditions
+        témoin, lumière allumée et DEL éteinte.
+      source: Lehnert et al., Nature Communications 2026, données sources des fig. 4i et 4n (CC BY 4.0).
+      activation: Activation
+      inhibition: Inhibition
+      control: Témoin
+      opto: Opto
+      led_off: DEL éteinte
+      y_label: Indice d’attention
+      mouse: Souris
+    trials:
+      title: Une souris, 3 043 essais
+      text: >-
+        Tous les essais du fichier de séances fourni comme exemple public, à
+        raison d’une ligne par séance. Détections correctes, omissions et
+        fausses alarmes dans une tâche de détection visuelle avec indice.
+      source: Lehnert et al. 2026, jeu de données d’exemple sur Dryad (CC0), doi:10.5061/dryad.5qfttdzms.
+      hit: Détection correcte
+      miss: Omission
+      fa: Fausse alarme
+      session: Séance
+      trial: Essai
+      contrast: Contraste
+      hit_rate: Taux de détection selon le contraste du stimulus
+      trials_word: essais
+      note: Une souris à titre d’exemple, et non la cohorte entière.
+    stimulus:
+      title: Ce que voyait la souris
+      text: >-
+        Lecture des images enregistrées des stimuli gauche et droit du premier
+        essai du fichier d’exemple. Faites glisser le curseur pour parcourir la
+        séquence.
+      source: Lehnert et al. 2026, jeu de données d’exemple sur Dryad (CC0).
+      play: Lire
+      pause: Pause
+      left: Gauche
+      right: Droite
+      frame: Image
+      time: Temps
+      types:
+        b: Écran vide
+        n: Bruit
+        s: Statique
+        g: Réseau
+      note: Matrices binaires enregistrées des stimuli, sans reconstruction étalonnée de l’affichage.
+    mbd2:
+      title: Changements de méthylation en l’absence de Mbd2
+      text: >-
+        Sites différentiellement méthylés dans l’hippocampe de souris
+        déficientes en Mbd2, par chromosome. La hauteur indique la significativité
+        statistique ; la couleur montre si la méthylation a augmenté ou diminué.
+        Survolez un point pour connaître le gène le plus proche.
+      source: Lax et al., Translational Psychiatry 2023, tableau supplémentaire 2 (CC BY 4.0).
+      hyper: Méthylation accrue après inactivation du gène
+      hypo: Méthylation réduite après inactivation du gène
+      chromosome: Chromosome
+      y_label: −log10(p)
+      gene: Gène
+      note: Affiche le sous-ensemble présélectionné dans l’article (p < 0,001), et non tous les sites testés.
+    optogenetics:
+      title: Optogénétique
+      text: >-
+        Les neurones exprimant la channelrhodopsine émettent des potentiels
+        d’action lorsque la lumière bleue ouvre le canal. Modifiez la fréquence
+        des impulsions pour accélérer ou ralentir l’activité du neurone.
+      frequency: Fréquence des impulsions
+      light: Lumière
+      membrane: Potentiel de membrane
+    photometry:
+      title: Photométrie par fibre optique
+      text: >-
+        La fluorescence de GCaMP excitée à 470 nm suit le calcium ; un canal
+        isosbestique à 405 nm suit les mouvements et le photoblanchiment. La
+        soustraction du signal témoin mis à l’échelle permet d’isoler le signal
+        d’activité, ΔF/F.
+      signal: 470 nm (calcium)
+      control: 405 nm (isosbestique)
+      corrected: ΔF/F corrigé
+      event: Événement
+    circuit:
+      title: Le circuit du noyau accumbens
+      text: >-
+        Sélectionnez une afférence pour découvrir les résultats du laboratoire
+        à son sujet.
+      findings:
+        vhpc: >-
+          Afférence la plus forte vers la coquille médiale. Son activation
+          renforce le comportement, et sa stimulation à basse fréquence pendant
+          la prise alimentaire augmente la palatabilité des aliments.
+        bla: >-
+          Nécessaire pour inhiber la recherche de récompenses lorsque la
+          récompense n’est pas disponible ; ses axones occupent des sous-régions
+          du noyau accumbens différentes de celles des axones thalamiques.
+        pvt: >-
+          Nécessaire à l’inhibition comportementale, et ses corps cellulaires
+          contribuent au comportement alimentaire.
+        pfc: >-
+          L’une des voies excitatrices comparées dans les travaux fondateurs du
+          laboratoire ; son activation renforce également le comportement.
+        vta: >-
+          Afférence dopaminergique. La dopamine évoquée par un indice maintient
+          les associations indice–valeur, et la dopamine dans la coquille limite
+          la durée des actions renforcées.
+
+news:
+  title: Nouvelles
+  meta_description: Nouvelles du Laboratoire Britt.
+  lede: Articles, équipe et autres nouvelles du laboratoire.
+  empty: Aucune nouvelle pour le moment.
+
+join:
+  title: Se joindre au labo
+  meta_description: >-
+    Possibilités de recherche aux cycles supérieurs, au premier cycle et au
+    postdoctorat au Laboratoire Britt de l’Université McGill.
+  lede: >-
+    Nous étudions les circuits de la motivation au moyen de l’optogénétique, de
+    la photométrie par fibre optique et de tâches comportementales
+    soigneusement conçues, et nous avons toujours plaisir à échanger avec des
+    personnes curieuses.
+  sections:
+    - title: Études supérieures
+      text: >-
+        Les candidatures à la M. Sc. et au Ph. D. se font par l’intermédiaire du
+        Département de psychologie ou du Programme intégré en neurosciences de
+        McGill. Avant de présenter votre candidature, veuillez envoyer à Jon un
+        courriel comprenant votre CV, vos relevés de notes et quelques phrases
+        sur les questions de recherche du laboratoire qui vous intéressent.
+    - title: Recherche au premier cycle
+      text: >-
+        Les personnes au premier cycle à McGill se joignent au laboratoire dans
+        le cadre de cours de recherche individuelle. Des membres ont déjà
+        réalisé des projets dans les cours PSYC 380, 395, 396, 450, 494, 496 et
+        498, NSCI 420 et 430, ainsi que COGS 396, 401 et 444, en plus de travaux
+        de recherche d’été financés par les bourses SURA, PURA, ARIA et
+        NSERC USRA (BRPC du CRSNG).
+    - title: Stages postdoctoraux
+      text: >-
+        Si vous souhaitez étudier les circuits à la base de la motivation et de
+        l’apprentissage, communiquez avec nous pour discuter de projets et de
+        demandes de bourses.
+  contact_title: Communiquez avec nous
+  contact_text: >-
+    Écrivez directement à Jon. Le laboratoire se trouve au pavillon de biologie
+    Stewart, sur le campus du centre-ville de McGill.
+  email_cta: Écrire à Jonathan Britt
+
+footer:
+  tagline: Circuits neuronaux, motivation et apprentissage par renforcement.
+  address_label: Nous rendre visite
+  contact_label: Coordonnées
+  explore_label: Explorer
+  rights: Laboratoire Britt
+  source: Code source du site
+
+notfound:
+  title: Page introuvable
+  text: >-
+    Cette page s’est égarée. Comme toute bonne souris de laboratoire, elle est
+    peut-être quelque part où elle ne devrait pas être.
+  cta: Retour à l’accueil

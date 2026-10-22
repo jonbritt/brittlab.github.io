@@ -1,0 +1,43 @@
+# Current lab members, shown on the People page.
+#
+# To add someone, copy a block and fill in what you have. Everything except
+# name and group is optional:
+#   photo:        file in assets/img/people/ (square-ish, ~600px). Leave empty for the mouse placeholder.
+#   interests_en / interests_fr:  one or two sentences. Leave empty to show "coming soon".
+#   email, website:  shown as small links on the card.
+#   author:       how the name appears in author lists (e.g. "Morris MM"), so the
+#                 Publications page can highlight current members.
+#
+# group must be one of: phd, msc, undergrad, postdoc, staff
+
+- name: Niharika Dighe
+  group: phd
+- name: Madeleine Morris
+  group: phd
+  author: Morris MM
+- name: Elie Bres
+  group: phd
+
+- name: Tiago Silva
+  group: msc
+- name: Luna Alkabra
+  group: msc
+
+- name: Kiara Breton
+  group: undergrad
+- name: Tess Hetherington
+  group: undergrad
+- name: Victoria Norton-Poulin
+  group: undergrad
+- name: Laurie-Michelle Tremblay
+  group: undergrad
+- name: Amina Lounnas
+  group: undergrad
+- name: Eza-Marie Lambert
+  group: undergrad
+- name: Shayla Stolberg
+  group: undergrad
+- name: Mar'ya Chumbayeva
+  group: undergrad
+- name: Ting yun Huang
+  group: undergrad
