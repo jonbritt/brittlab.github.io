@@ -42,25 +42,29 @@
     // fade in quickly; fade out over the last 30% while the rings keep moving
     " float life=smoothstep(0.0,0.04,u_life)*(1.0-smoothstep(0.70,1.0,u_life))*(1.0-0.3*u_life);",
     " env*=life;",
-    " if(env<0.01){gl_FragColor=vec4(tap(p),1.0);return;}",
     " vec2 dir=dv/max(d,1.0);",
     // refraction between the rings: push the image in and out along the radius
     " vec2 off=dir*sin(x/wl*6.2831853)*env*12.0*u_dpr;",
-    // big pixels in the leading ring, smaller in the ones behind it
-    " float cell=(x>-0.5*wl ? 30.0 : x>-1.5*wl ? 22.0 : 16.0)*u_dpr;",
-    " vec2 q=(floor(p/cell)+0.5)*cell;",
-    // decide ring membership per block so each block is wholly in or out
-    " float xq=length(q-u_origin)-u_radius;",
+    // Each 32 px "parent" block takes its strength from its centre, so the
+    // whole block is in or out of a ring and splits as one
+    " float base=32.0*u_dpr;",
+    " vec2 q0=(floor(p/base)+0.5)*base;",
+    " float xq=length(q0-u_origin)-u_radius;",
     " float envq=xq>0.0 ? exp(-xq*xq/(2.0*front*front)) : exp(xq/trail);",
     " float crest=cos(xq/wl*6.2831853);",
-    // blocks dissolve one by one in random order, each fading rather than popping
-    " vec2 cid=floor(p/cell);",
-    " float h=fract(sin(dot(cid,vec2(12.9898,78.233)))*43758.5453);",
+    " float h=fract(sin(dot(floor(p/base),vec2(12.9898,78.233)))*43758.5453);",
     " float strength=envq*life;",
-    " float qm=step(0.30,crest)*smoothstep(h*0.5,h*0.5+0.2,strength);",
+    " if(env<0.01&&strength<0.005){gl_FragColor=vec4(tap(p),1.0);return;}",
+    // As the wave weakens, blocks subdivide 32 > 16 > 8 > 4 > 2 px; each
+    // parent splits at a slightly different moment
+    " float level=clamp(floor((1.0-strength)*5.0+(h-0.5)*0.9),0.0,4.0);",
+    " float cell=base/exp2(level);",
+    " vec2 q=(floor(p/cell)+0.5)*cell;",
+    // ...and the finest pixels dissolve last, in random order
+    " float qm=step(0.30,crest)*smoothstep(h*0.12,h*0.12+0.08,strength);",
     " vec3 pix=tap(q+off);",
     " vec2 inCell=abs(fract(p/cell)-0.5);",
-    " pix*=1.0-0.12*step(0.45,max(inCell.x,inCell.y));   // crisp pixel edges",
+    " pix*=1.0-0.12*step(0.45,max(inCell.x,inCell.y))*step(7.5*u_dpr,cell);   // crisp edges on larger pixels",
     " pix*=1.0+0.14*strength;                               // rings catch the light",
     " vec3 col=mix(tap(p+off),pix,qm);",
     " gl_FragColor=vec4(col,1.0);",
