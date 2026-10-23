@@ -3,10 +3,19 @@
 # To add someone, copy a block and fill in what you have. Everything except
 # name and group is optional:
 #   photo:        file in assets/img/people/ (square-ish, ~600px). Leave empty for the mouse placeholder.
-#   interests_en / interests_fr:  one or two sentences. Leave empty to show "coming soon".
+#   interests_en / interests_fr:  research interests, one to three sentences.
+#   fun_fact_en / fun_fact_fr:    one line.
+#   bio_en / bio_fr:              a longer background (studies, previous labs).
+#                                 Shown folded under "Background"; mostly for grad students.
 #   email, website:  shown as small links on the card.
 #   author:       how the name appears in author lists (e.g. "Morris MM"), so the
 #                 Publications page can highlight current members.
+#
+# Every card shows "Research interests" and "Fun fact" in the same format,
+# with "Coming soon" until those are filled in. Graduate profiles are written
+# in the third person, undergraduate profiles in the first person.
+# Long text: start the value with ">-" and indent the lines below it.
+# If there is no _fr version, the French page shows the English text.
 #
 # group must be one of: phd, msc, undergrad, postdoc, staff
 # (phd and msc are shown together under "Graduate Students"; each card still
@@ -14,31 +23,255 @@
 
 - name: Niharika Dighe
   group: phd
+
 - name: Madeleine Morris
+  photo: madeleine-morris.jpg
   group: phd
   author: Morris MM
+  interests_en: >-
+    Madeleine is interested in understanding the relationship between the
+    physiological basis of dopamine signaling and behaviour. She is currently
+    researching how striatal acetylcholine and dopamine dynamics interact to
+    support synaptic plasticity and learning.
+  interests_fr: >-
+    Madeleine s’intéresse au lien entre les bases physiologiques de la
+    signalisation dopaminergique et le comportement. Elle étudie actuellement
+    comment les dynamiques de l’acétylcholine et de la dopamine dans le
+    striatum interagissent pour soutenir la plasticité synaptique et
+    l’apprentissage.
+  fun_fact_en: Madeleine has been to over 150 concerts!
+  fun_fact_fr: Madeleine a assisté à plus de 150 concerts !
+
 - name: Elie Bres
+  photo: elie-bres.jpg
   group: phd
+  interests_en: >-
+    Elie seeks to understand how dopamine modulates circuit dynamics during
+    behavioral state transitions.
+  interests_fr: >-
+    Elie cherche à comprendre comment la dopamine module la dynamique des
+    circuits lors des transitions entre états comportementaux.
+  bio_en: >-
+    Elie grew up in Corsica and moved to Canada during high school. He
+    obtained his B.Sc. in Psychology from uOttawa, then completed a master’s
+    degree in Neuroscience at UdeM in Dr. Louis-Éric Trudeau’s lab before
+    spending a year doing research internships in Paris (Faure lab) and
+    Okinawa (Yazaki-Sugiyama lab). After a year in the IPN rotation program,
+    Elie is now a co-supervised Ph.D. student in the Britt and Tritsch labs.
+  bio_fr: >-
+    Elie a grandi en Corse et s’est installé au Canada pendant ses études
+    secondaires. Il a obtenu un B. Sc. en psychologie à l’Université d’Ottawa,
+    puis une maîtrise en neurosciences à l’Université de Montréal, dans le
+    laboratoire du Dr Louis-Éric Trudeau, avant de passer une année en stages
+    de recherche à Paris (laboratoire Faure) et à Okinawa (laboratoire
+    Yazaki-Sugiyama). Après une année dans le programme de rotations de l’IPN,
+    il est aujourd’hui doctorant en codirection dans les laboratoires Britt
+    et Tritsch.
 
 - name: Tiago Silva
+  photo: tiago-silva.jpg
   group: msc
+  interests_en: >-
+    Tiago is interested in the fundamentals of dopamine in associative
+    learning: how dopamine is used to ascribe importance to cues, how
+    signalling changes as an association is learned, and how this learning
+    system is involved in addiction.
+  interests_fr: >-
+    Tiago s’intéresse aux fondements du rôle de la dopamine dans
+    l’apprentissage associatif : comment la dopamine sert à attribuer de
+    l’importance aux indices, comment la signalisation évolue à mesure
+    qu’une association est apprise, et quel rôle joue ce système
+    d’apprentissage dans la dépendance.
+  bio_en: >-
+    Tiago is an M.Sc. student in the Britt Lab and is transitioning from the
+    master’s to the Ph.D. track to continue this fundamental research through
+    a Ph.D.
+  bio_fr: >-
+    Tiago fait sa maîtrise au Laboratoire Britt et effectue le passage
+    accéléré au doctorat afin de poursuivre cette recherche fondamentale.
+  fun_fact_en: >-
+    Tiago likes to play piano, and his favorite song he’s ever learned is
+    both versions of the Gravity Falls theme song!
+  fun_fact_fr: >-
+    Tiago aime jouer du piano, et son morceau préféré parmi tous ceux qu’il a
+    appris est le générique de Souvenirs de Gravity Falls, dans ses deux
+    versions !
 - name: Luna Alkabra
+  photo: luna-alkabra.jpg
   group: msc
+  interests_en: >-
+    Luna is interested in understanding how dopamine signaling shapes reward
+    processing, motivation, and learning. Her current research uses fiber
+    photometry and behavioral paradigms in mice to investigate how dopamine
+    dynamics vary across different reward conditions and influence motivated
+    behavior.
+  interests_fr: >-
+    Luna s’intéresse à la façon dont la signalisation dopaminergique façonne
+    le traitement de la récompense, la motivation et l’apprentissage. Ses
+    recherches actuelles combinent la photométrie par fibre et des paradigmes
+    comportementaux chez la souris pour étudier comment les dynamiques de la
+    dopamine varient selon les conditions de récompense et influencent le
+    comportement motivé.
+  bio_en: >-
+    Luna completed her B.Sc. in Neuroscience at the University of Toronto
+    Mississauga, where she conducted research on learning, memory, and social
+    behavior in zebrafish. She is currently pursuing her M.Sc. in Neuroscience
+    at McGill University in the Britt Lab. Her research experience spans
+    behavioral neuroscience, clinical neurophysiology, and translational
+    research, reflecting her broader interest in bridging fundamental
+    neuroscience with human health.
+  bio_fr: >-
+    Luna a obtenu son B. Sc. en neurosciences à l’Université de Toronto
+    Mississauga, où elle a mené des recherches sur l’apprentissage, la mémoire
+    et le comportement social chez le poisson-zèbre. Elle poursuit
+    actuellement une maîtrise en neurosciences à l’Université McGill, au
+    Laboratoire Britt. Son expérience de recherche couvre les neurosciences
+    comportementales, la neurophysiologie clinique et la recherche
+    translationnelle, ce qui reflète son intérêt plus large pour le lien
+    entre les neurosciences fondamentales et la santé humaine.
+  fun_fact_en: >-
+    Luna did investigative reporting on a 1979 railway explosion with a
+    researcher from U of T; the work will be included in one of his
+    publications.
+  fun_fact_fr: >-
+    Luna a mené une enquête journalistique sur une explosion ferroviaire
+    survenue en 1979 avec un chercheur de l’Université de Toronto; ce travail sera intégré à
+    l’une de ses publications.
 
 - name: Kiara Breton
+  photo: kiara-breton.jpg
   group: undergrad
+  interests_en: >-
+    My research interests include learning, reward, and motivation,
+    particularly how the brain processes reward and how these mechanisms
+    influence the motivation to engage in specific behaviours.
+  interests_fr: >-
+    Mes intérêts de recherche portent sur l’apprentissage, la récompense et la
+    motivation, en particulier sur la façon dont le cerveau traite la
+    récompense et dont ces mécanismes influencent la motivation à adopter
+    certains comportements.
+  fun_fact_en: I love listening to Pitbull.
+  fun_fact_fr: J’adore écouter Pitbull.
+
 - name: Tess Hetherington
+  photo: tess-hetherington.jpg
   group: undergrad
+  interests_en: >-
+    I’m interested in research on addiction and compulsions, including what
+    causes certain individuals to be more susceptible to addictions and
+    compulsive disorders, the neural mechanisms that develop and maintain
+    them, and how dopamine and other neurotransmitters are involved.
+  interests_fr: >-
+    Je m’intéresse à la recherche sur la dépendance et les compulsions,
+    notamment à ce qui rend certaines personnes plus susceptibles de
+    développer des dépendances et des troubles compulsifs, aux mécanismes
+    neuronaux qui les font apparaître et les maintiennent, et au rôle de la
+    dopamine et d’autres neurotransmetteurs.
+  fun_fact_en: >-
+    I’m Australian, but I grew up in Hawai‘i… and President Obama’s holiday
+    house was on my street!
+  fun_fact_fr: >-
+    Je viens d’Australie, mais j’ai grandi à Hawaï… et la maison de vacances
+    du président Obama était dans ma rue !
+
 - name: Victoria Norton-Poulin
+  photo: victoria-norton-poulin.jpg
   group: undergrad
+  interests_en: >-
+    I am especially interested in cue conditioning and addiction memory, as
+    well as clinical affective neuroscience.
+  interests_fr: >-
+    Je m’intéresse particulièrement au conditionnement aux indices et à la
+    mémoire de la dépendance, ainsi qu’aux neurosciences affectives cliniques.
+  fun_fact_en: >-
+    I was trained as a musical theatre performer, and it is still one of my
+    side jobs!
+  fun_fact_fr: >-
+    J’ai suivi une formation d’interprète en théâtre musical, et c’est encore
+    l’un de mes emplois d’appoint !
+
 - name: Laurie-Michelle Tremblay
+  photo: laurie-michelle-tremblay.jpg
   group: undergrad
+  interests_en: >-
+    My research interests focus on neural development and how early-life
+    experiences, such as substance exposure during adolescence, can influence
+    brain function, behaviour, and decision-making later in life. I am
+    especially curious about the neural mechanisms underlying reward
+    learning, cognitive flexibility and vulnerability to addiction.
+  interests_fr: >-
+    Mes intérêts de recherche portent sur le développement neuronal et sur la
+    façon dont les expériences précoces, comme l’exposition à des substances à
+    l’adolescence, peuvent influencer le fonctionnement du cerveau, le
+    comportement et la prise de décision plus tard dans la vie. Je m’intéresse
+    particulièrement aux mécanismes neuronaux qui sous-tendent l’apprentissage
+    par la récompense, la flexibilité cognitive et la vulnérabilité à la
+    dépendance.
+  fun_fact_en: I read close to 200 books a year!
+  fun_fact_fr: Je lis près de 200 livres par année !
+
 - name: Amina Lounnas
+  photo: amina-lounnas.jpg
   group: undergrad
+  interests_en: >-
+    I am particularly interested in the role of dopamine dynamics in the
+    striatum and prefrontal cortex (PFC) in psychiatric disorders, especially
+    obsessive-compulsive disorder (OCD). I am also interested in using
+    computational models to characterize dopamine activity and cognitive
+    processes affected by these disorders.
+  interests_fr: >-
+    Je m’intéresse particulièrement au rôle des dynamiques de la dopamine dans
+    le striatum et le cortex préfrontal (CPF) dans les troubles psychiatriques,
+    en particulier le trouble obsessionnel-compulsif (TOC). Je m’intéresse
+    aussi à l’utilisation de modèles computationnels pour caractériser
+    l’activité dopaminergique et les processus cognitifs touchés par ces
+    troubles.
+  fun_fact_en: I received an “F” for nap time in kindergarten.
+  fun_fact_fr: J’ai reçu un « F » pour la sieste à la maternelle.
+
+- name: Ellie Griffiths-Barnhart
+  photo: ellie-griffiths-barnhart.jpg
+  group: undergrad
+  interests_en: >-
+    I am extremely interested in exploring the immune system’s role in the
+    onset and exacerbation of neurodegenerative symptoms.
+  interests_fr: >-
+    Je m’intéresse énormément au rôle du système immunitaire dans
+    l’apparition et l’aggravation des symptômes neurodégénératifs.
+  fun_fact_en: I’ve lived in 8 different cities so far!
+  fun_fact_fr: J’ai vécu dans 8 villes différentes jusqu’à présent !
+
 - name: Eza-Marie Lambert
+  photo: eza-marie-lambert.jpg
   group: undergrad
+  interests_en: >-
+    I am interested in studying the interactions between dopamine and
+    acetylcholine and understanding how both of these neurotransmitters
+    modulate striatal plasticity.
+  interests_fr: >-
+    Je m’intéresse aux interactions entre la dopamine et l’acétylcholine et à
+    la façon dont ces deux neurotransmetteurs modulent la plasticité
+    striatale.
+  fun_fact_en: >-
+    When I was a teenager, I was strictly vegetarian, and now I work in a
+    mouse lab!
+  fun_fact_fr: >-
+    À l’adolescence, je ne mangeais absolument pas de viande, et aujourd’hui
+    je travaille dans un laboratoire sur la souris !
+
 - name: Shayla Stolberg
+  photo: shayla-stolberg.jpg
   group: undergrad
+  interests_en: >-
+    My research interests focus on understanding the psychological and neural
+    mechanisms underlying learning, motivation, and behavior.
+  interests_fr: >-
+    Mes intérêts de recherche portent sur les mécanismes psychologiques et
+    neuronaux qui sous-tendent l’apprentissage, la motivation et le
+    comportement.
+  fun_fact_en: I love running and trying new workout classes!
+  fun_fact_fr: J’adore la course à pied et essayer de nouveaux cours d’entraînement !
+
 - name: Mar'ya Chumbayeva
   group: undergrad
 - name: Ting yun Huang

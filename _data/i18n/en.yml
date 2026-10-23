@@ -300,6 +300,8 @@ people:
     staff: Research Staff
   interests_label: Research interests
   interests_stub: Coming soon
+  fun_fact_label: Fun fact
+  bio_label: Background
   placeholder_alt: Placeholder portrait of a lab mouse
   alumni_label: Alumni
   alumni_text: Former lab members and where they went next.
@@ -307,10 +309,10 @@ people:
   alumni_undergrad: Undergraduate researchers
   now_prefix: Now
   pets:
-    title: The Furry Side of Britt Lab
-    subtitle: Meet the four-legged members of our research family.
+    title: The Furry and Feathered Side of Britt Lab
+    subtitle: Meet the furry and feathered members of our research family.
     owner_prefix: With
-    empty: Photos coming soon. Our furry colleagues are still getting ready for their close-ups.
+    empty: Photos coming soon. Our furry and feathered colleagues are still getting ready for their close-ups.
 
 pi:
   title: Jonathan Britt

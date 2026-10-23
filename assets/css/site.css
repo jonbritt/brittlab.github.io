@@ -946,25 +946,31 @@ main:focus { outline: none; }
 .roster-count { display: block; margin-bottom: 14px; font-size: clamp(2.6rem, 4.4vw, 4rem); font-weight: 200; letter-spacing: -0.045em; line-height: 0.9; color: var(--gfp-ink); font-variant-numeric: tabular-nums; }
 .roster-count--paw { font-size: clamp(2rem, 3vw, 2.6rem); letter-spacing: 0; }
 .roster-grid, .roster-body { grid-column: 4 / 13; }
-.roster-grid { list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 44px var(--col-gap); align-items: start; }
-.roster-grid > li:nth-child(5n+2), .roster-grid > li:nth-child(5n+4) { margin-top: clamp(24px, 3vw, 48px); }
-@media (max-width: 1180px) and (min-width: 1021px) {
-  .roster-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .roster-grid > li:nth-child(5n+2), .roster-grid > li:nth-child(5n+4) { margin-top: 0; }
-  .roster-grid > li:nth-child(4n+2), .roster-grid > li:nth-child(4n+4) { margin-top: clamp(24px, 3vw, 48px); }
-}
+.roster-grid { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px var(--col-gap); align-items: start; }
+.roster-grid > li:nth-child(3n+2) { margin-top: clamp(32px, 4vw, 64px); }
 .roster + .roster:not(.field) { padding-top: calc(var(--rhythm) * 0.35); }
 .ed-flow--people > .roster:first-child { padding-top: calc(var(--rhythm) * 0.35); }
 
-.person-photo { aspect-ratio: 1 / 1; overflow: hidden; border-radius: var(--radius); background: var(--card); }
-.person-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+.person-photo { aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius); background: var(--card); }
+.person-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 32%; transition: transform 0.6s var(--ease); }
 .person-photo img.is-placeholder { object-fit: contain; padding: 14% 12% 8%; mix-blend-mode: multiply; }
 .person:hover .person-photo img.is-placeholder { transform: translateY(-3px) rotate(-2deg); }
 .person-name { display: block; margin-top: 14px; font-size: 1.06rem; font-weight: 450; letter-spacing: -0.01em; line-height: 1.25; }
 .person-role { display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); }
-.person-interests { margin: 12px 0 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.45; }
-.person-interests em { display: block; margin-bottom: 3px; font-style: normal; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
-.person-interests .stub { color: var(--ink-3); }
+/* Every profile: Research interests, optional Background (folded), Fun fact */
+.person-field { margin: 16px 0 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.person-field em { display: block; margin-bottom: 4px; font-style: normal; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
+.person-field .stub { color: var(--ink-3); }
+.person-fact { color: var(--ink); }
+.person-bio { margin-top: 14px; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.person-bio summary {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer; list-style: none;
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gfp-ink);
+}
+.person-bio summary::-webkit-details-marker { display: none; }
+.person-bio summary::after { content: "+"; font-size: 13px; line-height: 1; }
+.person-bio[open] summary::after { content: "\2212"; }
+.person-bio p { margin: 8px 0 0; }
 .person-links { display: flex; gap: 12px; margin-top: 10px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; }
 
 /* Confocal strip: starts at the roster column and bleeds right, half over the alumni field */
@@ -1002,7 +1008,6 @@ main:focus { outline: none; }
   .ed-pi img { grid-column: 1 / -1; grid-row: 2; width: calc(100% + var(--gutter)); margin-top: 40px; aspect-ratio: 16 / 11; }
   .ed-pi-text { grid-row: 3; padding-top: 28px; }
   .roster-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .roster-grid > li:nth-child(5n+2), .roster-grid > li:nth-child(5n+4) { margin-top: 0; }
   .roster-grid > li:nth-child(3n+2) { margin-top: clamp(20px, 3vw, 36px); }
   .ed-strip { margin-left: 20%; }
 }
@@ -1024,9 +1029,9 @@ main:focus { outline: none; }
   .ed-join::after { background: linear-gradient(0deg, var(--ink) 10%, rgba(18, 19, 21, 0.55) 60%, rgba(18, 19, 21, 0.35)); }
   .page-home .site-footer { border-radius: 0; }
   .ed-pi img { aspect-ratio: 1 / 1; }
-  .roster-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 14px; }
+  .roster-grid { grid-template-columns: 1fr; gap: 40px; }
   .roster-grid > li:nth-child(3n+2) { margin-top: 0; }
-  .roster-grid > li:nth-child(even) { margin-top: 24px; }
+  .person-photo { aspect-ratio: 16 / 10; }
   .roster-body .alumni-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ed-strip { margin-left: 12%; }
 }

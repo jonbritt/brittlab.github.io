@@ -1,4 +1,4 @@
-# Lab pets, shown in "The Furry Side of Britt Lab" at the bottom of the People
+# Lab pets, shown in "The Furry and Feathered Side of Britt Lab" at the bottom of the People
 # page. While this list is empty, the section shows a "photos coming soon" note.
 #
 # To add a pet on github.com:
@@ -10,7 +10,7 @@
 #      every pet starts with "- name:" at the very left.
 #   3. Commit. The site updates in a minute or two.
 #
-# Everything except name and photo is optional:
+# Everything except photo is optional (without a name, the card shows the species):
 #   name:        the pet's name
 #   photo:       file name in assets/img/pets/
 #   species_en / species_fr:  e.g. "Cat" / "Chat"
@@ -27,3 +27,58 @@
 #   about_fr: Responsable du moral. Échange câlins contre friandises.
 
 # Pets:
+# Pet names still to come: add a "name:" line to each block when you have it.
+- photo: ellie-griffiths-barnhart.jpg
+  species_en: Dog
+  species_fr: Chien
+  owner: Ellie Griffiths-Barnhart
+
+- photo: eza-marie-lambert.jpg
+  species_en: Cats
+  species_fr: Chats
+  owner: Eza-Marie Lambert
+
+- photo: kiara-breton.jpg
+  species_en: Cat
+  species_fr: Chat
+  owner: Kiara Breton
+
+- photo: laurie-michelle-tremblay.jpg
+  species_en: Dog
+  species_fr: Chien
+  owner: Laurie-Michelle Tremblay
+
+- photo: luna-alkabra.jpg
+  species_en: Cat
+  species_fr: Chat
+  owner: Luna Alkabra
+
+- photo: madeleine-morris-1.jpg
+  species_en: Dog
+  species_fr: Chien
+  owner: Madeleine Morris
+
+- photo: madeleine-morris-2.jpg
+  species_en: Dog
+  species_fr: Chien
+  owner: Madeleine Morris
+
+- photo: madeleine-morris-3.jpg
+  species_en: Dog
+  species_fr: Chien
+  owner: Madeleine Morris
+
+- photo: tess-hetherington.jpg
+  species_en: Cat and dog
+  species_fr: Chat et chien
+  owner: Tess Hetherington
+
+- photo: tiago-silva.jpg
+  species_en: Dog
+  species_fr: Chien
+  owner: Tiago Silva
+
+- photo: victoria-norton-poulin.jpg
+  species_en: Conure
+  species_fr: Conure
+  owner: Victoria Norton-Poulin

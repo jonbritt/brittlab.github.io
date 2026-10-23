@@ -14,9 +14,9 @@ on github.com.
 
 | To change | Edit |
 |---|---|
-| Current lab members | `_data/people.yml`: add a block with `name` and `group` (`phd`, `msc`, `undergrad`, `postdoc`, `staff`). Optional: `photo` (put the file in `assets/img/people/`), `interests_en` / `interests_fr`, `email`, `website`, `author` (e.g. `Morris MM`, to highlight them in publication lists). Without a photo, the card shows the lab-mouse placeholder. |
+| Current lab members | `_data/people.yml`: add a block with `name` and `group` (`phd`, `msc`, `undergrad`, `postdoc`, `staff`). Optional: `photo` (put the file in `assets/img/people/`), `interests_en` / `interests_fr`, `fun_fact_en` / `fun_fact_fr`, `bio_en` / `bio_fr` (longer background, shown folded), `email`, `website`, `author` (e.g. `Morris MM`, to highlight them in publication lists). Every card shows Research interests and Fun fact in the same format ("Coming soon" until filled in). Without a photo, the card shows the lab-mouse placeholder. |
 | Alumni | `_data/alumni.yml`: move a member here when they leave. `role_*` is what they did in the lab, `now_*` where they went next. |
-| Lab pets ("The Furry Side of Britt Lab", bottom of People) | Upload the photo to `assets/img/pets/`, then add a block to `_data/pets.yml` with `name` and `photo` (optional: `species_en` / `species_fr`, `owner`, `about_en` / `about_fr`). The file has a copy-ready example. While it's empty, the section shows a "coming soon" note. |
+| Lab pets ("The Furry and Feathered Side of Britt Lab", bottom of People) | Upload the photo to `assets/img/pets/`, then add a block to `_data/pets.yml` with `photo` and, if you have it, `name` (optional: `species_en` / `species_fr`, `owner`, `about_en` / `about_fr`). The file has a copy-ready example. While it's empty, the section shows a "coming soon" note. |
 | Publications | `_data/publications.yml`: copy a block to the top (the list is newest first; the four newest appear on the home page). |
 | Funders strip | `_data/funders.yml`, logos in `assets/img/funders/`. |
 | Gallery images | `_data/gallery.yml`, files in `assets/img/gallery/` with a 720px copy in `assets/img/gallery/thumbs/`. Keep the credit and licence for paper figures. |

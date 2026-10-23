@@ -327,6 +327,8 @@ people:
     staff: Personnel de recherche
   interests_label: Intérêts de recherche
   interests_stub: À venir
+  fun_fact_label: Anecdote
+  bio_label: Parcours
   placeholder_alt: Portrait provisoire d’une souris de laboratoire
   alumni_label: Membres des années précédentes
   alumni_text: Les membres qui ont quitté le laboratoire et la suite de leur parcours.
@@ -334,10 +336,10 @@ people:
   alumni_undergrad: Recherche au premier cycle
   now_prefix: Aujourd’hui
   pets:
-    title: Le côté poilu du Laboratoire Britt
-    subtitle: Faites connaissance avec les membres à quatre pattes de notre famille de recherche.
+    title: Le Laboratoire Britt, à poils et à plumes
+    subtitle: Faites connaissance avec les membres à poils et à plumes de notre famille de recherche.
     owner_prefix: Avec
-    empty: Photos à venir. Nos collègues à poils se préparent encore pour leur séance photo.
+    empty: Photos à venir. Nos collègues à poils et à plumes se préparent encore pour leur séance photo.
 
 pi:
   title: Jonathan Britt
