@@ -314,6 +314,7 @@ people:
   pi_cta: Profil complet
   groups:
     postdoc: Stages postdoctoraux
+    grad: Étudiants des cycles supérieurs
     phd: Doctorat
     msc: Maîtrise
     undergrad: Recherche au premier cycle
@@ -332,6 +333,11 @@ people:
   alumni_grad: Études supérieures
   alumni_undergrad: Recherche au premier cycle
   now_prefix: Aujourd’hui
+  pets:
+    title: Le côté poilu du Laboratoire Britt
+    subtitle: Faites connaissance avec les membres à quatre pattes de notre famille de recherche.
+    owner_prefix: Avec
+    empty: Photos à venir. Nos collègues à poils se préparent encore pour leur séance photo.
 
 pi:
   title: Jonathan Britt

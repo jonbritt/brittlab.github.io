@@ -1,0 +1,29 @@
+# Lab pets, shown in "The Furry Side of Britt Lab" at the bottom of the People
+# page. While this list is empty, the section shows a "photos coming soon" note.
+#
+# To add a pet on github.com:
+#   1. Open assets/img/pets/, choose "Add file" > "Upload files" and upload the
+#      photo (square-ish, ~600px, .jpg or .png). Use a short lowercase file name
+#      with no spaces, e.g. biscuit.jpg.
+#   2. Open this file, click the pencil icon, and paste a copy of the example
+#      block at the bottom. Remove the "# " at the start of each line, so that
+#      every pet starts with "- name:" at the very left.
+#   3. Commit. The site updates in a minute or two.
+#
+# Everything except name and photo is optional:
+#   name:        the pet's name
+#   photo:       file name in assets/img/pets/
+#   species_en / species_fr:  e.g. "Cat" / "Chat"
+#   owner:       the lab member they belong to
+#   about_en / about_fr:  one fun line about them
+#
+# Example (copy, then remove the "# "):
+# - name: Biscuit
+#   photo: biscuit.jpg
+#   species_en: Golden retriever
+#   species_fr: Golden retriever
+#   owner: Luna Alkabra
+#   about_en: Chief morale officer. Will trade affection for treats.
+#   about_fr: Responsable du moral. Échange câlins contre friandises.
+
+# Pets:

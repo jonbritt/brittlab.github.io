@@ -3,90 +3,149 @@ layout: default
 ---
 {%- include page-vars.html -%}
 {%- assign pp = t.people -%}
-<section class="page-hero">
-  <div class="wrap">
-    <p class="label">{{ t.lab_name }}</p>
-    <h1 class="display">{{ pp.title }}</h1>
-    <p class="lede">{{ pp.lede }}</p>
+{%- comment -%}
+  Editorial People page: the PI as a feature beside the title, then one
+  "roster" per group (heading column on the left, portraits on the right).
+  A confocal strip leads from the current team into alumni and pets, which
+  share a tonal field. Styles: "Editorial layout" in site.css.
+{%- endcomment -%}
+<section class="ed-hero">
+  <div class="wrap ed-grid">
+    <div class="ed-hero-text">
+      <p class="label">{{ t.lab_name }}</p>
+      <h1 class="display">{{ pp.title }}</h1>
+      <p class="lede">{{ pp.lede }}</p>
+    </div>
+    <div class="ed-pi reveal">
+      <img src="/assets/img/pi/jonathan-britt.jpg" alt="{{ t.pi.portrait_alt }}" width="999" height="1000">
+      <div class="ed-pi-text">
+        <p class="label">{{ pp.pi_label }}</p>
+        <h2>{{ t.pi.name }}</h2>
+        <p>{{ pp.pi_role }}</p>
+        {% include cta.html href=url_pi label=pp.pi_cta mouse="right" %}
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section--tight" style="padding-top:0">
-  <div class="wrap">
-    <p class="label">{{ pp.pi_label }}</p>
-    <div class="pi-card reveal">
-      <img src="/assets/img/pi/jonathan-britt.jpg" alt="{{ t.pi.portrait_alt }}" width="200" height="200">
-      <div>
-        <h2>{{ t.pi.name }}</h2>
-        <p>{{ pp.pi_role }}</p>
-      </div>
-      {% include cta.html href=url_pi label=pp.pi_cta mouse="right" %}
-    </div>
-
-    {%- assign group_order = "postdoc,phd,msc,staff,undergrad" | split: "," -%}
-    {%- for g in group_order -%}
+<div class="ed-flow ed-flow--people">
+  {%- comment -%}
+    Display groups. "grad" is not a value in people.yml: it gathers the
+    phd and msc entries into one Graduate Students grid, Ph.D. first.
+    Each portrait still shows the person's own degree (roles[m.group]).
+  {%- endcomment -%}
+  {%- assign group_order = "postdoc,grad,staff,undergrad" | split: "," -%}
+  {%- for g in group_order -%}
+  {%- if g == "grad" -%}
+    {%- assign phd = site.data.people | where: "group", "phd" -%}
+    {%- assign msc = site.data.people | where: "group", "msc" -%}
+    {%- assign members = phd | concat: msc -%}
+  {%- else -%}
     {%- assign members = site.data.people | where: "group", g -%}
-    {%- if members.size > 0 %}
-    <div class="group">
-      <div class="group-head">
+  {%- endif -%}
+  {%- if members.size > 0 %}
+  <section class="ed roster" id="{{ g }}">
+    <div class="wrap ed-grid">
+      <div class="roster-head">
+        <span class="roster-count" aria-hidden="true">{% if members.size < 10 %}0{% endif %}{{ members.size }}</span>
         <h2>{{ pp.groups[g] }}</h2>
-        <span>{{ members.size }}</span>
       </div>
-      <ul class="member-grid">
+      <ul class="roster-grid">
         {%- for m in members -%}
         {%- assign interests = m[k_interests] | default: m.interests_en %}
-        <li class="member reveal">
-          <div class="member-photo">
+        <li class="person reveal">
+          <div class="person-photo">
             {%- if m.photo %}
             <img src="/assets/img/people/{{ m.photo }}" alt="{{ m.name }}" loading="lazy">
             {%- else %}
             <img class="is-placeholder" src="/assets/img/people/placeholder-mouse.jpg" alt="" loading="lazy">
             {%- endif %}
           </div>
-          <div class="member-body">
-            <span class="member-name">{{ m.name }}</span>
-            <span class="member-role">{{ pp.roles[m.group] }}</span>
-            <p class="member-interests"><em>{{ pp.interests_label }}</em>{% if interests %}{{ interests }}{% else %}<span class="stub">{{ pp.interests_stub }}</span>{% endif %}</p>
-            {%- if m.email or m.website %}
-            <span class="member-links">
-              {%- if m.email %}<a href="mailto:{{ m.email }}">{{ t.common.email }}</a>{% endif -%}
-              {%- if m.website %}<a href="{{ m.website }}" rel="noopener">Web</a>{% endif -%}
-            </span>
-            {%- endif %}
-          </div>
+          <span class="person-name">{{ m.name }}</span>
+          <span class="person-role">{{ pp.roles[m.group] }}</span>
+          <p class="person-interests"><em>{{ pp.interests_label }}</em>{% if interests %}{{ interests }}{% else %}<span class="stub">{{ pp.interests_stub }}</span>{% endif %}</p>
+          {%- if m.email or m.website %}
+          <span class="person-links">
+            {%- if m.email %}<a href="mailto:{{ m.email }}">{{ t.common.email }}</a>{% endif -%}
+            {%- if m.website %}<a href="{{ m.website }}" rel="noopener">Web</a>{% endif -%}
+          </span>
+          {%- endif %}
         </li>
         {%- endfor %}
       </ul>
     </div>
-    {%- endif -%}
-    {%- endfor %}
+  </section>
+  {%- endif -%}
+  {%- endfor %}
 
-    <div class="group" id="alumni">
-      <div class="group-head">
-        <h2>{{ pp.alumni_label }}</h2>
-        <span>{{ site.data.alumni.size }}</span>
-      </div>
-      <p class="muted" style="margin:0">{{ pp.alumni_text }}</p>
-      {%- assign alumni_groups = "grad,undergrad" | split: "," -%}
-      {%- for ag in alumni_groups -%}
-      {%- assign al = site.data.alumni | where: "group", ag %}
-      <p class="subhead">{% if ag == "grad" %}{{ pp.alumni_grad }}{% else %}{{ pp.alumni_undergrad }}{% endif %}</p>
-      <ul class="alumni-grid">
-        {%- for a in al -%}
-        {%- assign role = a[k_role] | default: a.role_en -%}
-        {%- assign now = a[k_now] | default: a.now_en %}
-        <li class="alum">
-          <div class="alum-photo">
-            <img src="/assets/img/{% if a.photo %}alumni/{{ a.photo }}{% else %}people/placeholder-mouse.jpg{% endif %}" alt="" loading="lazy" width="210" height="210">
-          </div>
-          <div class="alum-name">{{ a.name }}</div>
-          <div class="alum-role">{{ role }}</div>
-          {%- if now %}<div class="alum-now">{{ now }}</div>{% endif %}
-        </li>
-        {%- endfor %}
-      </ul>
-      {%- endfor %}
-    </div>
+  {%- comment -%} Transition: hippocampal neurons, bleeding off the right edge into the alumni field {%- endcomment -%}
+  <div class="wrap">
+    <figure class="ed-strip bleed-right" aria-hidden="true">
+      <img src="/assets/img/research/banner-confocal.jpg" alt="" width="940" height="189" loading="lazy">
+    </figure>
   </div>
-</section>
-<div class="section--tight"></div>
+
+  <section class="ed field field--left roster roster--alumni" id="alumni">
+    <div class="wrap ed-grid">
+      <div class="roster-head">
+        <span class="roster-count" aria-hidden="true">{{ site.data.alumni.size }}</span>
+        <h2>{{ pp.alumni_label }}</h2>
+        <p>{{ pp.alumni_text }}</p>
+      </div>
+      <div class="roster-body">
+        {%- assign alumni_groups = "grad,undergrad" | split: "," -%}
+        {%- for ag in alumni_groups -%}
+        {%- assign al = site.data.alumni | where: "group", ag %}
+        <p class="subhead">{% if ag == "grad" %}{{ pp.alumni_grad }}{% else %}{{ pp.alumni_undergrad }}{% endif %}</p>
+        <ul class="alumni-grid">
+          {%- for a in al -%}
+          {%- assign role = a[k_role] | default: a.role_en -%}
+          {%- assign now = a[k_now] | default: a.now_en %}
+          <li class="alum">
+            <div class="alum-photo">
+              <img src="/assets/img/{% if a.photo %}alumni/{{ a.photo }}{% else %}people/placeholder-mouse.jpg{% endif %}" alt="" loading="lazy" width="210" height="210">
+            </div>
+            <div class="alum-name">{{ a.name }}</div>
+            <div class="alum-role">{{ role }}</div>
+            {%- if now %}<div class="alum-now">{{ now }}</div>{% endif %}
+          </li>
+          {%- endfor %}
+        </ul>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  {%- assign pets = site.data.pets -%}
+  {%- assign fp = pp.pets %}
+  <section class="ed roster roster--pets" id="pets">
+    <div class="wrap ed-grid">
+      <div class="roster-head">
+        <span class="roster-count roster-count--paw" aria-hidden="true">🐾</span>
+        <h2>{{ fp.title }}</h2>
+        <p>{{ fp.subtitle }}</p>
+      </div>
+      <div class="roster-body">
+        {%- if pets.size > 0 %}
+        <ul class="pet-grid">
+          {%- for pet in pets -%}
+          {%- assign species = pet[k_species] | default: pet.species_en -%}
+          {%- assign about = pet[k_about] | default: pet.about_en %}
+          <li class="pet reveal">
+            <div class="pet-photo">
+              <img src="/assets/img/pets/{{ pet.photo }}" alt="{{ pet.name }}{% if species %}, {{ species | downcase }}{% endif %}" loading="lazy">
+            </div>
+            <div class="pet-name">{{ pet.name }}</div>
+            {%- if species %}<div class="pet-meta">{{ species }}</div>{% endif -%}
+            {%- if pet.owner %}<div class="pet-owner">{{ fp.owner_prefix }} {{ pet.owner }}</div>{% endif -%}
+            {%- if about %}<p class="pet-about">{{ about }}</p>{% endif %}
+          </li>
+          {%- endfor %}
+        </ul>
+        {%- else %}
+        <p class="pet-empty">{{ fp.empty }}</p>
+        {%- endif %}
+      </div>
+    </div>
+  </section>
+</div>

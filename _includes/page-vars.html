@@ -41,11 +41,13 @@
     {%- when "join" -%}{%- assign url_join = item[lang] -%}
   {%- endcase -%}
 {%- endfor -%}
+{%- assign k_about = "about_" | append: lang -%}
 {%- assign k_alt = "alt_" | append: lang -%}
 {%- assign k_caption = "caption_" | append: lang -%}
 {%- assign k_interests = "interests_" | append: lang -%}
 {%- assign k_name = "name_" | append: lang -%}
 {%- assign k_now = "now_" | append: lang -%}
 {%- assign k_role = "role_" | append: lang -%}
+{%- assign k_species = "species_" | append: lang -%}
 {%- assign k_title = "title_" | append: lang -%}
 {%- assign k_url = "url_" | append: lang -%}

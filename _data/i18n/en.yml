@@ -287,6 +287,7 @@ people:
   pi_cta: Full profile
   groups:
     postdoc: Postdoctoral fellows
+    grad: Graduate Students
     phd: Ph.D. students
     msc: M.Sc. students
     undergrad: Undergraduate researchers
@@ -305,6 +306,11 @@ people:
   alumni_grad: Graduate students
   alumni_undergrad: Undergraduate researchers
   now_prefix: Now
+  pets:
+    title: The Furry Side of Britt Lab
+    subtitle: Meet the four-legged members of our research family.
+    owner_prefix: With
+    empty: Photos coming soon. Our furry colleagues are still getting ready for their close-ups.
 
 pi:
   title: Jonathan Britt

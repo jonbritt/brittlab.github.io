@@ -9,6 +9,8 @@
 #                 Publications page can highlight current members.
 #
 # group must be one of: phd, msc, undergrad, postdoc, staff
+# (phd and msc are shown together under "Graduate Students"; each card still
+# says Ph.D. Student or M.Sc. Student)
 
 - name: Niharika Dighe
   group: phd

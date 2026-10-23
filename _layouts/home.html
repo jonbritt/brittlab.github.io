@@ -3,6 +3,12 @@ layout: default
 ---
 {%- include page-vars.html -%}
 {%- assign h = t.home -%}
+{%- comment -%}
+  Editorial home page. Sections are told apart by layout, type and tone, not
+  by rules: partial-width tonal fields (.field), images that cross from one
+  section into the next (.bleed-right), and one spacing rhythm (--rhythm).
+  Styles live under "Editorial layout" in site.css.
+{%- endcomment -%}
 
 {%- assign banner = site.data.gallery.images | where: "slug", "bla-calbindin" | first %}
 <section class="banner">
@@ -26,11 +32,15 @@ layout: default
   <p class="banner-credit">{{ banner[k_title] }} · {{ banner.credit }}</p>
 </section>
 
-<section class="section section--rule">
-  <div class="wrap welcome">
-    <p class="label">{{ h.welcome_label }}</p>
-    <div class="reveal">
-      <blockquote>
+<div class="ed-flow">
+
+{%- comment -%} Welcome: the quote, with a tall micrograph that bleeds off the right edge and drops into the next section {%- endcomment -%}
+{%- assign wimg = site.data.gallery.images | where: "slug", "gcamp-expression" | first %}
+<section class="ed ed--intro">
+  <div class="wrap ed-grid">
+    <div class="ed-intro-text reveal">
+      <p class="label ed-idx">{{ h.welcome_label }}</p>
+      <blockquote class="ed-quote">
         <p>{{ h.welcome }}</p>
       </blockquote>
       <div class="signature">
@@ -38,65 +48,68 @@ layout: default
         <span>{{ h.welcome_signature }}</span>
       </div>
     </div>
+    <figure class="ed-intro-img bleed-right">
+      <img src="/assets/img/gallery/{{ wimg.slug }}.jpg" alt="{{ wimg[k_alt] | default: wimg.alt_en }}" width="872" height="872" loading="lazy">
+      <figcaption>{{ wimg[k_title] | default: wimg.title_en }} · {{ wimg.credit }}</figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="section section--rule">
+{%- comment -%} Questions: numbered editorial columns on a field anchored to the left edge {%- endcomment -%}
+<section class="ed field field--left ed--questions">
   <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="label">{{ h.questions_label }}</p>
-        <h2 class="h2">{{ h.questions_title }}</h2>
-      </div>
-      {% include cta.html href=url_research label=h.cta_research mouse="right" %}
+    <div class="ed-head">
+      <p class="label ed-idx">{{ h.questions_label }}</p>
+      <h2 class="h2">{{ h.questions_title }}</h2>
+      <div class="ed-head-cta">{% include cta.html href=url_research label=h.cta_research mouse="right" %}</div>
     </div>
-    <div class="card-grid">
+    <ol class="ed-questions">
       {%- for q in h.questions %}
-      <article class="card reveal">
-        <span class="card-num">0{{ forloop.index }}</span>
+      <li class="reveal">
+        <span class="ed-num" aria-hidden="true">0{{ forloop.index }}</span>
         <h3>{{ q.title }}</h3>
         <p>{{ q.text }}</p>
-        <p class="card-refs">{{ q.refs }}</p>
-      </article>
+        <p class="ed-refs">{{ q.refs }}</p>
+      </li>
       {%- endfor %}
-    </div>
+    </ol>
   </div>
 </section>
 
-<section class="section section--rule">
-  <div class="wrap approach">
-    <div class="reveal">
-      <p class="label">{{ h.approach_label }}</p>
-      <h2 class="h2">{{ h.approach_title }}</h2>
-      <div class="prose" style="margin-top:24px">
-        <p>{{ h.approach }}</p>
-        <p>{{ h.approach_2 }}</p>
-      </div>
-      <ul class="methods">
-        {%- for m in h.methods %}
-        <li><h3>{{ m.title }}</h3><p>{{ m.text }}</p></li>
-        {%- endfor %}
-      </ul>
-    </div>
-    <figure class="figure reveal">
+{%- comment -%} Approach: the composition flips, figure left and text right {%- endcomment -%}
+<section class="ed ed--approach">
+  <div class="wrap ed-grid">
+    <figure class="figure ed-approach-fig reveal">
       <div class="figure-frame">
         <img src="/assets/img/research/nac-input-innervation.jpg" alt="{{ h.approach_figure_caption }}" width="1412" height="1025" loading="lazy">
       </div>
       <figcaption>{{ h.approach_figure_caption }}</figcaption>
     </figure>
+    <div class="ed-approach-text reveal">
+      <p class="label ed-idx">{{ h.approach_label }}</p>
+      <h2 class="h2">{{ h.approach_title }}</h2>
+      <div class="prose">
+        <p>{{ h.approach }}</p>
+        <p>{{ h.approach_2 }}</p>
+      </div>
+      <ul class="ed-methods">
+        {%- for m in h.methods %}
+        <li><h3>{{ m.title }}</h3><p>{{ m.text }}</p></li>
+        {%- endfor %}
+      </ul>
+    </div>
   </div>
 </section>
 
-<section class="section section--rule">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="label">{{ h.selected_label }}</p>
-        <h2 class="h2">{{ h.selected_title }}</h2>
-      </div>
-      {% include cta.html href=url_pubs label=t.common.all_publications mouse="right" %}
+{%- comment -%} Selected papers: a heading column on the left, the list set by type alone {%- endcomment -%}
+<section class="ed ed--papers">
+  <div class="wrap ed-grid">
+    <div class="ed-side">
+      <p class="label ed-idx">{{ h.selected_label }}</p>
+      <h2 class="h2">{{ h.selected_title }}</h2>
+      <div class="ed-head-cta">{% include cta.html href=url_pubs label=t.common.all_publications mouse="right" %}</div>
     </div>
-    <ul class="pub-list reveal">
+    <ul class="ed-papers reveal">
       {%- comment -%} The newest papers; publications.yml is kept newest first {%- endcomment -%}
       {%- for p in site.data.publications limit: 4 %}
       {% include pub-row.html pub=p compact=true %}
@@ -105,22 +118,25 @@ layout: default
   </div>
 </section>
 
-<section class="section section--rule">
+{%- comment -%} Gallery: an asymmetric mosaic that bleeds off the right edge {%- endcomment -%}
+<section class="ed ed--gallery">
   <div class="wrap">
-    <div class="section-head">
+    <div class="ed-head ed-head--split">
       <div>
-        <p class="label">{{ h.gallery_label }}</p>
+        <p class="label ed-idx">{{ h.gallery_label }}</p>
         <h2 class="h2">{{ h.gallery_title }}</h2>
-        <p class="lede" style="margin-top:16px">{{ h.gallery_text }}</p>
       </div>
-      {% include cta.html href=url_gallery label=h.gallery_cta mouse="left" %}
+      <div>
+        <p class="lede">{{ h.gallery_text }}</p>
+        <div class="ed-head-cta">{% include cta.html href=url_gallery label=h.gallery_cta mouse="left" %}</div>
+      </div>
     </div>
-    <div class="strip reveal">
+    <div class="mosaic bleed-right reveal">
       {%- assign teaser = "gcamp-expression,striatum-two-colour,bla-calbindin,tdtomato-cortex" | split: "," -%}
       {%- for slug in teaser -%}
       {%- assign g = site.data.gallery.images | where: "slug", slug | first %}
-      <a href="{{ url_gallery }}#{{ slug }}">
-        <img src="/assets/img/gallery/thumbs/{{ slug }}.jpg" alt="{{ g[k_alt] | default: g.alt_en }}" loading="lazy">
+      <a class="mosaic-{{ forloop.index }}" href="{{ url_gallery }}#{{ slug }}">
+        <img src="/assets/img/gallery/{% if forloop.index == 2 or forloop.index == 4 %}thumbs/{% endif %}{{ slug }}.jpg" alt="{{ g[k_alt] | default: g.alt_en }}" loading="lazy">
         <span>{{ g[k_title] | default: g.title_en }}</span>
       </a>
       {%- endfor %}
@@ -128,22 +144,21 @@ layout: default
   </div>
 </section>
 
-<section class="section section--rule">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="label">{{ h.news_label }}</p>
-      </div>
+{%- comment -%} News: the label stays on the paper, the posts sit on a field anchored to the right edge {%- endcomment -%}
+<section class="ed field field--right ed--news">
+  <div class="wrap ed-grid">
+    <div class="ed-side">
+      <p class="label ed-idx">{{ h.news_label }}</p>
       <a class="text-link" href="{{ url_news }}">{{ h.news_cta }} {% include arrow.svg %}</a>
     </div>
-    <ul class="news-list reveal">
+    <ul class="ed-news reveal">
       {%- assign posts = site.posts | where: "lang", lang -%}
       {%- for post in posts limit: 3 %}
       <li>
         <a href="{{ post.url }}">
           <time datetime="{{ post.date | date_to_xmlschema }}">{% include date.html date=post.date %}</time>
-          <span><h3>{{ post.title }}</h3><p>{{ post.summary }}</p></span>
-          {% include arrow.svg %}
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.summary }}</p>
         </a>
       </li>
       {%- endfor %}
@@ -151,19 +166,7 @@ layout: default
   </div>
 </section>
 
-<section class="section--tight">
-  <div class="wrap">
-    <div class="band reveal">
-      <div>
-        <h2 class="h2">{{ h.join_title }}</h2>
-        <p>{{ h.join_text }}</p>
-      </div>
-      {% include cta.html href=url_join label=h.join_cta mouse="right" %}
-    </div>
-  </div>
-</section>
-
-<section class="funders" aria-labelledby="funders-label">
+<section class="funders ed--funders" aria-labelledby="funders-label">
   <div class="wrap funders-head">
     <p class="label" id="funders-label">{{ h.funders_label }}</p>
     {% include motion-btn.html %}
@@ -184,5 +187,21 @@ layout: default
     </div>
   </div>
 </section>
+
+{%- comment -%} Join: a dark lab photograph that runs straight into the footer {%- endcomment -%}
+{%- assign jimg = site.data.gallery.images | where: "slug", "brain-slices-blue-light" | first %}
+<section class="ed-join">
+  <img class="ed-join-img" src="/assets/img/gallery/{{ jimg.slug }}.jpg" alt="" width="1387" height="1224" loading="lazy">
+  <div class="wrap ed-join-inner">
+    <div class="ed-join-text reveal">
+      <h2 class="h2">{{ h.join_title }}</h2>
+      <p>{{ h.join_text }}</p>
+      {% include cta.html href=url_join label=h.join_cta mouse="right" class="cta--light" %}
+    </div>
+    <p class="ed-join-credit">{{ jimg[k_title] | default: jimg.title_en }} · {{ jimg.credit }}</p>
+  </div>
+</section>
+
+</div>
 
 <script src="/assets/js/banner-fx.js?v={{ site.time | date: '%s' }}" defer></script>
