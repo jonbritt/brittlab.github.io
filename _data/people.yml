@@ -22,7 +22,15 @@
 # says Ph.D. Student or M.Sc. Student)
 
 - name: Niharika Dighe
+  photo: niharika-dighe.jpg
   group: phd
+  # Research interests and fun fact to come.
+  bio_en: >-
+    Niharika is a Ph.D. student in McGill’s Integrated Program in
+    Neuroscience (IPN).
+  bio_fr: >-
+    Niharika est doctorante au Programme intégré en neurosciences (IPN) de
+    l’Université McGill.
 
 - name: Madeleine Morris
   photo: madeleine-morris.jpg

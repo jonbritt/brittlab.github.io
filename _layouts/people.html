@@ -70,7 +70,7 @@ layout: default
           <p class="person-field"><em>{{ pp.interests_label }}</em>{{ interests }}</p>
           {%- endif %}
           {%- if bio %}
-          <details class="person-bio">
+          <details class="person-bio"{% unless interests %} open{% endunless %}>
             <summary>{{ pp.bio_label }}</summary>
             <p>{{ bio }}</p>
           </details>
