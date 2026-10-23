@@ -87,34 +87,6 @@
     il est aujourd’hui doctorant en codirection dans les laboratoires Britt
     et Tritsch.
 
-- name: Tiago Silva
-  photo: tiago-silva.jpg
-  group: msc
-  interests_en: >-
-    Tiago is interested in the fundamentals of dopamine in associative
-    learning: how dopamine is used to ascribe importance to cues, how
-    signalling changes as an association is learned, and how this learning
-    system is involved in addiction.
-  interests_fr: >-
-    Tiago s’intéresse aux fondements du rôle de la dopamine dans
-    l’apprentissage associatif : comment la dopamine sert à attribuer de
-    l’importance aux indices, comment la signalisation évolue à mesure
-    qu’une association est apprise, et quel rôle joue ce système
-    d’apprentissage dans la dépendance.
-  bio_en: >-
-    Tiago is an M.Sc. student in the Britt Lab and is transitioning from the
-    master’s to the Ph.D. track to continue this fundamental research through
-    a Ph.D.
-  bio_fr: >-
-    Tiago fait sa maîtrise au Laboratoire Britt et effectue le passage
-    accéléré au doctorat afin de poursuivre cette recherche fondamentale.
-  fun_fact_en: >-
-    Tiago likes to play piano, and his favorite song he’s ever learned is
-    both versions of the Gravity Falls theme song!
-  fun_fact_fr: >-
-    Tiago aime jouer du piano, et son morceau préféré parmi tous ceux qu’il a
-    appris est le générique de Souvenirs de Gravity Falls, dans ses deux
-    versions !
 - name: Luna Alkabra
   photo: luna-alkabra.jpg
   group: msc
@@ -155,6 +127,34 @@
   fun_fact_fr: >-
     Luna a mené une enquête journalistique sur une explosion ferroviaire
     survenue en 1979 avec un chercheur de l’Université de Toronto; ce travail sera intégré à
+- name: Tiago Silva
+  photo: tiago-silva.jpg
+  group: msc
+  interests_en: >-
+    Tiago is interested in the fundamentals of dopamine in associative
+    learning: how dopamine is used to ascribe importance to cues, how
+    signalling changes as an association is learned, and how this learning
+    system is involved in addiction.
+  interests_fr: >-
+    Tiago s’intéresse aux fondements du rôle de la dopamine dans
+    l’apprentissage associatif : comment la dopamine sert à attribuer de
+    l’importance aux indices, comment la signalisation évolue à mesure
+    qu’une association est apprise, et quel rôle joue ce système
+    d’apprentissage dans la dépendance.
+  bio_en: >-
+    Tiago is an M.Sc. student in the Britt Lab and is transitioning from the
+    master’s to the Ph.D. track to continue this fundamental research through
+    a Ph.D.
+  bio_fr: >-
+    Tiago fait sa maîtrise au Laboratoire Britt et effectue le passage
+    accéléré au doctorat afin de poursuivre cette recherche fondamentale.
+  fun_fact_en: >-
+    Tiago likes to play piano, and his favorite song he’s ever learned is
+    both versions of the Gravity Falls theme song!
+  fun_fact_fr: >-
+    Tiago aime jouer du piano, et son morceau préféré parmi tous ceux qu’il a
+    appris est le générique de Souvenirs de Gravity Falls, dans ses deux
+    versions !
     l’une de ses publications.
 
 - name: Kiara Breton
