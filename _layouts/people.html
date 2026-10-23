@@ -65,15 +65,19 @@ layout: default
           </div>
           <span class="person-name">{{ m.name }}</span>
           <span class="person-role">{{ pp.roles[m.group] }}</span>
-          {%- comment -%} Same three parts on every card, whatever the group {%- endcomment %}
-          <p class="person-field"><em>{{ pp.interests_label }}</em>{% if interests %}{{ interests }}{% else %}<span class="stub">{{ pp.interests_stub }}</span>{% endif %}</p>
+          {%- comment -%} Same parts and order on every card, whatever the group; a part only shows once it is filled in {%- endcomment %}
+          {%- if interests %}
+          <p class="person-field"><em>{{ pp.interests_label }}</em>{{ interests }}</p>
+          {%- endif %}
           {%- if bio %}
           <details class="person-bio">
             <summary>{{ pp.bio_label }}</summary>
             <p>{{ bio }}</p>
           </details>
           {%- endif %}
-          <p class="person-field person-fact"><em>{{ pp.fun_fact_label }}</em>{% if fact %}{{ fact }}{% else %}<span class="stub">{{ pp.interests_stub }}</span>{% endif %}</p>
+          {%- if fact %}
+          <p class="person-field person-fact"><em>{{ pp.fun_fact_label }}</em>{{ fact }}</p>
+          {%- endif %}
           {%- if m.email or m.website %}
           <span class="person-links">
             {%- if m.email %}<a href="mailto:{{ m.email }}">{{ t.common.email }}</a>{% endif -%}

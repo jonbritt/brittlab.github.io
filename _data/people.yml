@@ -11,8 +11,8 @@
 #   author:       how the name appears in author lists (e.g. "Morris MM"), so the
 #                 Publications page can highlight current members.
 #
-# Every card shows "Research interests" and "Fun fact" in the same format,
-# with "Coming soon" until those are filled in. Graduate profiles are written
+# Every card shows "Research interests", "Background" and "Fun fact" in the
+# same format; each part appears once it is filled in. Graduate profiles are written
 # in the third person, undergraduate profiles in the first person.
 # Long text: start the value with ">-" and indent the lines below it.
 # If there is no _fr version, the French page shows the English text.
