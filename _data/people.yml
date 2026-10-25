@@ -292,6 +292,22 @@
   fun_fact_fr: J’adore la course à pied et essayer de nouveaux cours d’entraînement !
 
 - name: Mar'ya Chumbayeva
+  photo: marya-chumbayeva.jpg
   group: undergrad
+  interests_en: >-
+    My research interests include decision-making and behavioral
+    neuroscience, with a focus on how early substance exposure may contribute
+    to long-term changes in cognition, decision-making, and behaviour. I am
+    also interested in the cognitive and emotional processes associated with
+    psychopathology, substance use disorders, and psychological well-being.
+  interests_fr: >-
+    Mes intérêts de recherche portent sur la prise de décision et les
+    neurosciences comportementales, en particulier sur la façon dont une
+    exposition précoce à des substances peut entraîner des changements à long
+    terme de la cognition, de la prise de décision et du comportement. Je
+    m’intéresse aussi aux processus cognitifs et émotionnels associés à la
+    psychopathologie, aux troubles liés à l’usage de substances et au
+    bien-être psychologique.
+
 - name: Ting yun Huang
   group: undergrad
