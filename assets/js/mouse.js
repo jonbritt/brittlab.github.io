@@ -71,7 +71,7 @@
     '<rect x="19" y="7" width="4" height="1"/><rect x="19" y="9" width="4" height="1"/></g>';
 
   var headSVG =
-    '<svg xmlns="' + NS + '" viewBox="-3 0 26 12" preserveAspectRatio="xMidYMax meet" shape-rendering="crispEdges">' +
+    '<svg xmlns="' + NS + '" viewBox="-3 -2 26 14" preserveAspectRatio="xMidYMax meet" shape-rendering="crispEdges">' +
     '<g class="ears" style="transform-box:fill-box">' + rects(earRows(), 0, 0) + "</g>" +
     rects(headWithoutEars(), 0, 0) +
     '<g class="blink">' + rects(BLINK, 0, 0) + "</g>" +
