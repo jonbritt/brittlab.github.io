@@ -155,11 +155,11 @@ main:focus { outline: none; }
 
 .peek {
   position: absolute; bottom: calc(100% - 1px); right: 6px;
-  width: 78px; height: 34px; pointer-events: none; z-index: 2;
+  width: 78px; height: 50px; pointer-events: none; z-index: 2;   /* 16px headroom for the bounce */
 }
 .peek-clip { position: absolute; inset: 0; overflow: hidden; }
 .peek-head {
-  position: absolute; left: 0; bottom: -3px; width: 78px; height: 36px;
+  position: absolute; left: 0; bottom: -3px; width: 78px; height: 42px;   /* 2 spare pixel rows above the ears */
   transform: translateY(105%);
   transition: transform 0.22s cubic-bezier(0.5, 0, 0.8, 0.4);
 }
@@ -265,9 +265,11 @@ main:focus { outline: none; }
 
 /* ---------- Home banner ---------- */
 
-/* The card hangs below the image by --overlap, so the banner runs into the
+/* The banner sits a layer above the page (z-index 3) so the part of the card
+   that hangs into the welcome section (.ed--intro, z-index 2) stays clickable.
+   The card hangs below the image by --overlap, so the banner runs into the
    page instead of ending at a hard edge. */
-.banner { position: relative; min-height: clamp(560px, 78vh, 820px); display: flex; align-items: flex-end; background: var(--scope); }
+.banner { position: relative; z-index: 3; min-height: clamp(560px, 78vh, 820px); display: flex; align-items: flex-end; background: var(--scope); }
 .banner-media { position: absolute; inset: 0; overflow: hidden; }
 .banner-img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
 .banner-fx { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
